@@ -5,9 +5,7 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb",
-        "airbnb-base",
-        "plugin:prettier/recommended"
+        "airbnb"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -20,13 +18,6 @@
         "react"
     ],
     "rules": {
-        "prettier/prettier": "error",
-        "no-unused-vars": "warn",
-        "func-names": "off",
-        "class-methods-use-this": "off",
-        "no-useless-catch": "warn",
-        "global-require":"warn",
-        "import/no-dynamic-require": "warn",
         "react/react-in-jsx-scope": 0
     }
 }

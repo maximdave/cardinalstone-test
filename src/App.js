@@ -1,8 +1,10 @@
 import './App.css';
+
 function App() {
   return (
-    <div className='App'>
-      <h1>hello yourself now</h1>
+    // eslint-disable-next-line react/jsx-filename-extension
+    <div className="App">
+      <h1>hello yourself</h1>
     </div>
   );
 }
