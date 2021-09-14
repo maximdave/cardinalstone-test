@@ -17,6 +17,7 @@ function App() {
         <Route path="/admin-page" component={AdminPage} />
         <Route path="/create-user" component={CreateUser} />
         <Route path="/create-user-success" component={CreateUserSuccess} />
+        <Route path="/create-user-success" component={CreateUserSuccess} />
         <Route path="/manage-users" component={ManageUsers} />
         <Route path="/edit-request" component={EditRequest} />
 
