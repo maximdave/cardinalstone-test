@@ -21,6 +21,7 @@ function App() {
         <Route path="/manage-users" component={ManageUsers} />
         <Route path="/edit-request" component={EditRequest} />
         <Route path="/create-stockbroker" component={CreateSockbroker} />
+
       </Switch>
     </div>
   );
