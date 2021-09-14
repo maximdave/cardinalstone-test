@@ -1,6 +1,6 @@
-.App{
+.App {
   /* text-align: center; */
-  background: rgba(0, 37, 100, 1) url('./assets/image\ 4.png') no-repeat fixed center;
-  height:100vh;
+  background: rgba(0, 37, 100, 1) url('./assets/image\ 4.png') no-repeat fixed
+    center;
+  height: 100vh;
 }
-
