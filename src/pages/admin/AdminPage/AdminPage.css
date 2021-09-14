@@ -1,0 +1,38 @@
+.admin-page {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.admin-options {
+  display: flex;
+  width: 60%;
+}
+.page-title {
+  color: #d8d8d8;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 40px auto;
+}
+.options {
+  border: 1px solid #d8d8d8;
+  word-wrap: break-word;
+  width: 100%;
+  height: 90%;
+  padding: 10%;
+  text-align: center;
+  color: #d8d8d8;
+  font-size: 14px;
+  margin-top: 5%;
+  margin-right: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.options img {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
