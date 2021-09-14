@@ -6,6 +6,7 @@ import AdminPage from './pages/admin/AdminPage/AdminPage';
 import CreateUser from './pages/admin/CreateUser/CreateUser';
 import CreateUserSuccess from './pages/admin/CreateUserSuccess/CreateUserSuccess';
 import ManageUsers from './pages/admin/ManageUsers/ManageUsers';
+import EditRequest from './pages/admin/EditRequest/EditRequest';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/create-user" component={CreateUser} />
         <Route path="/create-user-success" component={CreateUserSuccess} />
         <Route path="/manage-users" component={ManageUsers} />
+        <Route path="/edit-request" component={EditRequest} />
       </Switch>
     </div>
   );
