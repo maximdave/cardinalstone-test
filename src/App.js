@@ -7,6 +7,7 @@ import CreateUser from './pages/admin/CreateUser/CreateUser';
 import CreateUserSuccess from './pages/admin/CreateUserSuccess/CreateUserSuccess';
 import ManageUsers from './pages/admin/ManageUsers/ManageUsers';
 import EditRequest from './pages/admin/EditRequest/EditRequest';
+import CreateSockbroker from './pages/admin/CreateSockbroker/CreateSockbroker';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/create-user-success" component={CreateUserSuccess} />
         <Route path="/manage-users" component={ManageUsers} />
         <Route path="/edit-request" component={EditRequest} />
+        <Route path="/create-stockbroker" component={CreateSockbroker} />
       </Switch>
     </div>
   );

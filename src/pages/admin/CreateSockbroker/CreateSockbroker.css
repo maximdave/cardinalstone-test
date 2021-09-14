@@ -1,0 +1,43 @@
+.create-stockerbroker-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+.note {
+  position: absolute;
+  margin: 60px 20px 90px 170px;
+}
+
+.create-stockerbroker-card {
+  margin: auto;
+
+  background-color: #ffffff;
+  min-width: 360px;
+  width: 40vw;
+  height: 60vh;
+  border-radius: 5px;
+}
+.create-stockerbroker-input {
+  width: 100%;
+}
+
+.create-stockerbroker-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}
+.create-stockerbroker-btn {
+  width: 50%;
+}
+
+.create-stockerbroker-header {
+  width: 50%;
+  margin-left: 30px;
+  margin-bottom: 40px;
+}
+
+.create-stockerbroker-header h5 {
+  margin-top: 30px;
+}
