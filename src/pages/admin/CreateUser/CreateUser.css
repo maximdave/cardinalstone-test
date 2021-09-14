@@ -1,0 +1,39 @@
+.create-user-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.create-user-card {
+  margin: auto;
+
+  background-color: #ffffff;
+  min-width: 360px;
+  width: 40vw;
+  height: 60vh;
+  border-radius: 5px;
+}
+.create-user-input {
+  width: 100%;
+}
+
+.create-user-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}
+.create-user-btn {
+  width: 40%;
+}
+
+.create-user-header {
+  width: 50%;
+  margin-left: 30px;
+  margin-bottom: 40px;
+}
+
+.create-user-header h5 {
+  margin-top: 30px;
+}
