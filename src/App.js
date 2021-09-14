@@ -14,6 +14,7 @@ function App() {
         <Route exact path="/" component={AdminLogin} />
         <Route path="/admin-page" component={AdminPage} />
         <Route path="/create-user" component={CreateUser} />
+
         <Route path="/create-user-success" component={CreateUserSuccess} />
       </Switch>
     </div>
