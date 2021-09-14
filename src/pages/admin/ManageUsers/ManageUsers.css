@@ -1,0 +1,24 @@
+.logo-header{
+  margin-left: 5%;
+}
+
+.table-list{
+  width:100%;
+  margin-bottom: 20px;
+  padding:20px;
+}
+
+.thead-primary{
+  background-color: #528DC2;
+  color:#ffffff;
+  font-size: 12px;
+  border-radius: 4px;
+}
+.manager-users-table{
+  border-radius: 4px!important;
+  margin:auto;
+  width:90%!important;
+}
+.table-header{
+  font-size: 14px!important;
+}
