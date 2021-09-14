@@ -4,6 +4,10 @@
   align-items: center;
   height: 100vh;
 }
+.note {
+  position: absolute;
+  margin: 60px 20px 90px 170px;
+}
 
 .create-user-card {
   margin: auto;
