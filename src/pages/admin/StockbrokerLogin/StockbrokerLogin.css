@@ -1,0 +1,58 @@
+.stockbroker-login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+.stockbroker-login-card {
+  margin: auto;
+
+  background-color: #ffffff;
+  min-width: 360px;
+  width: 40vw;
+  height: 85vh;
+  border-radius: 5px;
+}
+.header-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.header-logo img {
+  width: 60%;
+  margin: 60px auto 20px auto;
+}
+.header-logo h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #002564;
+}
+
+.header-logo p {
+  color: #002564;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+.stockbroker-login-btn {
+  margin-top: 30px;
+}
+.stockbroker-login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}
+.password {
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.login-admin {
+  /* color: #2B2B2B important; */
+  color: #c22727 important;
+  /* margin-bottom: 4000px; */
+}

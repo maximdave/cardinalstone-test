@@ -9,6 +9,7 @@ import ManageUsers from './pages/admin/ManageUsers/ManageUsers';
 import EditRequest from './pages/admin/EditRequest/EditRequest';
 import CreateSockbroker from './pages/admin/CreateSockbroker/CreateSockbroker';
 import UpdateRequirement from './pages/admin/UpdateRequirement/UpdateRequirement';
+import StockbrokerLogin from './pages/admin/StockbrokerLogin/StockbrokerLogin';
 
 function App() {
   return (
@@ -19,11 +20,11 @@ function App() {
         <Route path="/admin-page" component={AdminPage} />
         <Route path="/create-user" component={CreateUser} />
         <Route path="/create-user-success" component={CreateUserSuccess} />
-        <Route path="/create-user-success" component={CreateUserSuccess} />
         <Route path="/manage-users" component={ManageUsers} />
         <Route path="/edit-request" component={EditRequest} />
         <Route path="/create-stockbroker" component={CreateSockbroker} />
         <Route path="/update-requirement" component={UpdateRequirement} />
+        <Route path="/stockbroker-login" component={StockbrokerLogin} />
       </Switch>
     </div>
   );
