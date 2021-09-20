@@ -1,0 +1,85 @@
+.requirement-div {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  top: 0;
+}
+.requirement-card {
+  width: 730px;
+  height: 550px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px 0px rgba(99, 106, 119, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 50px;
+  z-index: 10;
+}
+.requirement-card > img {
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.requirement-card > .portal-head {
+  color: #002564;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.requirement-card .card-title {
+  color: #002564;
+  font-size: 25px;
+  letter-spacing: 0.4px;
+  margin-bottom: 20px;
+}
+.requirement-card > hr {
+  width: 100%;
+  margin-top: -20px;
+}
+.request-div {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  justify-content: space-between;
+  align-items: start;
+}
+.request-div p {
+  font-size: 16px;
+  color: #2b2b2b;
+  display: flex;
+  justify-content: flex-start;
+}
+.icon-div {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.icon-div > img {
+  width: 22px;
+}
+.requirement-btn-flex {
+  display: flex;
+  gap: 10px;
+}
+.requirement-btn-flex > button {
+  width: 258px;
+  height: 44px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+}
+.requirement-btn-flex > .update {
+  background: linear-gradient(103.92deg, #002564 1.19%, #528dc2 100%);
+  border: none;
+  color: #fff;
+}
+.requirement-btn-flex > .back {
+  border: 1px solid #528dc2;
+  color: #528dc2;
+  background-color: #fff;
+}
