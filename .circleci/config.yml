@@ -30,10 +30,6 @@ jobs:
 
       - run: yarn lint
 
-      - run: yarn size
-
       - run: yarn test
-
-      - run: yarn ci:cypress-run
 
       - run: yarn build

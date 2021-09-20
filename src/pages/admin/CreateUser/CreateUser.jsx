@@ -10,47 +10,47 @@ const CreateUser = () => {
   const history = useHistory();
   const createUser = () => {
     history.push('/create-user-success');
-  };
-  return (
-    <div className="create-user-page">
-      <div className="create-user-card">
-        <div className="create-user-header">
-          <img src={Logo} alt="CSP" />
-          <img src={Note} alt="NOTE" className="note" />
-          <h5>Create User</h5>
-        </div>
+    return (
+      <div className="create-user-page">
+        <div className="create-user-card">
+          <div className="create-user-header">
+            <img src={Logo} alt="CSP" />
+            <img src={Note} alt="NOTE" className="note" />
+            <h5>Create User</h5>
+          </div>
 
-        <form className="create-user-form m-auto" onSubmit={createUser}>
-          <div className="d-flex justify-content-space-around">
-            <TextField
-              className="create-user-input"
-              label="Full Name"
-              placeholder="Full name"
-            />
-            <TextField
-              className=" create-user-input"
-              label="Email"
-              placeholder="email"
-            />
-          </div>
-          <div className=" d-flex mt-3">
-            <TextField
-              className="create-user-input"
-              label="Create Password for user"
-              placeholder="Enter password"
-            />
-            <TextField
-              className="create-user-input"
-              label="Role ID"
-              placeholder="Role ID"
-            />
-          </div>
-          <Button text="Create User" className="mt-4 create-user-btn" />
-          <p>Already have an account? Click here to login</p>
-        </form>
+          <form className="create-user-form m-auto" onSubmit={createUser}>
+            <div className="d-flex justify-content-space-around">
+              <TextField
+                className="create-user-input"
+                label="Full Name"
+                placeholder="Full name"
+              />
+              <TextField
+                className=" create-user-input"
+                label="Email"
+                placeholder="email"
+              />
+            </div>
+            <div className=" d-flex mt-3">
+              <TextField
+                className="create-user-input"
+                label="Create Password for user"
+                placeholder="Enter password"
+              />
+              <TextField
+                className="create-user-input"
+                label="Role ID"
+                placeholder="Role ID"
+              />
+            </div>
+            <Button text="Create User" className="mt-4 create-user-btn" />
+            <p>Already have an account? Click here to login</p>
+          </form>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 };
 
 export default CreateUser;
