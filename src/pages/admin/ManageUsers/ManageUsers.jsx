@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './ManageUsers.css';
 import Logo from '../../../assets/CSRL Logo 1.png';
 import Modal from '../../../components/Modal/Modal';
-import Backdrop from '../../../components/Backdrop/Backdrop';
+// import Backdrop from '../../../components/Backdrop/Backdrop';
 
 const ManageUsers = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
