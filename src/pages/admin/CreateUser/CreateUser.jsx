@@ -2,7 +2,6 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Logo from '../../../assets/CSRL Logo 1.png';
 import Note from '../../../assets/contact-form-svgrepo-com 1.png';
-import Logo from '../../../assets/CSRL Logo 1.png';
 import Button from '../../../components/Button/Button';
 import TextField from '../../../components/TextField/TextField';
 import './CreateUser.css';
@@ -11,8 +10,6 @@ const CreateUser = () => {
   const history = useHistory();
   const createUser = () => {
     history.push('/create-user-success');
-  const createUser = () => {
-    alert('hi');
   };
   return (
     <div className="create-user-page">
