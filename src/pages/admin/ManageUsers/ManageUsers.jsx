@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ManageUsers.css';
 import Logo from '../../../assets/CSRL Logo 1.png';
+import Modal from '../../../components/Modal/Modal';
+import Backdrop from '../../../components/Backdrop/Backdrop';
 
 const ManageUsers = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  function deleteHandler() {
+    setModalIsOpen(true);
+  }
+
+  function closeModalHandler() {
+    setModalIsOpen(false);
+  }
+
   const tableData = [
     {
       name: 'Fred Germany',
@@ -56,6 +68,7 @@ const ManageUsers = () => {
                   color: '#252733',
                   fontSize: '12px',
                 }}
+                onClick={deleteHandler}
               >
                 <td>{index + 1}</td>
                 <td>{data.name}</td>
@@ -73,6 +86,11 @@ const ManageUsers = () => {
           View all Users
         </p>
       </div>
+
+      {modalIsOpen && (
+        <Modal onCancel={closeModalHandler} onConfirm={closeModalHandler} />
+      )}
+      {/* {modalIsOpen && <Backdrop onCancel={closeModalHandler} />} */}
     </div>
   );
 };
