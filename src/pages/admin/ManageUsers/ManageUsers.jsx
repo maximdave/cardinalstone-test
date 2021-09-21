@@ -43,7 +43,7 @@ const ManageUsers = () => {
   ];
   return (
     <div className="user-page">
-      <div className="user-card">
+      <div className="muser-card">
         <div className="logo-header">
           <img src={Logo} alt="csp" />
           <h4 style={{ color: '#002564' }}>Manage Users</h4>

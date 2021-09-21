@@ -4,17 +4,17 @@
   align-items: center;
   height: 100vh;
 }
-.note {
+.notes {
   position: absolute;
-  margin: 60px 20px 90px 170px;
+  margin: 60px 5000px 90000px 300px;
 }
 .create-user-card {
   margin: auto;
 
   background-color: #ffffff;
   min-width: 360px;
-  width: 40vw;
-  height: 60vh;
+  width: 50vw;
+  height: 70vh;
   border-radius: 5px;
 }
 .create-user-input {
@@ -32,10 +32,17 @@
 
 .create-user-header {
   width: 50%;
+  margin-top: 30px;
   margin-left: 30px;
   margin-bottom: 40px;
 }
 
 .create-user-header h5 {
   margin-top: 30px;
+  font-size: 30px;
+  color: #002564;
+}
+
+.accountzz {
+  margin-top: 10px;
 }

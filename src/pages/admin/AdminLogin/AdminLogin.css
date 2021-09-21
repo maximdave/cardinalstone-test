@@ -11,7 +11,7 @@
   background-color: #ffffff;
   min-width:360px;
   width: 40vw;
-  height:80vh;
+  height:75vh;
   border-radius: 5px;
 }
 .header-logo{
@@ -46,4 +46,11 @@
   flex-direction: column;
   justify-content: center;
   width: 90%;
+}
+.admin-login-form > .password {
+  margin-top: 10px;
+}
+
+.admin-login-form > .username {
+  margin-bottom: 20px;
 }

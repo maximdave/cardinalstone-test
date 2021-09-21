@@ -11,7 +11,7 @@
   background-color: #ffffff;
   min-width: 360px;
   width: 40vw;
-  height: 60vh;
+  height: 70vh;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -33,5 +33,15 @@
 }
 .btn {
   width: 100%;
+  /* margin-top: -10px; */
   margin-bottom: 20px;
+}
+.btn2 {
+  width: 100%;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.success {
+  margin-bottom: 30px;
 }

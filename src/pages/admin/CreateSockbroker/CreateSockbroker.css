@@ -5,6 +5,7 @@
   height: 100vh;
 }
 .note {
+  padding-left: 270px;
   position: absolute;
   margin: 60px 20px 90px 170px;
 }
@@ -14,8 +15,8 @@
 
   background-color: #ffffff;
   min-width: 360px;
-  width: 40vw;
-  height: 60vh;
+  width: 60vw;
+  height: 78vh;
   border-radius: 5px;
 }
 .create-stockerbroker-input {
@@ -29,15 +30,18 @@
   width: 90%;
 }
 .create-stockerbroker-btn {
-  width: 50%;
+  width: 35%;
 }
 
 .create-stockerbroker-header {
   width: 50%;
+  margin-top: 19px;
   margin-left: 30px;
   margin-bottom: 40px;
 }
 
 .create-stockerbroker-header h5 {
   margin-top: 30px;
+  font-size: 30px;
+  color: #002564;
 }
