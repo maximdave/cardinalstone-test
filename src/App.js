@@ -12,6 +12,7 @@ import UpdateRequirement from './pages/admin/UpdateRequirement/UpdateRequirement
 import StockbrokerLogin from './pages/admin/StockbrokerLogin/StockbrokerLogin';
 import ChangePassword from './pages/admin/ChangePassword/ChangePassword';
 import Subscription from './pages/admin/Subscription/Subscription';
+import ChoosePayment from './pages/admin/ChoosePayment/ChoosePayment';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/stockbroker-login" component={StockbrokerLogin} />
         <Route path="/change-password" component={ChangePassword} />
         <Route path="/subscription" component={Subscription} />
+        <Route path="/choose-payment" component={ChoosePayment} />
       </Switch>
     </div>
   );
