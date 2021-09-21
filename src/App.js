@@ -11,6 +11,7 @@ import CreateSockbroker from './pages/admin/CreateSockbroker/CreateSockbroker';
 import UpdateRequirement from './pages/admin/UpdateRequirement/UpdateRequirement';
 import StockbrokerLogin from './pages/admin/StockbrokerLogin/StockbrokerLogin';
 import ChangePassword from './pages/admin/ChangePassword/ChangePassword';
+import Subscription from './pages/admin/Subscription/Subscription';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/update-requirement" component={UpdateRequirement} />
         <Route path="/stockbroker-login" component={StockbrokerLogin} />
         <Route path="/change-password" component={ChangePassword} />
+        <Route path="/subscription" component={Subscription} />
       </Switch>
     </div>
   );
