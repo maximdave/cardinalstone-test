@@ -60,8 +60,15 @@ const CreateSockbroker = () => {
               placeholder="STOCKBROKER"
             />
           </div>
-          <Button text="CREATE STOCKBROKER" className="mt-4 create-stockerbroker-btn" />
-          <p>Already have an account? Click here to login</p>
+          <Button
+            text="CREATE STOCKBROKER"
+            className="mt-4 create-stockerbroker-btn"
+          />
+          <div onClick={() => history.push('/')} className="accountzz">
+            Already have an account?
+            {' '}
+            <b>Click here to login</b>
+          </div>
         </form>
       </div>
     </div>

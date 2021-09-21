@@ -9,7 +9,6 @@ const AdminLogin = () => {
   const history = useHistory();
   const adminLogin = (e) => {
     e.preventDefault();
-    alert('hi');
   };
   return (
     <div className="admin-login-page">
@@ -21,9 +20,19 @@ const AdminLogin = () => {
         </div>
 
         <form className="admin-login-form m-auto" onSubmit={adminLogin}>
-          <TextField className="w-100" label="Admin Username" />
-          <TextField className="w-100" label="Admin Password" />
-
+          <TextField
+            className="w-100 username"
+            label="Admin Username"
+            placeholder="Admin Username"
+          />
+          <TextField
+            className="w-100"
+            label="Admin Password"
+            placeholder="Admin Password"
+          />
+          <div onClick={() => history.push('/')} className="password">
+            Forgot Password?
+          </div>
           <Button
             className="admin-login-btn"
             text="LOGIN"
