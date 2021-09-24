@@ -1,0 +1,20 @@
+@media (min-width: 700px) {
+  .namebar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .profile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 1.5em;
+    margin-left: 1.5em;
+    border-left: 3px solid #dfe0eb;
+  }
+  .profil > .helloo > span{
+    color: red;
+  }
+}

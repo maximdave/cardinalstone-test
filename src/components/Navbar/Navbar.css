@@ -1,0 +1,18 @@
+.navbar {
+  height: 30px;
+  width: 100%;
+  background-color: #e5e5e5;
+}
+.navbar h3 {
+  font-size: 24px;
+}
+
+.navbar-items {
+  display: flex;
+  flex-direction: row;
+}
+.navbar-items > hr {
+  width: 2px;
+  height: 20px;
+  background-color: #dfe0eb;
+}
