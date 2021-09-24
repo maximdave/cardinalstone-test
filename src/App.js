@@ -14,7 +14,6 @@ import ChangePassword from './pages/admin/ChangePassword/ChangePassword';
 import Subscription from './pages/admin/Subscription/Subscription';
 import ChoosePayment from './pages/admin/ChoosePayment/ChoosePayment';
 import IndemnityAgreement from './pages/admin/IndemnityAgreement/IndemnityAgreement';
-import DematRequest from './pages/admin/DematRequest/DematRequest';
 import RequestDashboard from './pages/requestDashboard/RequestDashboard';
 
 function App() {
@@ -35,7 +34,6 @@ function App() {
         <Route path="/subscription" component={Subscription} />
         <Route path="/choose-payment" component={ChoosePayment} />
         <Route path="/indemnity-agreement" component={IndemnityAgreement} />
-        <Route path="/demate-request" component={DematRequest} />
         <Route path="/requestDashboard" component={RequestDashboard} />
       </Switch>
     </div>
