@@ -14,6 +14,7 @@ import ChangePassword from './pages/admin/ChangePassword/ChangePassword';
 import Subscription from './pages/admin/Subscription/Subscription';
 import ChoosePayment from './pages/admin/ChoosePayment/ChoosePayment';
 import IndemnityAgreement from './pages/admin/IndemnityAgreement/IndemnityAgreement';
+import RequestDashboard from './pages/requestDashboard/RequestDashboard';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/subscription" component={Subscription} />
         <Route path="/choose-payment" component={ChoosePayment} />
         <Route path="/indemnity-agreement" component={IndemnityAgreement} />
+        <Route path="/requestDashboard" component={RequestDashboard} />
       </Switch>
     </div>
   );
