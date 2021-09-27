@@ -6,7 +6,14 @@ import {
   TransferHeader,
 } from './requestForms/TransferOfSharesForm';
 import { DematRequestForm, DematHeader } from './requestForms/DematRequestForm';
-import { TransmisionOfSharesForm, TransmisionHeader } from './requestForms/TransmisionOfSharesForm';
+import {
+  TransmisionOfSharesForm,
+  TransmisionHeader,
+} from './requestForms/TransmisionOfSharesForm';
+import {
+  OutstandingDividendsForm,
+  OutstandingDividendsHeader,
+} from './requestForms/OutstandingDividendsForm';
 import {
   ConsolidationOfAccounts,
   ConsolidationOfAccountsHeader,
@@ -156,6 +163,15 @@ const Requests = () => {
             }}
           >
             Request for Transmision Of Shares
+          </p>
+          <p
+            className="right-text"
+            onClick={() => {
+              setForm1(OutstandingDividendsForm);
+              setHeader(OutstandingDividendsHeader);
+            }}
+          >
+            Request for Outstanding Dividends
           </p>
         </div>
       </div>
