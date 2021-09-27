@@ -6,6 +6,7 @@ import {
   TransferHeader,
 } from './requestForms/TransferOfSharesForm';
 import { DematRequestForm, DematHeader } from './requestForms/DematRequestForm';
+import { TransmisionOfSharesForm, TransmisionHeader } from './requestForms/TransmisionOfSharesForm';
 import {
   ConsolidationOfAccounts,
   ConsolidationOfAccountsHeader,
@@ -146,6 +147,15 @@ const Requests = () => {
             }}
           >
             Request for Consolidating Accounts
+          </p>
+          <p
+            className="right-text"
+            onClick={() => {
+              setForm1(TransmisionOfSharesForm);
+              setHeader(TransmisionHeader);
+            }}
+          >
+            Request for Transmision Of Shares
           </p>
         </div>
       </div>
