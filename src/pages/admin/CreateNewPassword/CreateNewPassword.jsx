@@ -35,7 +35,7 @@ const CreateNewPassword = () => {
           <Button
             className="change-password-btn"
             text="RESET PASSWORD"
-            onClick={() => history.push('/admin-page')}
+            onClick={() => history.push('/create-password-success')}
           />
         </form>
       </div>
