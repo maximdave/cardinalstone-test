@@ -17,6 +17,7 @@ import IndemnityAgreement from './pages/admin/IndemnityAgreement/IndemnityAgreem
 import RequestDashboard from './pages/requestDashboard/RequestDashboard';
 import ForgotPassword from './pages/admin/ForgotPassword/ForgotPassword';
 import CreateNewPassword from './pages/admin/CreateNewPassword/CreateNewPassword';
+import CreateNewPasswordSuccess from './pages/admin/CreateNewPasswordSuccess/CreateNewPasswordSuccess';
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
         <Route path="/change-password" component={ChangePassword} />
         <Route path="/forgot-password" component={ForgotPassword} />
         <Route path="/create-password" component={CreateNewPassword} />
+        <Route path="/create-password" component={CreateNewPassword} />
+        <Route path="/create-password-success" component={CreateNewPasswordSuccess} />
         <Route path="/subscription" component={Subscription} />
         <Route path="/choose-payment" component={ChoosePayment} />
         <Route path="/indemnity-agreement" component={IndemnityAgreement} />
