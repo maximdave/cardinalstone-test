@@ -15,6 +15,7 @@ import Subscription from './pages/admin/Subscription/Subscription';
 import ChoosePayment from './pages/admin/ChoosePayment/ChoosePayment';
 import IndemnityAgreement from './pages/admin/IndemnityAgreement/IndemnityAgreement';
 import RequestDashboard from './pages/requestDashboard/RequestDashboard';
+import ForgotPassword from './pages/admin/ForgotPassword/ForgotPassword';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/update-requirement" component={UpdateRequirement} />
         <Route path="/stockbroker-login" component={StockbrokerLogin} />
         <Route path="/change-password" component={ChangePassword} />
+        <Route path="/forgot-password" component={ForgotPassword} />
         <Route path="/subscription" component={Subscription} />
         <Route path="/choose-payment" component={ChoosePayment} />
         <Route path="/indemnity-agreement" component={IndemnityAgreement} />
