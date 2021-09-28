@@ -28,6 +28,22 @@
   color: #8692a6;
 }
 
+.text-area > textarea{
+  display: inline-block;
+  text-align: left;
+  background: #fff;
+  padding: 6px;
+  width: 864px;
+  height: 134px;
+  position: relative;
+  border-radius: 5px;
+  border: 1px solid #8692a6;
+}
+
+.text-area > textarea::placeholder{
+  color: #9FA2B4;
+}
+
 .file-input {
   display: inline-block;
   text-align: left;
@@ -73,6 +89,8 @@
 .card-content > .left > button {
   width: 250px;
   height: 50px;
+  margin-top: 40px;
+
   background: linear-gradient(103.92deg, #002564 1.19%, #528dc2 100%);
   border-radius: 5px;
   color: #fff;
