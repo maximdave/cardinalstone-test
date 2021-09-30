@@ -1,64 +1,37 @@
 import "../Requests.css";
 // eslint-disable-next-line import/prefer-default-export
+
 export const DematRequestForm = (
   <div className="left">
-    <div>
-      <label>
-        Duly executed dematerialization form signed by the shareholder and two
-        authorized signatories
-      </label>
-      <div className="file-input">
-        <input type="file" />
-        <span className="button">SELECT</span>
-        <span className="label" data-js-label>
-          png, jpeg (=300KB)
-        </span>
-      </div>
+    <div className="requirements">
+      <hr className="horizontal-line" />
+      <ul className="ulllll">
+        <li>
+          Duly executed dematerialization form signed by the shareholder and two
+          authorized signatories
+        </li>
+        <li>Authenticated Coloured passport photograph</li>
+        <li>
+          Means of Identification i.e National ID Card, Driver’s License,
+          International Passport or Permanent Voter’s Card
+        </li>
+        <li>CSCS Statement</li>
+        <li>Other supporting documents</li>
+      </ul>
     </div>
-    <div>
-      <label>Authenticated Coloured passport photograph</label>
-      <div className="file-input">
-        <input type="file" />
-        <span className="button">SELECT</span>
-        <span className="label" data-js-label>
-          png, jpeg (=300KB)
-        </span>
-      </div>
+    <div className="file-input">
+      <input type="file" />
+      <span className="button">SELECT</span>
+      <span className="label" data-js-label>
+        png, jpeg (=300KB)
+      </span>
     </div>
-    <div>
-      <label>
-        Means of Identification i.e National ID Card, Driver’s License,
-        International Passport or Permanent Voter’s Card
-      </label>
-      <div className="file-input">
-        <input type="file" />
-        <span className="button">SELECT</span>
-        <span className="label" data-js-label>
-          png, jpeg (=300KB)
-        </span>
-      </div>
+    <h6>Click the button below to make payment</h6>
+
+    <div className="btn-container">
+      <button className="btn-container1">PAY NOW</button>
+      <button className="btn-container2">SUBMIT REQUEST</button>
     </div>
-    <div>
-      <label>CSCS Statement</label>
-      <div className="file-input">
-        <input type="file" />
-        <span className="button">SELECT</span>
-        <span className="label" data-js-label>
-          png, jpeg (=300KB)
-        </span>
-      </div>
-    </div>
-    <div>
-      <label>Other supporting documents</label>
-      <div className="file-input">
-        <input type="file" />
-        <span className="button">SELECT</span>
-        <span className="label" data-js-label>
-          png, jpeg (=300KB)
-        </span>
-      </div>
-    </div>
-    <button>SUBMIT REQUEST</button>
   </div>
 );
 export const DematHeader = (
