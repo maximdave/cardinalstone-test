@@ -2,7 +2,7 @@
   .namebar {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
     align-items: center;
   }
 
@@ -14,7 +14,15 @@
     margin-left: 1.5em;
     border-left: 3px solid #dfe0eb;
   }
-  .profil > .helloo > span{
-    color: red;
+
+  .helloo {
+    margin-right: auto;
+    /* font-style: normal; */
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .buttonsss {
+    display: flex;
   }
 }
