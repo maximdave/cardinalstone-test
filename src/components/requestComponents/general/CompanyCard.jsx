@@ -1,5 +1,5 @@
-import React from 'react';
-import './CompanyCard.css';
+import React from "react";
+import "./CompanyCard.css";
 
 const CompanyCard = ({ logoUrl, companyName }) => (
   <div className="companycard">

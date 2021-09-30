@@ -1,11 +1,11 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import NameBar from '../../components/requestComponents/general/NameBar';
-import Overview from '../../components/requestComponents/secretary/Overview';
-import Navbar from '../../components/requestComponents/secretary/Navbar';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import NameBar from "../../components/requestComponents/general/NameBar";
+import Overview from "../../components/requestComponents/secretary/Overview";
+import Navbar from "../../components/requestComponents/secretary/Navbar";
 
-import './RequestDashboard.css';
-import Requests from './requestTypes/Requests';
+import "./RequestDashboard.css";
+import Requests from "./requestTypes/Requests";
 
 const RequestDashboard = () => (
   <div className="secretary_dashboard">

@@ -1,9 +1,9 @@
-import React from 'react';
-import './StockbrokerLogin.css';
-import { useHistory } from 'react-router-dom';
-import Logo from '../../../assets/CSRL Logo 1.png';
-import Button from '../../../components/Button/Button';
-import TextField from '../../../components/TextField/TextField';
+import React from "react";
+import "./StockbrokerLogin.css";
+import { useHistory } from "react-router-dom";
+import Logo from "../../../assets/CSRL Logo 1.png";
+import Button from "../../../components/Button/Button";
+import TextField from "../../../components/TextField/TextField";
 
 const StockbrokerLogin = () => {
   const history = useHistory();
@@ -41,19 +41,19 @@ const StockbrokerLogin = () => {
             placeholder="Password"
             label="Password"
           />
-          <div onClick={() => history.push('/')} className="password">
+          <div onClick={() => history.push("/")} className="password">
             Forgot Password?
           </div>
           <Button
             className="stockbroker-login-btn"
             text="LOGIN"
-            onClick={() => history.push('/admin-page')}
+            onClick={() => history.push("/admin-page")}
           />
           <Button
             type="secondary"
             className="btn login-admin"
             text="Click to sign in as Admin"
-            onClick={() => history.push('/')}
+            onClick={() => history.push("/")}
           />
         </form>
       </div>

@@ -1,21 +1,21 @@
 /* eslint-disable react/no-array-index-key */
-import React from 'react';
-import NavItem from '../general/NavItem';
-import overviewIcon from '../../../assets/dashboard.png';
-import logoutIcon from '../../../assets/logout.png';
-import reportsIcon from '../../../assets/reports.png';
-import requestsIcon from '../../../assets/requests.png';
+import React from "react";
+import NavItem from "../general/NavItem";
+import overviewIcon from "../../../assets/dashboard.png";
+import logoutIcon from "../../../assets/logout.png";
+import reportsIcon from "../../../assets/reports.png";
+import requestsIcon from "../../../assets/requests.png";
 
-import cardinalLogo from '../../../assets/CSRLLogo1.png';
+import cardinalLogo from "../../../assets/CSRLLogo1.png";
 
 const navItems = [
   {
-    linkPath: '/overview',
+    linkPath: "/overview",
     linkIcon: overviewIcon,
-    linkText: 'Overview',
+    linkText: "Overview",
   },
-  { linkPath: '/requests', linkIcon: requestsIcon, linkText: 'Requests' },
-  { linkPath: '/reports', linkIcon: reportsIcon, linkText: 'Reports' },
+  { linkPath: "/requests", linkIcon: requestsIcon, linkText: "Requests" },
+  { linkPath: "/reports", linkIcon: reportsIcon, linkText: "Reports" },
 ];
 
 const Navbar = () => (

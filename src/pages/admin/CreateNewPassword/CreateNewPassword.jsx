@@ -1,11 +1,11 @@
-import React from 'react';
-import './CreateNewPassword.css';
-import { useHistory } from 'react-router-dom';
-import Logo from '../../../assets/CSRL Logo 1.png';
-import Button from '../../../components/Button/Button';
-import TextField from '../../../components/TextField/TextField';
-import key from '../../../assets/icons/key.svg';
-import star from '../../../assets/icons/star.svg';
+import React from "react";
+import "./CreateNewPassword.css";
+import { useHistory } from "react-router-dom";
+import Logo from "../../../assets/CSRL Logo 1.png";
+import Button from "../../../components/Button/Button";
+import TextField from "../../../components/TextField/TextField";
+import key from "../../../assets/icons/key.svg";
+import star from "../../../assets/icons/star.svg";
 
 const CreateNewPassword = () => {
   const history = useHistory();
@@ -35,7 +35,7 @@ const CreateNewPassword = () => {
           <Button
             className="change-password-btn"
             text="RESET PASSWORD"
-            onClick={() => history.push('/create-password-success')}
+            onClick={() => history.push("/create-password-success")}
           />
         </form>
       </div>

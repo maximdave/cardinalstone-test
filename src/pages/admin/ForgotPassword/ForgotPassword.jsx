@@ -1,11 +1,11 @@
-import React from 'react';
-import './ForgotPassword.css';
-import { useHistory } from 'react-router-dom';
-import Logo from '../../../assets/CSRL Logo 1.png';
-import Button from '../../../components/Button/Button';
-import TextField from '../../../components/TextField/TextField';
-import key from '../../../assets/icons/key.svg';
-import star from '../../../assets/icons/star.svg';
+import React from "react";
+import "./ForgotPassword.css";
+import { useHistory } from "react-router-dom";
+import Logo from "../../../assets/CSRL Logo 1.png";
+import Button from "../../../components/Button/Button";
+import TextField from "../../../components/TextField/TextField";
+import key from "../../../assets/icons/key.svg";
+import star from "../../../assets/icons/star.svg";
 
 const ForgotPassword = () => {
   const history = useHistory();
@@ -37,9 +37,9 @@ const ForgotPassword = () => {
           <Button
             className="change-password-btn"
             text="CHANGE PASSWORD"
-            onClick={() => history.push('/admin-page')}
+            onClick={() => history.push("/admin-page")}
           />
-          <div onClick={() => history.push('/')} className="passwordwww">
+          <div onClick={() => history.push("/")} className="passwordwww">
             Mistake?
             <b>Go back to Login</b>
           </div>

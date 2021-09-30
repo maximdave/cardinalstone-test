@@ -1,52 +1,55 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import React, { useState } from 'react';
-import './Requests.css';
+import React, { useState } from "react";
+import "./Requests.css";
 import {
   TransferOfSharesForm,
   TransferHeader,
-} from './requestForms/TransferOfSharesForm';
-import { DematRequestForm, DematHeader } from './requestForms/DematRequestForm';
-import { OtherRelevantRequestForm, OtherRelevantRequestHeader } from './requestForms/OtherRelevantRequestForm';
+} from "./requestForms/TransferOfSharesForm";
+import { DematRequestForm, DematHeader } from "./requestForms/DematRequestForm";
+import {
+  OtherRelevantRequestForm,
+  OtherRelevantRequestHeader,
+} from "./requestForms/OtherRelevantRequestForm";
 import {
   TransmisionOfSharesForm,
   TransmisionHeader,
-} from './requestForms/TransmisionOfSharesForm';
+} from "./requestForms/TransmisionOfSharesForm";
 import {
   OutstandingDividendsForm,
   OutstandingDividendsHeader,
-} from './requestForms/OutstandingDividendsForm';
+} from "./requestForms/OutstandingDividendsForm";
 import {
   ConsolidationOfAccounts,
   ConsolidationOfAccountsHeader,
-} from './requestForms/ConsolidationOfAccounts';
+} from "./requestForms/ConsolidationOfAccounts";
 import {
   StatementOfAccount,
   StatementOfAccountHeader,
-} from './requestForms/StatementOfAccount';
+} from "./requestForms/StatementOfAccount";
 import {
   ChangeOfAddressForm,
   ChangeOfAddressHeader,
-} from './requestForms/ChangeOfAddressForm';
+} from "./requestForms/ChangeOfAddressForm";
 import {
   SubmitBankerConfirm,
   SubmitBankerConfirmHeader,
-} from './requestForms/SubmitBankerConfirm';
+} from "./requestForms/SubmitBankerConfirm";
 import {
   SignatureMandateForm,
   SignatureMandateHeader,
-} from './requestForms/SignatureMandateForm';
+} from "./requestForms/SignatureMandateForm";
 import {
   ChangeOfNameFormCorporate,
   ChangeOfNameHeaderC,
-} from './requestForms/ChangeOfNameFormCorporate';
+} from "./requestForms/ChangeOfNameFormCorporate";
 import {
   ChangeOfNameFormIndividual,
   ChangeOfNameHeaderI,
-} from './requestForms/ChangeOfNameFormIndividual';
+} from "./requestForms/ChangeOfNameFormIndividual";
 import {
   CorrectionOfNameForm,
   CorrectionOfNameHeader,
-} from './requestForms/CorrectionOfNameForm';
+} from "./requestForms/CorrectionOfNameForm";
 
 const Requests = () => {
   // const [image1, setImage1] = useState();

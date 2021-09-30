@@ -1,10 +1,10 @@
-import React from 'react';
-import './CreateNewPasswordSuccess.css';
-import { useHistory } from 'react-router-dom';
-import Logo from '../../../assets/CSRL Logo 1.png';
-import Button from '../../../components/Button/Button';
-import key from '../../../assets/icons/key.svg';
-import star from '../../../assets/icons/star.svg';
+import React from "react";
+import "./CreateNewPasswordSuccess.css";
+import { useHistory } from "react-router-dom";
+import Logo from "../../../assets/CSRL Logo 1.png";
+import Button from "../../../components/Button/Button";
+import key from "../../../assets/icons/key.svg";
+import star from "../../../assets/icons/star.svg";
 
 const CreateNewPasswordSuccess = () => {
   const history = useHistory();
@@ -28,7 +28,7 @@ const CreateNewPasswordSuccess = () => {
           <Button
             className="create-password-btn-success"
             text="LOGIN"
-            onClick={() => history.push('/stockbroker-login')}
+            onClick={() => history.push("/stockbroker-login")}
           />
         </form>
       </div>

@@ -1,8 +1,8 @@
-import React from 'react';
-import Button from '../../../components/Button/Button';
-import Logo from '../../../assets/CSRL Logo 1.png';
-import Success from '../../../assets/success.svg';
-import './CreateUserSuccess.css';
+import React from "react";
+import Button from "../../../components/Button/Button";
+import Logo from "../../../assets/CSRL Logo 1.png";
+import Success from "../../../assets/success.svg";
+import "./CreateUserSuccess.css";
 
 const CreateUserSuccess = () => (
   <div className="create-user-success-page">

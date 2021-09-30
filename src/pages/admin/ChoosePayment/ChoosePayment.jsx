@@ -1,9 +1,9 @@
-import React from 'react';
-import './ChoosePayment.css';
-import { useHistory } from 'react-router-dom';
-import Logo from '../../../assets/CSRL Logo 1.png';
-import Button from '../../../components/Button/Button';
-import TextField from '../../../components/TextField/TextField';
+import React from "react";
+import "./ChoosePayment.css";
+import { useHistory } from "react-router-dom";
+import Logo from "../../../assets/CSRL Logo 1.png";
+import Button from "../../../components/Button/Button";
+import TextField from "../../../components/TextField/TextField";
 
 const ChoosePayment = () => {
   const history = useHistory();
@@ -47,7 +47,7 @@ const ChoosePayment = () => {
           <Button
             className="choose-payment-btn"
             text="PAY NOW"
-            onClick={() => history.push('/admin-page')}
+            onClick={() => history.push("/admin-page")}
           />
         </form>
       </div>

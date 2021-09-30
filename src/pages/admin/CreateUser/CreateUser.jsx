@@ -1,15 +1,15 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
-import Logo from '../../../assets/CSRL Logo 1.png';
-import Note from '../../../assets/contact-form-svgrepo-com 1.png';
-import Button from '../../../components/Button/Button';
-import TextField from '../../../components/TextField/TextField';
-import './CreateUser.css';
+import React from "react";
+import { useHistory } from "react-router-dom";
+import Logo from "../../../assets/CSRL Logo 1.png";
+import Note from "../../../assets/contact-form-svgrepo-com 1.png";
+import Button from "../../../components/Button/Button";
+import TextField from "../../../components/TextField/TextField";
+import "./CreateUser.css";
 
 const CreateUser = () => {
   const history = useHistory();
   const handleCreateUser = () => {
-    history.push('/create-user-success');
+    history.push("/create-user-success");
   };
   return (
     <div className="create-user-page">
@@ -49,10 +49,8 @@ const CreateUser = () => {
           </div>
           <Button text="Create User" className="mt-4 create-user-btn" />
 
-          <div onClick={() => history.push('/')} className="accountzz">
-            Already have an account?
-            {' '}
-            <b>Click here to login</b>
+          <div onClick={() => history.push("/")} className="accountzz">
+            Already have an account? <b>Click here to login</b>
           </div>
         </form>
       </div>

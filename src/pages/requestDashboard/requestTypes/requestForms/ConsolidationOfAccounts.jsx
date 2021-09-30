@@ -1,4 +1,4 @@
-import '../Requests.css';
+import "../Requests.css";
 // eslint-disable-next-line import/prefer-default-export
 export const ConsolidationOfAccounts = (
   <div className="left">

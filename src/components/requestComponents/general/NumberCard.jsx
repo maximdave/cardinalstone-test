@@ -1,5 +1,5 @@
-import React from 'react';
-import './NumberCard.css';
+import React from "react";
+import "./NumberCard.css";
 
 const NumberCard = ({ text, number, bgColor }) => (
   <div style={{ background: bgColor }} className="numbercard">

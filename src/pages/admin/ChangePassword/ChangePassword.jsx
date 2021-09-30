@@ -1,11 +1,11 @@
-import React from 'react';
-import './ChangePassword.css';
-import { useHistory } from 'react-router-dom';
-import Logo from '../../../assets/CSRL Logo 1.png';
-import Button from '../../../components/Button/Button';
-import TextField from '../../../components/TextField/TextField';
-import key from '../../../assets/icons/key.svg';
-import star from '../../../assets/icons/star.svg';
+import React from "react";
+import "./ChangePassword.css";
+import { useHistory } from "react-router-dom";
+import Logo from "../../../assets/CSRL Logo 1.png";
+import Button from "../../../components/Button/Button";
+import TextField from "../../../components/TextField/TextField";
+import key from "../../../assets/icons/key.svg";
+import star from "../../../assets/icons/star.svg";
 
 const ChangePassword = () => {
   const history = useHistory();
@@ -35,7 +35,7 @@ const ChangePassword = () => {
           <Button
             className="change-password-btn"
             text="CHANGE PASSWORD"
-            onClick={() => history.push('/admin-page')}
+            onClick={() => history.push("/admin-page")}
           />
         </form>
       </div>
