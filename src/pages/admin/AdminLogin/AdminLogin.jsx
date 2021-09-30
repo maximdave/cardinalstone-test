@@ -1,9 +1,9 @@
-import React from 'react';
-import './AdminLogin.css';
-import { useHistory } from 'react-router-dom';
-import Logo from '../../../assets/CSRL Logo 1.png';
-import Button from '../../../components/Button/Button';
-import TextField from '../../../components/TextField/TextField';
+import React from "react";
+import "./AdminLogin.css";
+import { useHistory } from "react-router-dom";
+import Logo from "../../../assets/CSRL Logo 1.png";
+import Button from "../../../components/Button/Button";
+import TextField from "../../../components/TextField/TextField";
 
 const AdminLogin = () => {
   const history = useHistory();
@@ -30,13 +30,13 @@ const AdminLogin = () => {
             label="Admin Password"
             placeholder="Admin Password"
           />
-          <div onClick={() => history.push('/')} className="password">
+          <div onClick={() => history.push("/")} className="password">
             Forgot Password?
           </div>
           <Button
             className="admin-login-btn"
             text="LOGIN"
-            onClick={() => history.push('/admin-page')}
+            onClick={() => history.push("/admin-page")}
           />
         </form>
       </div>

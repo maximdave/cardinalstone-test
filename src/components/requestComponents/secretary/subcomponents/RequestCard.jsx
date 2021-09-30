@@ -1,5 +1,5 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const RequestCard = ({
   linkPath,
@@ -7,21 +7,21 @@ const RequestCard = ({
   linkIcon,
   bgColor,
   subText,
-  fontColor = '#ffffff',
+  fontColor = "#ffffff",
 }) => (
   <NavLink
     to={linkPath}
     className="nav_item"
     style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: '2em',
-      textDecoration: 'none',
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      padding: "2em",
+      textDecoration: "none",
       color: fontColor,
       background: bgColor,
-      borderRadius: '.5em',
-      width: '300px',
+      borderRadius: ".5em",
+      width: "300px",
     }}
   >
     <div className="nav_items">
@@ -32,20 +32,20 @@ const RequestCard = ({
       <div className="requestcard_texts">
         <p
           style={{
-            fontSize: '1.5rem',
-            width: '100%',
-            margin: '0em',
+            fontSize: "1.5rem",
+            width: "100%",
+            margin: "0em",
           }}
         >
           {linkText}
         </p>
         <p
           style={{
-            fontSize: '.8rem',
+            fontSize: ".8rem",
 
-            width: '100%',
-            margin: '0em',
-            color: '#000',
+            width: "100%",
+            margin: "0em",
+            color: "#000",
           }}
         >
           {subText}

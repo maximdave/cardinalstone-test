@@ -1,23 +1,23 @@
-import React from 'react';
-import './App.css';
-import { Switch, Route } from 'react-router-dom';
-import AdminLogin from './pages/admin/AdminLogin/AdminLogin';
-import AdminPage from './pages/admin/AdminPage/AdminPage';
-import CreateUser from './pages/admin/CreateUser/CreateUser';
-import CreateUserSuccess from './pages/admin/CreateUserSuccess/CreateUserSuccess';
-import ManageUsers from './pages/admin/ManageUsers/ManageUsers';
-import EditRequest from './pages/admin/EditRequest/EditRequest';
-import CreateSockbroker from './pages/admin/CreateSockbroker/CreateSockbroker';
-import UpdateRequirement from './pages/admin/UpdateRequirement/UpdateRequirement';
-import StockbrokerLogin from './pages/admin/StockbrokerLogin/StockbrokerLogin';
-import ChangePassword from './pages/admin/ChangePassword/ChangePassword';
-import Subscription from './pages/admin/Subscription/Subscription';
-import ChoosePayment from './pages/admin/ChoosePayment/ChoosePayment';
-import IndemnityAgreement from './pages/admin/IndemnityAgreement/IndemnityAgreement';
-import RequestDashboard from './pages/requestDashboard/RequestDashboard';
-import ForgotPassword from './pages/admin/ForgotPassword/ForgotPassword';
-import CreateNewPassword from './pages/admin/CreateNewPassword/CreateNewPassword';
-import CreateNewPasswordSuccess from './pages/admin/CreateNewPasswordSuccess/CreateNewPasswordSuccess';
+import React from "react";
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import AdminLogin from "./pages/admin/AdminLogin/AdminLogin";
+import AdminPage from "./pages/admin/AdminPage/AdminPage";
+import CreateUser from "./pages/admin/CreateUser/CreateUser";
+import CreateUserSuccess from "./pages/admin/CreateUserSuccess/CreateUserSuccess";
+import ManageUsers from "./pages/admin/ManageUsers/ManageUsers";
+import EditRequest from "./pages/admin/EditRequest/EditRequest";
+import CreateSockbroker from "./pages/admin/CreateSockbroker/CreateSockbroker";
+import UpdateRequirement from "./pages/admin/UpdateRequirement/UpdateRequirement";
+import StockbrokerLogin from "./pages/admin/StockbrokerLogin/StockbrokerLogin";
+import ChangePassword from "./pages/admin/ChangePassword/ChangePassword";
+import Subscription from "./pages/admin/Subscription/Subscription";
+import ChoosePayment from "./pages/admin/ChoosePayment/ChoosePayment";
+import IndemnityAgreement from "./pages/admin/IndemnityAgreement/IndemnityAgreement";
+import RequestDashboard from "./pages/requestDashboard/RequestDashboard";
+import ForgotPassword from "./pages/admin/ForgotPassword/ForgotPassword";
+import CreateNewPassword from "./pages/admin/CreateNewPassword/CreateNewPassword";
+import CreateNewPasswordSuccess from "./pages/admin/CreateNewPasswordSuccess/CreateNewPasswordSuccess";
 
 function App() {
   return (
@@ -37,7 +37,10 @@ function App() {
         <Route path="/forgot-password" component={ForgotPassword} />
         <Route path="/create-password" component={CreateNewPassword} />
         <Route path="/create-password" component={CreateNewPassword} />
-        <Route path="/create-password-success" component={CreateNewPasswordSuccess} />
+        <Route
+          path="/create-password-success"
+          component={CreateNewPasswordSuccess}
+        />
         <Route path="/subscription" component={Subscription} />
         <Route path="/choose-payment" component={ChoosePayment} />
         <Route path="/indemnity-agreement" component={IndemnityAgreement} />

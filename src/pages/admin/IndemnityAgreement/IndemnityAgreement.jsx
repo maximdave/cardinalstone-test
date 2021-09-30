@@ -1,9 +1,9 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
-import Button from '../../../components/Button/Button';
-import Logo from '../../../assets/CSRL Logo 1.png';
-import IndemnityLogo from '../../../assets/indemnity.svg';
-import './IndemnityAgreement.css';
+import React from "react";
+import { useHistory } from "react-router-dom";
+import Button from "../../../components/Button/Button";
+import Logo from "../../../assets/CSRL Logo 1.png";
+import IndemnityLogo from "../../../assets/indemnity.svg";
+import "./IndemnityAgreement.css";
 
 const IndemnityAgreement = () => {
   const history = useHistory();
@@ -14,7 +14,7 @@ const IndemnityAgreement = () => {
         <div className="indemnity-agreement-success">
           <img src={Logo} alt="CSP" />
           <h5>STOCKBROKERS' PORTAL</h5>
-          <div onClick={() => history.push('/')}>
+          <div onClick={() => history.push("/")}>
             <img
               src={IndemnityLogo}
               alt="CSP"
@@ -30,7 +30,7 @@ const IndemnityAgreement = () => {
           <Button
             text="CONTINUE"
             className="btn13"
-            onClick={() => history.push('/')}
+            onClick={() => history.push("/")}
           />
         </div>
       </div>

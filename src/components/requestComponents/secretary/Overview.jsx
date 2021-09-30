@@ -1,10 +1,10 @@
-import React from 'react';
-import CompanyCard from '../general/CompanyCard';
-import NumberCard from '../general/NumberCard';
-import RequestCard from './subcomponents/RequestCard';
-import agmIcon from '../../../assets/newagm.png';
-import vrsIcon from '../../../assets/XMLID_51_vrs.png';
-import reportIcon from '../../../assets/report.png';
+import React from "react";
+import CompanyCard from "../general/CompanyCard";
+import NumberCard from "../general/NumberCard";
+import RequestCard from "./subcomponents/RequestCard";
+import agmIcon from "../../../assets/newagm.png";
+import vrsIcon from "../../../assets/XMLID_51_vrs.png";
+import reportIcon from "../../../assets/report.png";
 
 const Overview = () => (
   <div className="dashboard_view">

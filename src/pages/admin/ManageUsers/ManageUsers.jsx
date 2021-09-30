@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import './ManageUsers.css';
-import Logo from '../../../assets/CSRL Logo 1.png';
-import Modal from '../../../components/Modal/Modal';
+import React, { useState } from "react";
+import "./ManageUsers.css";
+import Logo from "../../../assets/CSRL Logo 1.png";
+import Modal from "../../../components/Modal/Modal";
 // import Backdrop from '../../../components/Backdrop/Backdrop';
 
 const ManageUsers = () => {
@@ -17,28 +17,28 @@ const ManageUsers = () => {
 
   const tableData = [
     {
-      name: 'Fred Germany',
-      email: 'fredgermany@mail.com',
-      role_id: 'Verification Unit',
-      option: 'Deactivate User',
+      name: "Fred Germany",
+      email: "fredgermany@mail.com",
+      role_id: "Verification Unit",
+      option: "Deactivate User",
     },
     {
-      name: 'Fred Germany',
-      email: 'fredgermany@mail.com',
-      role_id: 'Verification Unit',
-      option: 'Deactivate User',
+      name: "Fred Germany",
+      email: "fredgermany@mail.com",
+      role_id: "Verification Unit",
+      option: "Deactivate User",
     },
     {
-      name: 'Fred Germany',
-      email: 'fredgermany@mail.com',
-      role_id: 'Verification Unit',
-      option: 'Deactivate User',
+      name: "Fred Germany",
+      email: "fredgermany@mail.com",
+      role_id: "Verification Unit",
+      option: "Deactivate User",
     },
     {
-      name: 'Fred Germany',
-      email: 'fredgermany@mail.com',
-      role_id: 'Verification Unit',
-      option: 'Deactivate User',
+      name: "Fred Germany",
+      email: "fredgermany@mail.com",
+      role_id: "Verification Unit",
+      option: "Deactivate User",
     },
   ];
   return (
@@ -46,7 +46,7 @@ const ManageUsers = () => {
       <div className="muser-card">
         <div className="logo-header">
           <img src={Logo} alt="csp" />
-          <h4 style={{ color: '#002564' }}>Manage Users</h4>
+          <h4 style={{ color: "#002564" }}>Manage Users</h4>
         </div>
 
         <table className="table manager-users-table">
@@ -65,8 +65,8 @@ const ManageUsers = () => {
                 key={index}
                 className="table-list"
                 style={{
-                  color: '#252733',
-                  fontSize: '12px',
+                  color: "#252733",
+                  fontSize: "12px",
                 }}
                 onClick={deleteHandler}
               >
@@ -81,7 +81,7 @@ const ManageUsers = () => {
         </table>
         <p
           className="text-right"
-          style={{ marginRight: '30px', cursor: 'pointer', color: '#528DC2' }}
+          style={{ marginRight: "30px", cursor: "pointer", color: "#528DC2" }}
         >
           View all Users
         </p>

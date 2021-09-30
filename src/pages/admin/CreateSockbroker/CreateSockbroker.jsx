@@ -1,15 +1,15 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
-import Logo from '../../../assets/CSRL Logo 1.png';
-import Note from '../../../assets/contact-form-svgrepo-com 1.png';
-import Button from '../../../components/Button/Button';
-import TextField from '../../../components/TextField/TextField';
-import './CreateSockbroker.css';
+import React from "react";
+import { useHistory } from "react-router-dom";
+import Logo from "../../../assets/CSRL Logo 1.png";
+import Note from "../../../assets/contact-form-svgrepo-com 1.png";
+import Button from "../../../components/Button/Button";
+import TextField from "../../../components/TextField/TextField";
+import "./CreateSockbroker.css";
 
 const CreateSockbroker = () => {
   const history = useHistory();
   const createUser = () => {
-    history.push('/create-user-success');
+    history.push("/create-user-success");
   };
   return (
     <div className="create-stockerbroker-page">
@@ -64,10 +64,8 @@ const CreateSockbroker = () => {
             text="CREATE STOCKBROKER"
             className="mt-4 create-stockerbroker-btn"
           />
-          <div onClick={() => history.push('/')} className="accountzz">
-            Already have an account?
-            {' '}
-            <b>Click here to login</b>
+          <div onClick={() => history.push("/")} className="accountzz">
+            Already have an account? <b>Click here to login</b>
           </div>
         </form>
       </div>

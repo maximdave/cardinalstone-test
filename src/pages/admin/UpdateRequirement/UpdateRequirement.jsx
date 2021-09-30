@@ -1,10 +1,10 @@
-import React from 'react';
-import Logo from '../../../assets/CSRL Logo 1.png';
-import plusIcon from '../../../assets/icons/plus.svg';
-import minusIcon from '../../../assets/icons/minus.svg';
-import arrowDown from '../../../assets/icons/arrow-down.svg';
-import arrowUp from '../../../assets/icons/arrow-up.svg';
-import './UpdateRequirement.css';
+import React from "react";
+import Logo from "../../../assets/CSRL Logo 1.png";
+import plusIcon from "../../../assets/icons/plus.svg";
+import minusIcon from "../../../assets/icons/minus.svg";
+import arrowDown from "../../../assets/icons/arrow-down.svg";
+import arrowUp from "../../../assets/icons/arrow-up.svg";
+import "./UpdateRequirement.css";
 
 const UpdateRequirement = () => (
   <div className="requirement-div">

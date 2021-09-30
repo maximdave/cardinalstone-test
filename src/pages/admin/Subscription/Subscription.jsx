@@ -1,8 +1,8 @@
-import React from 'react';
-import Button from '../../../components/Button/Button';
-import Logo from '../../../assets/CSRL Logo 1.png';
-import SubscriptionLogo from '../../../assets/subscription.svg';
-import './Subscription.css';
+import React from "react";
+import Button from "../../../components/Button/Button";
+import Logo from "../../../assets/CSRL Logo 1.png";
+import SubscriptionLogo from "../../../assets/subscription.svg";
+import "./Subscription.css";
 
 const Subscription = () => (
   <div className="subscription-page">
