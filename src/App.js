@@ -18,6 +18,8 @@ import RequestDashboard from "./pages/requestDashboard/RequestDashboard";
 import ForgotPassword from "./pages/admin/ForgotPassword/ForgotPassword";
 import CreateNewPassword from "./pages/admin/CreateNewPassword/CreateNewPassword";
 import CreateNewPasswordSuccess from "./pages/admin/CreateNewPasswordSuccess/CreateNewPasswordSuccess";
+import RequestPayment from "./pages/admin/RequestPayment/RequestPayment";
+import StockbrokerDashboard from "./pages/stockbrokerDashboardRequest/stockbrokerDashboard";
 
 function App() {
   return (
@@ -43,8 +45,10 @@ function App() {
         />
         <Route path="/subscription" component={Subscription} />
         <Route path="/choose-payment" component={ChoosePayment} />
+        <Route path="/requests/request-payment" component={RequestPayment} />
         <Route path="/indemnity-agreement" component={IndemnityAgreement} />
         <Route path="/requestDashboard" component={RequestDashboard} />
+        <Route path="/stockbrokerDashboard" component={StockbrokerDashboard} />
       </Switch>
     </div>
   );

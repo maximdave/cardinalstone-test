@@ -5,11 +5,12 @@
 .dashboard_section {
   width: 100%;
 }
-.dashboard_view {
+.dashboard_view2 {
   background: #fff;
   padding: 1em 1.5em;
   margin-top: 1.5em;
   border-radius: 0.5em;
+  height : 700px;
 }
 .nav_bar {
   display: none;
@@ -42,14 +43,46 @@
 /* .dashboard_requests_header {
   margin-top: -2px;
 } */
-.dashboard_requests_header > h3 {
-  font-weight: 400;
-  color: #002564;
+.dashboard_requests_header2 > h3 {
   margin-top: -40px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  color: #000000;
 }
 
-.dashboard_head {
-  width: 760px;
+.dashboard_requests_header3 > h3 {
+  margin-top: 40px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  color: #000000;
+}
+
+.make-payment {
+  /* margin-top: 20px; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.make-payment > select{
+  margin-right: 20px;
+  /* width: 1000000px */
+
+}
+
+.payment-method-btn {
+  /* margin-top: 20px; */
+    width: 300px
+
+}
+
+.dashboard_head2 {
+  width: 1040px;
   margin-top: 10px;
 }
 
@@ -81,7 +114,7 @@
     background: #fff;
   }
 
-  .dashboard_header {
+  .dashboard_header2 {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;

@@ -1,25 +1,25 @@
 /* eslint-disable react/no-array-index-key */
 import React from "react";
-import NavItem from "../general/NavItem";
-import overviewIcon from "../../../assets/dashboard.png";
-import logoutIcon from "../../../assets/logout.png";
-import reportsIcon from "../../../assets/reports.png";
-import requestsIcon from "../../../assets/requests.png";
-import cardinalwhiteblack from "../../../assets/cardinalwhiteblack.svg";
+import NavItem from "../requestComponents/general/NavItem";
+import overviewIcon from "../../assets/dashboard.png";
+import logoutIcon from "../../assets/logout.png";
+import reportsIcon from "../../assets/reports.png";
+import requestsIcon from "../../assets/requests.png";
+import cardinalwhiteblack from "../../assets/cardinalwhiteblack.svg";
 
 const navItems = [
   {
-    linkPath: "/requestdashboard/overview",
+    linkPath: "/stockbroker/overview",
     linkIcon: overviewIcon,
     linkText: "Overview",
   },
   {
-    linkPath: "/requestdashboard/requests",
+    linkPath: "/stockbroker/requests",
     linkIcon: requestsIcon,
     linkText: "Requests",
   },
   {
-    linkPath: "/requestdashboard/reports",
+    linkPath: "/stockbroker/reports",
     linkIcon: reportsIcon,
     linkText: "Reports",
   },
