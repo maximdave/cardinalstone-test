@@ -1,22 +1,22 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NameBar from "../../components/requestComponents/general/NameBar";
-import Overview from "../../components/requestComponents/secretary/Overview";
-import Navbar from "../../components/requestComponents/secretary/Navbar";
+import Navbar from "../../components/stockrequest/Navbar";
+import Overview from "../../components/stockrequest/Overview";
 
-import "./RequestDashboard.css";
+import "./stockbrokerDashboard.css";
 import Requests from "./requestTypes/Requests";
 
-const RequestDashboard = () => (
+const StockbrokerDashboard = () => (
   <div className="secretary_dashboard">
     <Router>
       <Navbar />
       <div className="dashboard_section">
         <NameBar name="Jones" title="Jones Ferdinand" />
-        <div className="dashboard_view">
+        <div className="dashboard_view2">
           <Switch>
-            <Route path="/requestdashboard/overview" component={Overview} />
-            <Route path="/requestdashboard/requests" component={Requests} />
+            <Route path="/stockbroker/overview" component={Overview} />
+            <Route path="/stockbroker/requests" component={Requests} />
           </Switch>
         </div>
       </div>
@@ -24,4 +24,4 @@ const RequestDashboard = () => (
   </div>
 );
 
-export default RequestDashboard;
+export default StockbrokerDashboard;

@@ -1,0 +1,47 @@
+.gainerscard {
+  margin-top: 2em;
+  width: 48%;
+  border-radius: 1em;
+  border: 1px solid #d8d8d8;
+  /* height: 500px; */
+}
+
+.gainerscard_header {
+  background: linear-gradient(103.92deg, #002564 1.19%, #528dc2 100%);
+  padding: 1em;
+  color: #fff;
+  border-radius: 0.5em 0.5em 0 0;
+}
+
+.gainerscard_header h4 {
+  margin: 0;
+  font-size: 0.7em;
+}
+
+.gainerscard_data {
+  font-size: 0.7em;
+  background: #f7f7f7;
+  height: 55px;
+}
+
+.gainerscard_data_headers {
+  display: flex;
+  width: 100%;
+}
+
+.gainerscard_data_header p {
+  margin: 0;
+}
+
+.gainerscard_data_header h4 {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.gainerscard_data_header {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0.5em auto;
+}
