@@ -6,6 +6,7 @@ import Overview from "../../components/stockrequest/Overview";
 
 import "./stockbrokerDashboard.css";
 import Requests from "./requestTypes/Requests";
+import ForgotPassword from "../admin/ForgotPassword/ForgotPassword";
 
 const StockbrokerDashboard = () => (
   <div className="secretary_dashboard">
@@ -17,6 +18,7 @@ const StockbrokerDashboard = () => (
           <Switch>
             <Route path="/stockbroker/overview" component={Overview} />
             <Route path="/stockbroker/requests" component={Requests} />
+            <Route path="/forgotpass" component={ForgotPassword} />
           </Switch>
         </div>
       </div>
