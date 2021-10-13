@@ -9,17 +9,17 @@ import cardinalwhiteblack from "../../../assets/cardinalwhiteblack.svg";
 
 const navItems = [
   {
-    linkPath: "/requestdashboard/overview",
+    linkPath: "/stockbrokerdashboard/overview",
     linkIcon: overviewIcon,
     linkText: "Overview",
   },
   {
-    linkPath: "/requestdashboard/requests",
+    linkPath: "/stockbrokerdashboard/requests",
     linkIcon: requestsIcon,
     linkText: "Requests",
   },
   {
-    linkPath: "/requestdashboard/reports",
+    linkPath: "/stockbrokerdashboard/reports",
     linkIcon: reportsIcon,
     linkText: "Reports",
   },

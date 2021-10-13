@@ -10,7 +10,7 @@
   padding: 1em 1.5em;
   margin-top: 1.5em;
   border-radius: 0.5em;
-  height : 700px;
+  height: 700px;
 }
 .nav_bar {
   display: none;
@@ -53,6 +53,16 @@
   color: #000000;
 }
 
+.dashboard_requests_header22 > h3 {
+  /* margin-top: -40px; */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  color: #000000;
+}
+
 .dashboard_requests_header3 > h3 {
   margin-top: 40px;
   font-style: normal;
@@ -69,16 +79,14 @@
   justify-content: space-between;
 }
 
-.make-payment > select{
+.make-payment > select {
   margin-right: 20px;
   /* width: 1000000px */
-
 }
 
 .payment-method-btn {
   /* margin-top: 20px; */
-    width: 300px
-
+  width: 300px;
 }
 
 .dashboard_head2 {
@@ -118,6 +126,15 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+  }
+
+  .dashboard_header22 {
+    margin-top: 20px;
+    margin-bottom: 80px;
+    /* margin-right: 20px; */
+    display: flex;
+    justify-content: space-between;
+    width: 750px;
   }
 
   .dashboard_requests_cards {

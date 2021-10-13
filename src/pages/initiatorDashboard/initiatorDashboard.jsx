@@ -4,11 +4,11 @@ import NameBar from "../../components/requestComponents/general/NameBar";
 import Navbar from "../../components/stockrequest/Navbar";
 import Overview from "../../components/stockrequest/Overview";
 
-import "./stockbrokerDashboard.css";
+import "./initiatorDashboard.css";
 import Requests from "./requestTypes/Requests";
 import ForgotPassword from "../admin/ForgotPassword/ForgotPassword";
 
-const StockbrokerDashboard = () => (
+const InitiatorDashboard = () => (
   <div className="secretary_dashboard">
     <Router>
       <Navbar />
@@ -16,8 +16,8 @@ const StockbrokerDashboard = () => (
         <NameBar name="Jones" title="Jones Ferdinand" />
         <div className="dashboard_view2">
           <Switch>
-            <Route path="/stockbroker/overview" component={Overview} />
-            <Route path="/stockbroker/requests" component={Requests} />
+            <Route path="/initiatorDashboard/overview" component={Overview} />
+            <Route path="/initiatorDashboard/requests" component={Requests} />
             <Route path="/forgotpass" component={ForgotPassword} />
           </Switch>
         </div>
@@ -26,4 +26,4 @@ const StockbrokerDashboard = () => (
   </div>
 );
 
-export default StockbrokerDashboard;
+export default InitiatorDashboard;

@@ -14,12 +14,12 @@ import ChangePassword from "./pages/admin/ChangePassword/ChangePassword";
 import Subscription from "./pages/admin/Subscription/Subscription";
 import ChoosePayment from "./pages/admin/ChoosePayment/ChoosePayment";
 import IndemnityAgreement from "./pages/admin/IndemnityAgreement/IndemnityAgreement";
-import RequestDashboard from "./pages/requestDashboard/RequestDashboard";
 import ForgotPassword from "./pages/admin/ForgotPassword/ForgotPassword";
 import CreateNewPassword from "./pages/admin/CreateNewPassword/CreateNewPassword";
 import CreateNewPasswordSuccess from "./pages/admin/CreateNewPasswordSuccess/CreateNewPasswordSuccess";
 import RequestPayment from "./pages/admin/RequestPayment/RequestPayment";
-import StockbrokerDashboard from "./pages/stockbrokerDashboardRequest/stockbrokerDashboard";
+import InitiatorDashboard from "./pages/initiatorDashboard/initiatorDashboard";
+import StockbrokerDashboard from "./pages/stockbrokerDashboard/StockbrokerDashboard";
 
 function App() {
   return (
@@ -47,8 +47,8 @@ function App() {
         <Route path="/choose-payment" component={ChoosePayment} />
         <Route path="/requests/request-payment" component={RequestPayment} />
         <Route path="/indemnity-agreement" component={IndemnityAgreement} />
-        <Route path="/requestDashboard" component={RequestDashboard} />
         <Route path="/stockbrokerDashboard" component={StockbrokerDashboard} />
+        <Route path="/initiatorDashboard" component={InitiatorDashboard} />
       </Switch>
     </div>
   );

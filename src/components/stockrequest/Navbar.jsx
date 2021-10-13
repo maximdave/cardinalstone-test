@@ -4,22 +4,42 @@ import NavItem from "../requestComponents/general/NavItem";
 import overviewIcon from "../../assets/dashboard.png";
 import logoutIcon from "../../assets/logout.png";
 import reportsIcon from "../../assets/reports.png";
-import requestsIcon from "../../assets/requests.png";
 import cardinalwhiteblack from "../../assets/cardinalwhiteblack.svg";
+
+import StockrequestIconIcon from "../../assets/svg/stockrequest.svg";
+import ApprovecallIcon from "../../assets/svg/approvecall.svg";
+import RejectcallIcon from "../../assets/svg/rejectcall.svg";
+import ReverseLogIcon from "../../assets/svg/reverselode.svg";
 
 const navItems = [
   {
-    linkPath: "/stockbroker/overview",
+    linkPath: "/initiatorDashboard/overview",
     linkIcon: overviewIcon,
     linkText: "Overview",
   },
   {
-    linkPath: "/stockbroker/requests",
-    linkIcon: requestsIcon,
-    linkText: "Requests",
+    linkPath: "/initiatorDashboard/requests",
+    linkIcon: StockrequestIconIcon,
+    linkText: "Stockbroker's Request",
   },
   {
-    linkPath: "/stockbroker/reports",
+    linkPath: "/initiatorDashboard/approvedcallover",
+    linkIcon: ApprovecallIcon,
+    linkText: "Approved Callover",
+  },
+  {
+    linkPath: "/initiatorDashboard/rejectedcallover",
+    linkIcon: RejectcallIcon,
+    linkText: "Rejected Callover",
+  },
+  {
+    linkPath: "/initiatorDashboard/reverselodg",
+    linkIcon: ReverseLogIcon,
+    linkText: "Reverse Lodgement",
+  },
+
+  {
+    linkPath: "/initiatorDashboard/reports",
     linkIcon: reportsIcon,
     linkText: "Reports",
   },

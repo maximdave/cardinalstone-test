@@ -4,10 +4,11 @@ import NameBar from "../../components/requestComponents/general/NameBar";
 import Overview from "../../components/requestComponents/secretary/Overview";
 import Navbar from "../../components/requestComponents/secretary/Navbar";
 
-import "./RequestDashboard.css";
+import "./StockbrokerDashboard.css";
 import Requests from "./requestTypes/Requests";
+// import Requests from "../initiatorDashboard/requestTypes/Requests";
 
-const RequestDashboard = () => (
+const StockbrokerDashboard = () => (
   <div className="secretary_dashboard">
     <Router>
       <Navbar />
@@ -15,8 +16,9 @@ const RequestDashboard = () => (
         <NameBar name="Jones" title="Jones Ferdinand" />
         <div className="dashboard_view">
           <Switch>
-            <Route path="/requestdashboard/overview" component={Overview} />
-            <Route path="/requestdashboard/requests" component={Requests} />
+            <Route path="/stockbrokerdashboard/overview" component={Overview} />
+            <Route path="/stockbrokerdashboard/requests" component={Requests} />
+            {/* <Route path="/stockbrokerdashboard/requests" component={Requests} /> */}
           </Switch>
         </div>
       </div>
@@ -24,4 +26,4 @@ const RequestDashboard = () => (
   </div>
 );
 
-export default RequestDashboard;
+export default StockbrokerDashboard;

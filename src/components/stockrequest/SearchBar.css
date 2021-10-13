@@ -1,0 +1,22 @@
+.icon_textfield_header {
+   font-size: 0.8rem;
+}
+.icon_textfield_header h3 {
+   font-weight: 400;
+   margin: 0;
+   margin-bottom: 0.5em;
+}
+
+.searchbar_filter_field {
+   display: flex;
+   margin-top: 1em;
+}
+.selection_field {
+   width: 100%;
+   max-width: 400px;
+}
+@media (min-width: 700px) {
+   .searchbar_filter_field {
+      justify-content: space-between;
+   }
+}
