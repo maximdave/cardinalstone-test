@@ -1,0 +1,41 @@
+.logo-header {
+  margin-top: 5%;
+  margin-left: 5%;
+  height: 20vh;
+}
+.logo-header h4 {
+  margin-top: 20px;
+  /* margin-bottom: 5000px; */
+}
+
+.muser-card {
+  margin: auto;
+  background-color: #ffffff;
+  min-width: 360px;
+  width: 50vw;
+  height: 60vh;
+  border-radius: 5px;
+}
+.table-list {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.thead-primary {
+  background-color: #528dc2;
+  color: #ffffff;
+  font-size: 12px;
+  border-radius: 4px;
+}
+.manager-users-table {
+  border-radius: 4px !important;
+  margin: auto;
+  width: 90% !important;
+}
+.table-header {
+  font-size: 14px !important;
+}
+.text-right{
+  text-align: right
+}

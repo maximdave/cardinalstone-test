@@ -1,0 +1,27 @@
+.priceupdate {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.5em;
+}
+
+.pricecard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 0.5em;
+}
+
+.pricecard + .pricecard {
+  border-left: 1px solid #424141;
+}
+
+.priceupdate_header {
+  background: #528dc2;
+  color: #fff;
+  padding: 0.5em;
+}
+
+.priceupdate_header h3 {
+  margin: 0;
+}
