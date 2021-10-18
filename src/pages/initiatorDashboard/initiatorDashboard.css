@@ -93,7 +93,66 @@
   width: 1040px;
   margin-top: 10px;
 }
-
+.header-div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dashboard_head2 > nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.dashboard_head2 > nav > h1 {
+  font-size: 30px;
+  font-weight: 400;
+}
+.dashboard_head2 > nav > div > h3 {
+  font-weight: 400;
+  font-size: 24px;
+}
+.dashboard_head2 > nav > div > p {
+  font-size: 18px;
+  color: #528dc2;
+}
+.dashboard_head2 .header-div > button {
+  background-color: #ef9011;
+  color: #fff;
+  border-radius: 20px;
+  width: 208px;
+  height: 26px;
+  font-size: 14px;
+}
+.shareholder-flex {
+  display: flex;
+  gap: 90px;
+}
+.shareholder-flex > div {
+  width: 588px;
+  height: 167px;
+  border: 1px solid #528dc2;
+  border-radius: 5px;
+  background: rgba(117, 117, 158, 0.15);
+}
+.shareholder-flex > div > table {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.shareholder-flex > div > table > tr > td:nth-child(1) {
+  width: 300px;
+  height: 30px;
+}
+.upload-flex {
+  display: flex;
+  gap: 105px;
+}
+.upload-flex > div {
+  width: 588px;
+  height: 361px;
+  border: 1px solid #528dc2;
+  border-radius: 5px;
+  background: rgba(117, 117, 158, 0.15);
+}
 @media (min-width: 700px) {
   .secretary_dashboard {
     display: flex;
