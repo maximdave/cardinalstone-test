@@ -1,0 +1,59 @@
+.indemnity-agreement-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.indemnity-agreement-card {
+  margin: auto;
+  background-color: #ffffff;
+  min-width: 360px;
+  width: 40vw;
+  height: 75vh;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.indemnity-agreement-success {
+  margin: auto;
+  text-align: center;
+}
+.indemnity-agreement-success h5 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  /* font-family: Calibri; */
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  color: #002564;
+}
+.indemnity-agreement-success p {
+  margin-top: -15px;
+  color: #002564;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  width: 30vw;
+}
+.indemnity-agreement-success p > span {
+  margin-right: 10px;
+}
+.btn13 {
+  width: 100%;
+  /* margin-top: -10px; */
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.indemnity-agreement {
+  margin-bottom: 30px;
+  /* margin-top: 20px; */
+}

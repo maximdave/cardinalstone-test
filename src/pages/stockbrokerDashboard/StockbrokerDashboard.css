@@ -1,0 +1,137 @@
+.secretary_dashboard {
+  background: #e5e5e5;
+}
+
+.dashboard_section {
+  width: 100%;
+}
+.dashboard_view {
+  background: #fff;
+  padding: 1em 1.5em;
+  margin-top: 1.5em;
+  border-radius: 0.5em;
+}
+.nav_bar {
+  display: none;
+  background: #002564;
+}
+
+.nav_item:hover {
+  opacity: 0.6;
+}
+.nav_item_icon {
+  max-width: 25px;
+  width: 100%;
+  margin-right: 1.5em;
+}
+
+.nav_items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav_items > p {
+  width: 100%;
+  text-align: left;
+}
+
+.nav_bar_section_two {
+  position: absolute;
+  bottom: 0;
+}
+/* .dashboard_requests_header {
+  margin-top: -2px;
+} */
+.dashboard_requests_header > h3 {
+  font-weight: 400;
+  color: #002564;
+  margin-top: -40px;
+}
+
+.dashboard_head {
+  width: 760px;
+  margin-top: 10px;
+}
+
+@media (min-width: 700px) {
+  .secretary_dashboard {
+    display: flex;
+  }
+
+  .nav_bar {
+    display: block;
+    width: 20%;
+    height: 100vh;
+  }
+
+  .cardinal_logo {
+    padding: 1em 2em;
+  }
+
+  .dashboard_section {
+    width: 100%;
+    padding-right: 1.5em;
+    padding-top: 1.5em;
+    margin-left: 1.5em;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+
+  .dashboard_view {
+    background: #fff;
+  }
+
+  .dashboard_header {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .dashboard_requests_cards {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .request_cards_shrink {
+    max-width: 650px;
+  }
+
+  .requests_utilities {
+    display: flex;
+  }
+
+  .price_update {
+    border: 1px solid black;
+    border-radius: 0.5em;
+    width: 1080px;
+    margin-top: 1.5em;
+    margin-top: 1.5em;
+  }
+  .dash_items {
+    margin-top: 1.5em;
+
+    display: flex;
+    width: 1080px;
+    justify-content: space-between;
+  }
+
+  .top_gainers_losers {
+    display: flex;
+    margin-top: -2em;
+    margin-bottom: 20em;
+    margin-right: 1.5em;
+    /* max-width: 48000px; */
+    width: 120%;
+    justify-content: space-between;
+  }
+
+  .chart_dash {
+    display: flex;
+    margin-top: -540px;
+    margin-bottom: 20em;
+    margin-right: 1.5em;
+    /* max-width: 48000px; */
+    width: 120%;
+    justify-content: space-between;
+  }
+}

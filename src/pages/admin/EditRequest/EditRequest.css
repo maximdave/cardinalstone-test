@@ -1,0 +1,29 @@
+.edit-request-header {
+  margin: auto;
+  text-align: center;
+}
+.edit-request-header > img{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.requirements {
+  margin-left: 5%;
+  margin-bottom: 5px;
+  width: 90%;
+  border-bottom: 1px solid #dfe0eb;
+}
+
+.line {
+  border-bottom: 1px solid #dfe0eb;
+  background-color: 1px solid #dfe0eb;
+  width: 90%;
+}
+
+.user-card {
+  margin: auto;
+  background-color: #ffffff;
+  min-width: 360px;
+  width: 50vw;
+  height: 80vh;
+  border-radius: 5px;
+}
