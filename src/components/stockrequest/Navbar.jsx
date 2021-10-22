@@ -48,7 +48,11 @@ const navItems = [
 const Navbar = () => (
   <div className="nav_bar">
     <div className="cardinal_logo">
-      <img src={cardinalwhiteblack} alt="cardinalLogo" />
+      <img
+        style={{ width: "100px" }}
+        src={cardinalwhiteblack}
+        alt="cardinalLogo"
+      />
     </div>
     <div className="nav_bar_section_one">
       {navItems.map((item, index) => (

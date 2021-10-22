@@ -86,18 +86,21 @@ const Overview = () => {
           number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
           icon={total}
+          num={3}
         />
         <NumberCard2
           text="Approved callovers"
           number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
           icon={likeIcon}
+          num={3}
         />
         <NumberCard2
           text="Rejected callovers"
           number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
           icon={unlikeIcon}
+          num={3}
         />
       </div>
       <div className="overview-cards">
@@ -107,24 +110,28 @@ const Overview = () => {
           number={3}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
           icon={likeIcon}
+          num={3}
         />
         <NumberCard2
           text="Approved Request"
           number={4}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
           icon={likeIcon}
+          num={3}
         />
         <NumberCard2
           text="Rejected requests"
           number={7}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
           icon={unlikeIcon}
+          num={3}
         />
         <NumberCard2
           text="Total Requests"
           number={14}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
           icon={total}
+          num={3}
         />
       </div>
 

@@ -1,9 +1,46 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import React from "react";
+import React, { useState } from "react";
+import Select from "react-select";
 import papers from "../../../assets/paper-stack.svg";
 import "./Requests.css";
 
 const Requests = () => {
+  const [approval, setShowApproval] = useState(false);
+
+  const options = [
+    {
+      label: "Wade Warren",
+      value: "Wade Warren",
+    },
+    {
+      label: "Esther Howard",
+      value: "Esther Howard",
+    },
+    {
+      label: "Cameron Williamson",
+      value: "Cameron Williamson",
+    },
+    {
+      label: "Brooklyn Simmons",
+      value: "Brooklyn Simmons",
+    },
+    {
+      label: "Leslie Alexander",
+      value: "Leslie Alexander",
+    },
+    {
+      label: "Guy Hawkins",
+      value: "Guy Hawkins",
+    },
+    {
+      label: "Theresa Webb",
+      value: "Theresa Webb",
+    },
+    {
+      label: "Kathryn Murphy",
+      value: "Kathryn Murphy",
+    },
+  ];
   return (
     <div className="dashboard_view">
       <div className="dashboard_head2">
@@ -94,8 +131,31 @@ const Requests = () => {
             </div>
           </div>
           <div className="d-flex cta-section">
-            <button className="primary-btn">APPROVE</button>
+            <button
+              className="primary-btn"
+              onClick={() => setShowApproval((prev) => !prev)}
+            >
+              APPROVE
+            </button>
             <button className="danger-btn">REJECT</button>
+          </div>
+          <div
+            style={{
+              marginLeft: "23%",
+              marginTop: "30px",
+              display: approval ? "block" : "none",
+            }}
+          >
+            <input className="stock-broker-request-approve-input" />
+            <div className="d-flex">
+              <Select
+                className="react-select-request"
+                classNamePrefix=""
+                name="color"
+                options={options}
+              />
+              <button className="primary-btn">Assign</button>
+            </div>
           </div>
         </div>
       </div>

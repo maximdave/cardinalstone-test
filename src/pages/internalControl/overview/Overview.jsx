@@ -84,18 +84,21 @@ const Overview = () => {
           number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
           icon={likeIcon}
+          num={9}
         />
         <NumberCard2
           text="Approved callovers"
           number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
           icon={unlikeIcon}
+          numm={7}
         />
         <NumberCard2
           text="Rejected callovers"
           number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
           icon={unlikeIcon}
+          num={3}
         />
       </div>
       <div className="dashboard_requests_header ">
