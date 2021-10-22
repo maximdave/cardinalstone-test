@@ -19,7 +19,9 @@ import CreateNewPassword from "./pages/admin/CreateNewPassword/CreateNewPassword
 import CreateNewPasswordSuccess from "./pages/admin/CreateNewPasswordSuccess/CreateNewPasswordSuccess";
 import RequestPayment from "./pages/admin/RequestPayment/RequestPayment";
 import InitiatorDashboard from "./pages/initiatorDashboard/initiatorDashboard";
+import VerificationDashboard from "./pages/verificationUnit/verificationUnitDashboard";
 import StockbrokerDashboard from "./pages/stockbrokerDashboard/StockbrokerDashboard";
+import InternalControlDashboard from "./pages/internalControl/internalControl";
 
 function App() {
   return (
@@ -49,6 +51,8 @@ function App() {
         <Route path="/indemnity-agreement" component={IndemnityAgreement} />
         <Route path="/stockbrokerDashboard" component={StockbrokerDashboard} />
         <Route path="/initiatorDashboard" component={InitiatorDashboard} />
+        <Route path="/verification" component={VerificationDashboard} />
+        <Route path="/internalcontrol" component={InternalControlDashboard} />
       </Switch>
     </div>
   );

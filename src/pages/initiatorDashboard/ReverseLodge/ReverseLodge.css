@@ -1,0 +1,26 @@
+
+.success-btn{
+  background: linear-gradient(103.92deg, #327719 11.48%, #80B96D 99.99%, #FFFFFF 100%);
+  color:#FFFFFF;
+  border-radius: 5px;
+}
+
+.danger-btn{
+  background: linear-gradient(279.3deg, #E61C23 -4.92%, #8B0A0E 107.31%);
+}
+
+.reverse-prompt{
+  display:flex;
+  flex-direction: row;
+  gap:50px;
+  margin-top: 50px;
+
+}
+
+.reverse-lodge-input {
+  width:70%;
+  padding:10px;
+  border:1px solid #002564;
+  border-radius: 5px;
+  margin-right: 20px;
+}

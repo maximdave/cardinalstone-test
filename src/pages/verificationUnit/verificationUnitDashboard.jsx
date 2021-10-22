@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NameBar from "../../components/requestComponents/general/NameBar";
-import Navbar from "../../components/stockrequest/Navbar";
-import Overview from "../../components/stockrequest/Overview";
+import Navbar from "./Navbar";
+import Overview from "./overview/Overview";
 
-import "./initiatorDashboard.css";
+import "./verification.css";
 import Requests from "./requestTypes/Requests";
 import ForgotPassword from "../admin/ForgotPassword/ForgotPassword";
 import ReverseLodge from "./ReverseLodge";
@@ -12,7 +12,7 @@ import Reports from "./Report";
 import ApprovedCallover from "./ApprovedCallover";
 import RejectedCallover from "./RejectedCallover";
 
-const InitiatorDashboard = () => (
+const VerificationUnit = () => (
   <div className="secretary_dashboard">
     <Router>
       <Navbar />
@@ -20,19 +20,16 @@ const InitiatorDashboard = () => (
         <NameBar name="Jones" title="Jones Ferdinand" />
         <div className="dashboard_view2">
           <Switch>
-            <Route path="/initiatorDashboard/overview" component={Overview} />
-            <Route path="/initiatorDashboard/requests" component={Requests} />
+            <Route path="/verification/overview" component={Overview} />
+            <Route path="/verification/requests" component={Requests} />
+            <Route path="/verification/reverselodg" component={ReverseLodge} />
+            <Route path="/verification/reports" component={Reports} />
             <Route
-              path="/initiatorDashboard/reverselodg"
-              component={ReverseLodge}
-            />
-            <Route path="/initiatorDashboard/reports" component={Reports} />
-            <Route
-              path="/initiatorDashboard/rejectedcallover"
+              path="/verification/rejectedcallover"
               component={RejectedCallover}
             />
             <Route
-              path="/initiatorDashboard/approvedcallover"
+              path="/verification/approvedcallover"
               component={ApprovedCallover}
             />
             <Route path="/forgotpass" component={ForgotPassword} />
@@ -43,4 +40,4 @@ const InitiatorDashboard = () => (
   </div>
 );
 
-export default InitiatorDashboard;
+export default VerificationUnit;

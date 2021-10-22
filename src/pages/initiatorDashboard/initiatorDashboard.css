@@ -126,6 +126,9 @@
 .shareholder-flex {
   display: flex;
   gap: 90px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #DFE0EB
 }
 .shareholder-flex > div {
   width: 588px;
@@ -152,6 +155,7 @@
   border: 1px solid #528dc2;
   border-radius: 5px;
   background: rgba(117, 117, 158, 0.15);
+  padding: 20px;
 }
 @media (min-width: 700px) {
   .secretary_dashboard {
