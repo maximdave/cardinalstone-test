@@ -5,6 +5,10 @@ import { useTable } from "react-table";
 import { NavLink } from "react-router-dom";
 import SearchBar from "../../../components/stockrequest/SearchBar";
 import NumberCard2 from "../../../components/stockrequest/NumberCard2";
+import unlikeIcon from "../../../assets/like.svg";
+import likeIcon from "../../../assets/unlike.svg";
+import total from "../../../assets/total.svg";
+
 import "./overview.css";
 
 const Overview = () => {
@@ -81,16 +85,19 @@ const Overview = () => {
           text="Stockbrokers’ requests"
           number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
+          icon={total}
         />
         <NumberCard2
           text="Approved callovers"
           number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
+          icon={likeIcon}
         />
         <NumberCard2
           text="Rejected callovers"
           number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
+          icon={unlikeIcon}
         />
       </div>
       <div className="overview-cards">
@@ -99,21 +106,25 @@ const Overview = () => {
           text="Assigned requests"
           number={3}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
+          icon={likeIcon}
         />
         <NumberCard2
           text="Approved Request"
           number={4}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
+          icon={likeIcon}
         />
         <NumberCard2
           text="Rejected requests"
           number={7}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
+          icon={unlikeIcon}
         />
         <NumberCard2
           text="Total Requests"
           number={14}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
+          icon={total}
         />
       </div>
 

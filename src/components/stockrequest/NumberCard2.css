@@ -2,7 +2,7 @@
   .numbercard2 {
     background-color: red;
     color: #fff;
-    padding: 80px 40px 20px 20px;
+    padding: 90px 40px 20px 20px;
     border-radius: 0.5em;
     height: 130px;
     width: 240px;
@@ -15,4 +15,8 @@
     font-size: 18px;
     line-height: 22px;
   }
+}
+img {
+  width:10%;
+  margin-right: 5px;
 }
