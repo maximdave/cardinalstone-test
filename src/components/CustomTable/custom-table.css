@@ -21,10 +21,9 @@ th{
 }
 .custom-table-body-row td {
   padding: 20px;
+  border-bottom: 1px solid #DFE0EB;
 }
-tr{
-  border: 1px solid green;
-}
+
 .status{
   background-color: #BF7BB5;
   text-align: center;

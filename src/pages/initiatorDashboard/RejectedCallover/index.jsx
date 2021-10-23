@@ -50,7 +50,21 @@ const RejectedCallover = () => {
         <SearchBar />
       </div>
       <div className="rejected">
-        <CustomTable tableHeader={tableHeader} tableProps={tableProps} />
+        <CustomTable tableHeader={tableHeader}>
+          {tableProps.map((tb, idx) => (
+            <tr key={idx}>
+              <td>{tb.id}</td>
+              <td>{tb.date}</td>
+              <td>
+                <strong>{tb.type}</strong>
+              </td>
+              <td>{tb.stockbroker}</td>
+              <td className="d-flex">
+                <p className="">{tb.status}</p>
+              </td>
+            </tr>
+          ))}
+        </CustomTable>
 
         <div className="viewmore">
           <Link to="/viewmore">View all results</Link>

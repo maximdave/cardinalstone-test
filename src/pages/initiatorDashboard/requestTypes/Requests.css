@@ -199,7 +199,8 @@
 
 }
 .primary-btn {
-  background-color: #528DC2;
+  background: linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%);
+  font-size:12px;
   border-radius: 5px;
   color:#ffffff;
 
@@ -232,4 +233,9 @@
   border-radius: 5px;
   margin-bottom: 20px;
   width:50%;
+}
+.request_topic{
+  color:#002564;
+  font-size: 16px;
+  text-transform: capitalize;
 }

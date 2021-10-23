@@ -24,3 +24,12 @@
   border-radius: 5px;
   margin-right: 20px;
 }
+.reverse-lodge-status{
+  background-color: #D8D8D8;
+  margin-top:10px;
+  padding:0 40px;
+  color:#FFFFFF;
+  height: 24px;
+  border-radius: 12px;
+
+}

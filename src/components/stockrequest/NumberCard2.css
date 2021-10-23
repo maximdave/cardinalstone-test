@@ -12,13 +12,13 @@
 
   .numbercard_text2 {
     font-weight: normal;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 22px;
     
   }
 }
-img {
-  width:10%;
+.number-card-label > img {
+  width:15%;
   margin-right: 5px;
   justify-content: flex-end;
 }
@@ -27,8 +27,8 @@ img {
   margin-top:30px;
   margin-bottom: 10px;
 }
-.number-card-label p{
+.number-card-label > p{
   margin-top: 10px;
   padding-top:10px;
-  font-size: 24px;
+  font-size: 30px;
 }

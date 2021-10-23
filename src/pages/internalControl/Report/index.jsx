@@ -48,7 +48,21 @@ const Report = () => {
         <SearchBar />
       </div>
       <div className="reports">
-        <CustomTable tableProps={tableProps} tableHeader={tableHeader} />{" "}
+        <CustomTable tableHeader={tableHeader}>
+          {tableProps.splice(0, 1)?.map((tb, idx) => (
+            <tr key={idx}>
+              <td>{tb.id}</td>
+              <td>{tb.date}</td>
+              <td>
+                <strong>{tb.type}</strong>
+              </td>
+              <td>{tb.stockbroker}</td>
+              <td className="d-flex">
+                <p className={tb.status.toLowerCase()}>{tb.status}</p>
+              </td>
+            </tr>
+          ))}
+        </CustomTable>
         <div className="view-more">
           <Pagination count={10} color="primary" />
         </div>{" "}
