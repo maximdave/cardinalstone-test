@@ -159,10 +159,6 @@ const ApprovedCallover = () => {
             <p style={{ color: "#528DC2" }}>SHAREHOLDER’S HOLDING:</p>
             <p style={{ fontSize: "24px", marginTop: "2px" }}>1,000,000</p>
           </div>
-          <div className="request-status">
-            <p style={{ color: "#528DC2" }}>STATUS:</p>
-            <p className="request-status-show">Captured</p>
-          </div>
         </div>
         <div className="shareholder-flex">
           <p className="request_topic">Shareholder Details: </p>
