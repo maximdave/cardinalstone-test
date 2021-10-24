@@ -91,7 +91,7 @@ const Overview = () => {
           number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
           icon={unlikeIcon}
-          numm={7}
+          num={7}
         />
         <NumberCard2
           text="Rejected callovers"

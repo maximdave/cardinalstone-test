@@ -1,11 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Pagination from "@mui/material/Pagination";
 import { FilterListSharp, FilterAltOutlined } from "@mui/icons-material";
 import Select from "react-select";
 import Button from "@mui/material/Button";
 import CustomTable from "../../../components/CustomTable";
-import SearchBar from "../../../components/stockrequest/SearchBar";
 import "./Report.css";
 
 const Report = () => {

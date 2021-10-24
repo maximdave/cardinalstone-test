@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import CustomTable from "../../../components/CustomTable";
 import "./ReverseLodge.css";
 
 const ReverseLodge = () => {
+  const [showReverseOption, setShowReverseOption] = useState(false);
   const tableHeader = [
     "ID NO",
     "Date",
     "Request Type",
     "Stockbroker",
     "Status",
+    "",
   ];
   const tableProps = [
     {
@@ -16,7 +18,7 @@ const ReverseLodge = () => {
       date: "24 Aug 2021",
       type: "Demat Request",
       stockbroker: "Afri Invest",
-      status: "Submitted",
+      status: "Approved",
     },
     {
       id: "DR23554",
@@ -44,17 +46,48 @@ const ReverseLodge = () => {
     <div>
       <div>
         <h3>Reverse Lodgements</h3>
-        <input type="text" placeholder="Input request ID" />
+        <input
+          className="reverse-lodge-input"
+          type="text"
+          placeholder="Input request ID"
+        />
+        <span>
+          <button className="primary-btn">Search</button>
+        </span>
       </div>
 
       <div>
-        <CustomTable tableProps={tableProps} tableHeader={tableHeader} />
+        <CustomTable tableHeader={tableHeader}>
+          {tableProps.splice(0, 1)?.map((tb, idx) => (
+            <tr key={idx}>
+              <td>{tb.id}</td>
+              <td>{tb.date}</td>
+              <td>
+                <strong>{tb.type}</strong>
+              </td>
+              <td>{tb.stockbroker}</td>
+              <td className="d-flex">
+                <p className="reverse-lodge-status">{tb.status}</p>
+              </td>
+              <td>
+                <button
+                  className="primary-btn"
+                  onClick={() => setShowReverseOption((prev) => !prev)}
+                >
+                  REVERSE
+                </button>
+              </td>
+            </tr>
+          ))}
+        </CustomTable>
       </div>
 
-      <div className="reverse-prompt">
-        <button className="success-btn">CONFIRM</button>
-        <button className="danger-btn">CANCEL</button>
-      </div>
+      {showReverseOption && (
+        <div className="reverse-prompt">
+          <button className="success-btn">CONFIRM</button>
+          <button className="danger-btn">CANCEL</button>
+        </div>
+      )}
     </div>
   );
 };

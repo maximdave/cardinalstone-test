@@ -49,7 +49,7 @@ const Report = () => {
       </div>
       <div className="reports">
         <CustomTable tableHeader={tableHeader}>
-          {tableProps.splice(0, 1)?.map((tb, idx) => (
+          {tableProps.map((tb, idx) => (
             <tr key={idx}>
               <td>{tb.id}</td>
               <td>{tb.date}</td>
