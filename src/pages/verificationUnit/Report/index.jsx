@@ -1,5 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Pagination from "@mui/material/Pagination";
+import { FilterListSharp, FilterAltOutlined } from "@mui/icons-material";
+import Select from "react-select";
+import Button from "@mui/material/Button";
 import CustomTable from "../../../components/CustomTable";
 import SearchBar from "../../../components/stockrequest/SearchBar";
 import "./Report.css";
@@ -66,7 +70,53 @@ const Report = () => {
   return (
     <div>
       <div className="search_options">
-        <SearchBar />
+        <input
+          type="text"
+          placeholder="Enter Stockbroker name"
+          style={{ width: "80%", padding: "5px", marginRight: "20px" }}
+        />
+        <Button
+          color="primary"
+          style={{ marginBottom: "6px" }}
+          variant="contained"
+        >
+          Search
+        </Button>
+      </div>
+      <div className="filter-labels">
+        <div className="d-flex">
+          <FilterAltOutlined />
+          <p>Filter by:</p>
+        </div>
+        <div>
+          <Button className="reset-all" variant="text">
+            Reset All
+          </Button>
+        </div>
+      </div>
+      <div className="d-flex">
+        <div className="verification_filters">
+          <Select
+            placeholder="Start Date"
+            className="verification_filter_select"
+          />
+          <Select
+            placeholder="End Date"
+            className="verification_filter_select"
+          />
+          <Select
+            placeholder="Request Type"
+            className="verification_filter_select"
+          />
+          <Select placeholder="Status" className="verification_filter_select" />
+        </div>
+        <Button
+          style={{ height: "100%", marginTop: "20px" }}
+          variant="contained"
+          startIcon={<FilterListSharp />}
+        >
+          Filter
+        </Button>
       </div>
       <div className="reports">
         <CustomTable tableHeader={tableHeader}>

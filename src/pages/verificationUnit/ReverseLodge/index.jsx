@@ -10,6 +10,7 @@ const ReverseLodge = () => {
     "Request Type",
     "Stockbroker",
     "Status",
+    ".",
   ];
   const tableProps = [
     {
