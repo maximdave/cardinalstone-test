@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NameBar from "../../components/requestComponents/general/NameBar";
 import Overview from "../../components/requestComponents/secretary/Overview";
+import Reports from "./Report";
 import Navbar from "../../components/requestComponents/secretary/Navbar";
 
 import "./StockbrokerDashboard.css";
@@ -18,6 +19,7 @@ const StockbrokerDashboard = () => (
           <Switch>
             <Route path="/stockbrokerdashboard/overview" component={Overview} />
             <Route path="/stockbrokerdashboard/requests" component={Requests} />
+            <Route path="/stockbrokerdashboard/reports" component={Reports} />
             {/* <Route path="/stockbrokerdashboard/requests" component={Requests} /> */}
           </Switch>
         </div>

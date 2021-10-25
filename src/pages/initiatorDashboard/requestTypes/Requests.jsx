@@ -1,15 +1,20 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState } from "react";
 import Select from "react-select";
+import MuiModal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
 import Modal from "../../../components/Modal/Modal";
 import papers from "../../../assets/paper-stack.svg";
+import requestDocs from "../../../assets/request_document.png";
 import "./Requests.css";
 
 const Requests = () => {
   const [approval, setShowApproval] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [rejectOption, setRejectOption] = useState(true);
-  // ;
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   // Transmission documents required;
   // see attached requirements
   // No specimen signature.Please engage your stockbroker and process share transfer form through CSCS
@@ -150,6 +155,28 @@ const Requests = () => {
   return (
     <div className="dashboard_view">
       <Modal show={showModal} onConfirm={onConfirm} onCancel={onCancel} />
+      <MuiModal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="View-document-title"
+        aria-describedby="view document-description"
+      >
+        <Box>
+          <img
+            className="view_document_image"
+            src={requestDocs}
+            alt="View request document"
+          />
+          <div className="view_document_button">
+            <button className="primary-btn" onClick={handleClose}>
+              DOWNLOAD
+            </button>
+            <button className="primary-btn" onClick={handleClose}>
+              CLOSE
+            </button>
+          </div>
+        </Box>
+      </MuiModal>
       <div className="dashboard_head2">
         <div className="stock_broker_request_header">
           <div className="header_text">
@@ -199,7 +226,9 @@ const Requests = () => {
                       <img src={papers} alt="" />
                     </td>
                     <td>
-                      <button className="primary-btn">VIEW</button>
+                      <button className="primary-btn" onClick={handleOpen}>
+                        VIEW
+                      </button>
                     </td>
                     <td>
                       <button className="primary-btn">DOWNLOAD</button>
@@ -215,7 +244,9 @@ const Requests = () => {
                       <img src={papers} alt="" />
                     </td>
                     <td>
-                      <button className="primary-btn">VIEW</button>
+                      <button className="primary-btn" onClick={handleOpen}>
+                        VIEW
+                      </button>
                     </td>
                     <td>
                       <button className="primary-btn">DOWNLOAD</button>
@@ -230,7 +261,9 @@ const Requests = () => {
                       <img src={papers} alt="" />
                     </td>
                     <td>
-                      <button className="primary-btn">VIEW</button>
+                      <button className="primary-btn" onClick={handleOpen}>
+                        VIEW
+                      </button>
                     </td>
                     <td>
                       <button className="primary-btn my-2">DOWNLOAD</button>

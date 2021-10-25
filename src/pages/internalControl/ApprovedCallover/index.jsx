@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import { Link } from "react-router-dom";
 import Modal from "../../../components/Modal/Modal";
 import papers from "../../../assets/paper-stack.svg";
 import "./Approved.css";
