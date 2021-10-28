@@ -6,7 +6,7 @@ import papers from "../../../assets/paper-stack.svg";
 import "./Requests.css";
 
 const Requests = () => {
-  const [approval, setShowApproval] = useState(false);
+  const [approval] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [rejectOption, setRejectOption] = useState(true);
   const rejectOptions = [
