@@ -35,7 +35,7 @@ const ChangePassword = () => {
           <Button
             className="change-password-btn"
             text="CHANGE PASSWORD"
-            onClick={() => history.push("/admin-page")}
+            onClick={() => history.push("/subscription")}
           />
         </form>
       </div>

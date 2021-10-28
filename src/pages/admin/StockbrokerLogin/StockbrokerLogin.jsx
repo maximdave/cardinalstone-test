@@ -41,13 +41,16 @@ const StockbrokerLogin = () => {
             placeholder="Password"
             label="Password"
           />
-          <div onClick={() => history.push("/")} className="password">
+          <div
+            onClick={() => history.push("/change-password")}
+            className="password"
+          >
             Forgot Password?
           </div>
           <Button
             className="stockbroker-login-btn"
             text="LOGIN"
-            onClick={() => history.push("/admin-page")}
+            onClick={() => history.push("/change-password")}
           />
           <Button
             type="secondary"

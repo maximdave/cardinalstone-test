@@ -12,7 +12,6 @@ const Modal = (props) => {
     <div style={{ display: show ? "block" : "none" }}>
       <div className="card-div">
         <div className="modal-card">
-          {/* <h1>Confirm Deactivation</h1> */}
           <h1>Confirm Rejection</h1>
           <hr />
           <p>Do you want to reject this request?</p>
