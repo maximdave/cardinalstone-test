@@ -19,6 +19,7 @@ const Overview = () => {
         date: "12 Aug 2021",
         requestType: "Demat Request  ",
         stockbroker: "AFRI Invest",
+        assignedto: "Jenny Wilson",
         status: "Submitted",
       },
       {
@@ -26,6 +27,7 @@ const Overview = () => {
         date: "12 Sept 2021",
         requestType: "Correction of Name",
         stockbroker: "Century Securities",
+        assignedto: "Guy Hawkins",
         status: "Captured",
       },
       {
@@ -33,6 +35,7 @@ const Overview = () => {
         date: "12 Aug 2021",
         requestType: "Request for Outstanding Shares ",
         stockbroker: "Dominion Trust Limited",
+        assignedto: "Theresa Webb",
         status: "Verified, awaiting approval",
       },
       {
@@ -40,6 +43,7 @@ const Overview = () => {
         date: "12 Aug 2021",
         requestType: "Request for Outstanding Dividends ",
         stockbroker: "AFRI Invest",
+        assignedto: "Jerome Bell",
         status: "Submitted",
       },
     ],
@@ -63,6 +67,10 @@ const Overview = () => {
       {
         Header: "STOCKBROKER",
         accessor: "stockbroker",
+      },
+      {
+        Header: "ASSIGNED TO",
+        accessor: "assignedto",
       },
       {
         Header: "STATUS",
@@ -143,7 +151,7 @@ const Overview = () => {
       </div>
 
       <div className="view_more_payments">
-        <NavLink to="viewmore">View All Payment</NavLink>
+        <NavLink to="viewmore">View All Requests</NavLink>
       </div>
 
       <div style={{ marginTop: "2em" }} className="table">

@@ -225,11 +225,14 @@ const Requests = () => {
             <div className="d-flex cta-section">
               <button
                 className="primary-btn"
-                onClick={() => setShowApproval((prev) => !prev)}
+                // onClick={() => setShowApproval((prev) => !prev)}
               >
                 APPROVE
               </button>
-              <button className="danger-btn" onClick={() => setShowModal(true)}>
+              <button
+                className="danger-btn"
+                // onClick={() => setShowModal(true)}
+              >
                 REJECT
               </button>
             </div>
