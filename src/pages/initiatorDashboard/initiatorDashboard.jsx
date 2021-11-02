@@ -7,6 +7,11 @@ import Overview from "../../components/stockrequest/Overview";
 import "./initiatorDashboard.css";
 import Requests from "./requestTypes/Requests";
 import ForgotPassword from "../admin/ForgotPassword/ForgotPassword";
+import ReverseLodge from "./ReverseLodge";
+import Reports from "./Report";
+import ApprovedCallover from "./ApprovedCallover";
+import RejectedCallover from "./RejectedCallover";
+import RequestStart from "./requestTypes/RequestStart";
 
 const InitiatorDashboard = () => (
   <div className="secretary_dashboard">
@@ -17,7 +22,24 @@ const InitiatorDashboard = () => (
         <div className="dashboard_view2">
           <Switch>
             <Route path="/initiatorDashboard/overview" component={Overview} />
-            <Route path="/initiatorDashboard/requests" component={Requests} />
+            <Route
+              path="/initiatorDashboard/requests"
+              component={RequestStart}
+            />
+            <Route path="/initiatorDashboard/inrequest" component={Requests} />
+            <Route
+              path="/initiatorDashboard/reverselodg"
+              component={ReverseLodge}
+            />
+            <Route path="/initiatorDashboard/reports" component={Reports} />
+            <Route
+              path="/initiatorDashboard/rejectedcallover"
+              component={RejectedCallover}
+            />
+            <Route
+              path="/initiatorDashboard/approvedcallover"
+              component={ApprovedCallover}
+            />
             <Route path="/forgotpass" component={ForgotPassword} />
           </Switch>
         </div>

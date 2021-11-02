@@ -25,8 +25,8 @@ const EditRequest = () => (
       <div>
         {editRequirements.map((req) => (
           <div key={req} className="requirements">
-            <input type="radio" className="mr-2" />
-            <label>{req}</label>
+            <input type="radio" name="requirement" className="mr-2" />
+            <label style={{ paddingLeft: "16px" }}>{req}</label>
           </div>
         ))}
       </div>

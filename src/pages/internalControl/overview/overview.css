@@ -1,0 +1,11 @@
+.dashboard_header222{
+  display:flex;
+  justify-content: space-between;
+  flex:1;
+}
+
+.overview-cards{
+  display:flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}

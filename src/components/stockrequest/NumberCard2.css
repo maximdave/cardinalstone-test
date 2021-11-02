@@ -2,17 +2,33 @@
   .numbercard2 {
     background-color: red;
     color: #fff;
-    padding: 80px 40px 20px 20px;
     border-radius: 0.5em;
     height: 130px;
     width: 240px;
     display: flex;
+    padding:20px;
     justify-content: space-between;
   }
 
   .numbercard_text2 {
     font-weight: normal;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 22px;
+    
   }
+}
+.number-card-label > img {
+  width:15%;
+  margin-right: 5px;
+  justify-content: flex-end;
+}
+.number-card-label{
+  display: flex;
+  margin-top:30px;
+  margin-bottom: 10px;
+}
+.number-card-label > p{
+  margin-top: 10px;
+  padding-top:10px;
+  font-size: 30px;
 }

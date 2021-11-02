@@ -1,0 +1,31 @@
+.view-more{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1%;
+  margin-top:30px;
+}
+
+.verification_filters{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap:5%;
+  width:80%;
+  margin-right:20px;
+  margin-top:20px;
+}
+
+.filter-labels{
+  display:flex;
+  justify-content: space-between;
+  width:80%;
+  margin-top: 30px;
+}
+
+.verification_filter_select{
+  width:100%;
+}
+
+.reset-all{
+  text-decoration: none;
+}

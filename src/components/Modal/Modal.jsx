@@ -1,6 +1,7 @@
 import "./Modal.css";
 
 const Modal = (props) => {
+  const { show } = props;
   function cancelHandler() {
     props.onCancel();
   }
@@ -8,12 +9,13 @@ const Modal = (props) => {
     props.onConfirm();
   }
   return (
-    <div>
+    <div style={{ display: show ? "block" : "none" }}>
       <div className="card-div">
         <div className="modal-card">
-          <h1>Confirm Deactivation</h1>
+          {/* <h1>Confirm Deactivation</h1> */}
+          <h1>Confirm Rejection</h1>
           <hr />
-          <p>Do you want to deactivate the user?</p>
+          <p>Do you want to reject this request?</p>
           <div className="button-flex">
             <button className="yes" onClick={confirmHandler}>
               YES

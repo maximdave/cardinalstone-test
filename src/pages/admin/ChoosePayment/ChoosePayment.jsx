@@ -47,7 +47,7 @@ const ChoosePayment = () => {
           <Button
             className="choose-payment-btn"
             text="PAY NOW"
-            onClick={() => history.push("/admin-page")}
+            onClick={() => history.push("/indemnity-agreement")}
           />
         </form>
       </div>

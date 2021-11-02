@@ -30,7 +30,7 @@ const IndemnityAgreement = () => {
           <Button
             text="CONTINUE"
             className="btn13"
-            onClick={() => history.push("/")}
+            onClick={() => history.push("/stockbrokerDashboard/overview")}
           />
         </div>
       </div>

@@ -23,7 +23,7 @@ const NavItem = ({ linkPath, linkIcon, linkText }) => (
   >
     <div className="nav_items">
       <div className="nav_item_icon">
-        <img src={linkIcon} alt="" srcSet="" />
+        <img style={{ width: "20px" }} src={linkIcon} alt="" srcSet="" />
       </div>
 
       <p>{linkText}</p>

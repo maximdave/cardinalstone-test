@@ -12,7 +12,7 @@
   border-radius: 0.5em;
 }
 .nav_bar {
-  display: none;
+  display: flex;
   background: #002564;
 }
 

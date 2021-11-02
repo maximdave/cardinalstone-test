@@ -5,6 +5,9 @@ import { useTable } from "react-table";
 import { NavLink } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import NumberCard2 from "./NumberCard2";
+import unlikeIcon from "../../assets/like.svg";
+import likeIcon from "../../assets/unlike.svg";
+import total from "../../assets/total.svg";
 
 const Overview = () => {
   const data = useMemo(
@@ -76,20 +79,25 @@ const Overview = () => {
       </div>
       <div className="dashboard_header22">
         <NumberCard2
-          // onClick={() => history.push("/requestdashboard/requests")}
           text="Stockbrokers’ requests"
           number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
+          icon={total}
+          num={7}
         />
         <NumberCard2
-          text="Approved callovers"
+          text="Approved requests"
           number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
+          icon={likeIcon}
+          num={3}
         />
         <NumberCard2
-          text="Rejected callovers"
+          text="Rejected requests"
           number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
+          icon={unlikeIcon}
+          num={4}
         />
       </div>
 
@@ -101,7 +109,7 @@ const Overview = () => {
       </div>
 
       <div className="view_more_payments">
-        <NavLink to="viewmore">View All Payment</NavLink>
+        <NavLink to="viewmore">View All Requests</NavLink>
       </div>
 
       <div style={{ marginTop: "2em" }} className="table">
