@@ -96,7 +96,7 @@ const Overview = () => {
           icon={total}
           num={3}
         />
-        <NumberCard2
+        {/* <NumberCard2
           text="Approved callovers"
           number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
@@ -109,7 +109,7 @@ const Overview = () => {
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
           icon={unlikeIcon}
           num={3}
-        />
+        /> */}
       </div>
       <h3>Task Summary</h3>
       <div className="overview-cards">

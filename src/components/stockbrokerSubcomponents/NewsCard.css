@@ -1,20 +1,20 @@
 .newscard {
-   display: flex;
-margin: 1em auto;
-   justify-content: space-between;
-   align-items: center;
-   width: 100%;
+  display: flex;
+  margin: 1em auto;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .newscard_text {
-   margin-left: 1.5em;
+  margin-left: 1.5em;
+  margin-top: 0.6em;
 }
 .newscard_text h4 {
-   font-size: 0.9rem;
-   font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 .newscard_text h4,
 .newscard_text p {
-   margin: 0;
-
+  margin: 0;
 }

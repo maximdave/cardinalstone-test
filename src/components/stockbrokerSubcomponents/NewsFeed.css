@@ -16,6 +16,8 @@
 .newscards {
   background: #f7f7f7;
   padding: 1em;
+  height: 70vh;
+  overflow: scroll;
 }
 
 .newscard + .newscard {

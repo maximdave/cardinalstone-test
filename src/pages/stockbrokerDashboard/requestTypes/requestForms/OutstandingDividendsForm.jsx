@@ -1,8 +1,11 @@
+import React from "react";
 import { useHistory } from "react-router-dom";
 
 import "../Requests.css";
 // eslint-disable-next-line import/prefer-default-export
-export const OutstandingDividendsForm = () => {
+export const OutstandingDividendsForm = (props) => {
+  const fileRef = React.useRef(null);
+
   const history = useHistory();
 
   return (
@@ -19,7 +22,12 @@ export const OutstandingDividendsForm = () => {
         </ul>
       </div>
       <div className="file-input">
-        <input type="file" />
+        <input
+          type="file"
+          ref={fileRef}
+          multiple
+          onChange={props?.setRequestFiles}
+        />
         <span className="button">SELECT</span>
         <span className="label" data-js-label>
           png, jpeg (=300KB)
@@ -27,7 +35,11 @@ export const OutstandingDividendsForm = () => {
       </div>
 
       <div className="btn-container">
-        <button style={{ marginTop: "40px" }} className="btn-container2">
+        <button
+          style={{ marginTop: "40px" }}
+          className="btn-container2"
+          onClick={props?.onClick}
+        >
           SUBMIT REQUEST
         </button>
       </div>
@@ -42,10 +54,11 @@ export const OutstandingDividendsForm = () => {
     </div>
   );
 };
+export const OutstandingDividendsTitle = <h3>Outstanding Dividends</h3>;
 
 export const OutstandingDividendsHeader = (
   <div>
-    <h3>Outstanding Dividends</h3>
+    {OutstandingDividendsTitle}
     <p>To complete this request, please upload the required documents below</p>
   </div>
 );

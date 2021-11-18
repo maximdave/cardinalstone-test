@@ -1,9 +1,10 @@
 .gainerscard {
   margin-top: 2em;
-  width: 48%;
+  /* width: 48%; */
   border-radius: 1em;
   border: 1px solid #d8d8d8;
   /* height: 500px; */
+  flex: 0.49;
 }
 
 .gainerscard_header {

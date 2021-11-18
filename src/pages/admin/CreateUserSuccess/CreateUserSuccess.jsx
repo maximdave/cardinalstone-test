@@ -26,7 +26,7 @@ const CreateUserSuccess = () => {
             text="GO TO DASHBOARD"
             type="secondary"
             className="btn2"
-            onClick={() => history.push("/admin-page")}
+            onClick={() => history.push("/adminDashboard")}
           />
         </div>
       </div>

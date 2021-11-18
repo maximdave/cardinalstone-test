@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import Logo from "../../../assets/CSRL Logo 1.png";
 import Note from "../../../assets/contact-form-svgrepo-com 1.png";
 import Button from "../../../components/Button/Button";
 import TextField from "../../../components/TextField/TextField";
+import GlobalContext from "../../../contexts/Authentication/GlobalContext";
+
 import "./CreateSockbroker.css";
 
 const CreateSockbroker = () => {
   const history = useHistory();
-  const createUser = () => {
-    history.push("/create-user-success");
-  };
+  // const createUser = () => {
+  //   history.push("/create-user-success");
+  // };
+  const {
+    setcomapanyName,
+    companyName,
+    setPassword,
+    password,
+    email,
+    setEmail,
+    phoneNumber,
+    setPhone,
+    error,
+    handleCreateStockbroker,
+  } = useContext(GlobalContext);
   return (
     <div className="create-stockerbroker-page">
       <div className="create-stockerbroker-card">
@@ -22,18 +36,24 @@ const CreateSockbroker = () => {
 
         <form
           className="create-stockerbroker-form m-auto"
-          onSubmit={createUser}
+          onSubmit={handleCreateStockbroker}
         >
+          {error && <span>{error}</span>}
+
           <div className="d-flex justify-content-space-around">
             <TextField
               className="create-stockerbroker-input"
               label="Name of Company"
               placeholder="Name of Company"
+              onChange={(e) => setcomapanyName(e.target.value)}
+              value={companyName}
             />
             <TextField
               className=" create-stockerbroker-input"
               label="Company Email Address"
               placeholder="Company Email Address"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
             />
           </div>
           <div className=" d-flex mt-3">
@@ -41,6 +61,8 @@ const CreateSockbroker = () => {
               className="create-stockerbroker-input"
               label="Phone Number"
               placeholder="Phone Number"
+              onChange={(e) => setPhone(e.target.value)}
+              value={phoneNumber}
             />
             <TextField
               className="create-stockerbroker-input"
@@ -53,6 +75,8 @@ const CreateSockbroker = () => {
               className="create-stockerbroker-input"
               label="Create password for user"
               placeholder="Enter Password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
             />
             <TextField
               className="create-stockerbroker-input"

@@ -1,20 +1,30 @@
+import React from "react";
 import "../Requests.css";
 // eslint-disable-next-line import/prefer-default-export
-export const OtherRelevantRequestForm = (
-  <div className="left">
-    <hr className="horizontal-line" />
+export const OtherRelevantRequestForm = (props) => {
+  // const fileRef = React.useRef(null);
 
-    <div className="text-area">
-      <textarea placeholder="Type the request here..." rows="400" cols="500" />
+  return (
+    <div className="left">
+      <hr className="horizontal-line" />
+
+      <div className="text-area">
+        <textarea
+          placeholder="Type the request here..."
+          rows="400"
+          cols="500"
+        />
+      </div>
+
+      <button onClick={props?.onClick}>SUBMIT REQUEST</button>
     </div>
+  );
+};
 
-    <button>SUBMIT REQUEST</button>
-  </div>
-);
-
+export const OtherRelevantRequestTitle = <h3>Other Relevant Request</h3>;
 export const OtherRelevantRequestHeader = (
   <div>
-    <h3>Other Relevant Request</h3>
+    {OtherRelevantRequestTitle}
     <p>Kindly specify the request</p>
   </div>
 );

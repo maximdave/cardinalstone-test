@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AdminLogin from "./pages/admin/AdminLogin/AdminLogin";
 import AdminPage from "./pages/admin/AdminPage/AdminPage";
 import CreateUser from "./pages/admin/CreateUser/CreateUser";
@@ -22,39 +22,68 @@ import InitiatorDashboard from "./pages/initiatorDashboard/initiatorDashboard";
 import VerificationDashboard from "./pages/verificationUnit/verificationUnitDashboard";
 import StockbrokerDashboard from "./pages/stockbrokerDashboard/StockbrokerDashboard";
 import InternalControlDashboard from "./pages/internalControl/internalControl";
+import { GlobalContextProvider } from "./contexts/Authentication/GlobalContext";
+import { UserCreationContextProvider } from "./contexts/Authentication/UserCreationContext";
 
 function App() {
   return (
     // eslint-disable-next-line react/jsx-filename-extension
-    <div className="App">
-      <Switch>
-        <Route exact path="/" component={AdminLogin} />
-        <Route path="/admin-page" component={AdminPage} />
-        <Route path="/create-user" component={CreateUser} />
-        <Route path="/create-user-success" component={CreateUserSuccess} />
-        <Route path="/manage-users" component={ManageUsers} />
-        <Route path="/edit-request" component={EditRequest} />
-        <Route path="/create-stockbroker" component={CreateSockbroker} />
-        <Route path="/update-requirement" component={UpdateRequirement} />
-        <Route path="/stockbroker-login" component={StockbrokerLogin} />
-        <Route path="/change-password" component={ChangePassword} />
-        <Route path="/forgot-password" component={ForgotPassword} />
-        <Route path="/create-password" component={CreateNewPassword} />
-        <Route path="/create-password" component={CreateNewPassword} />
-        <Route
-          path="/create-password-success"
-          component={CreateNewPasswordSuccess}
-        />
-        <Route path="/subscription" component={Subscription} />
-        <Route path="/choose-payment" component={ChoosePayment} />
-        <Route path="/requests/request-payment" component={RequestPayment} />
-        <Route path="/indemnity-agreement" component={IndemnityAgreement} />
-        <Route path="/stockbrokerDashboard" component={StockbrokerDashboard} />
-        <Route path="/initiatorDashboard" component={InitiatorDashboard} />
-        <Route path="/verification" component={VerificationDashboard} />
-        <Route path="/internalcontrol" component={InternalControlDashboard} />
-      </Switch>
-    </div>
+    <Router>
+      <div className="App">
+        <GlobalContextProvider>
+          <UserCreationContextProvider>
+            <Switch>
+              <Route exact path="/" component={AdminLogin} />
+              <Route path="/adminDashboard" component={AdminPage} />
+              <Route path="/create-user" component={CreateUser} />
+              <Route
+                path="/create-user-success"
+                component={CreateUserSuccess}
+              />
+              <Route path="/manage-users" component={ManageUsers} />
+              <Route path="/edit-request" component={EditRequest} />
+              <Route path="/create-stockbroker" component={CreateSockbroker} />
+              <Route
+                path="/update-requirement"
+                component={UpdateRequirement}
+              />{" "}
+            </Switch>
+          </UserCreationContextProvider>
+
+          <Switch>
+            <Route path="/stockbroker-login" component={StockbrokerLogin} />
+            <Route path="/change-password" component={ChangePassword} />
+            <Route path="/forgot-password" component={ForgotPassword} />
+            <Route path="/create-password" component={CreateNewPassword} />
+            <Route path="/create-password" component={CreateNewPassword} />
+            <Route
+              path="/create-password-success"
+              component={CreateNewPasswordSuccess}
+            />
+            <Route path="/subscription" component={Subscription} />
+            <Route path="/choose-payment" component={ChoosePayment} />
+            <Route
+              path="/requests/request-payment"
+              component={RequestPayment}
+            />
+            <Route path="/indemnity-agreement" component={IndemnityAgreement} />
+            <Route
+              path="/stockbrokerDashboard"
+              component={StockbrokerDashboard}
+            />
+            <Route path="/initiatorDashboard" component={InitiatorDashboard} />
+            <Route
+              path="/verificationDashboard"
+              component={VerificationDashboard}
+            />
+            <Route
+              path="/internalcontrol"
+              component={InternalControlDashboard}
+            />
+          </Switch>
+        </GlobalContextProvider>
+      </div>
+    </Router>
   );
 }
 

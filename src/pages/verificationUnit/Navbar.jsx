@@ -7,8 +7,8 @@ import reportsIcon from "../../assets/reports.png";
 import cardinalwhiteblack from "../../assets/cardinalwhiteblack.svg";
 
 import StockrequestIconIcon from "../../assets/svg/stockrequest.svg";
-import ApprovecallIcon from "../../assets/svg/approvecall.svg";
-import RejectcallIcon from "../../assets/svg/rejectcall.svg";
+// import ApprovecallIcon from "../../assets/svg/approvecall.svg";
+// import RejectcallIcon from "../../assets/svg/rejectcall.svg";
 import ReverseLogIcon from "../../assets/svg/reverselode.svg";
 
 const navItems = [
@@ -22,16 +22,16 @@ const navItems = [
     linkIcon: StockrequestIconIcon,
     linkText: "Stockbroker's Request",
   },
-  {
-    linkPath: "/verification/approvedcallover",
-    linkIcon: ApprovecallIcon,
-    linkText: "Approved Callover",
-  },
-  {
-    linkPath: "/verification/rejectedcallover",
-    linkIcon: RejectcallIcon,
-    linkText: "Rejected Callover",
-  },
+  // {
+  //   linkPath: "/verification/approvedcallover",
+  //   linkIcon: ApprovecallIcon,
+  //   linkText: "Approved Callover",
+  // },
+  // {
+  //   linkPath: "/verification/rejectedcallover",
+  //   linkIcon: RejectcallIcon,
+  //   linkText: "Rejected Callover",
+  // },
   {
     linkPath: "/verification/reverselodg",
     linkIcon: ReverseLogIcon,
