@@ -8,6 +8,7 @@ export const GlobalContextProvider = ({ children }) => {
   const history = useHistory();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [fullName, setFullName] = useState("");
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -17,6 +18,12 @@ export const GlobalContextProvider = ({ children }) => {
   const [companyName, setcomapanyName] = useState("");
   const [phoneNumber, setPhone] = useState("");
   const [role, setRole] = useState("");
+  const [inRequest, setinRequest] = useState({});
+
+  const handleInRequest = async (item) => {
+    setinRequest(item);
+    // history.push("/initiatorDashboard/inrequest");
+  };
 
   // eslint-disable-next-line consistent-return
   const handleSubmit = async (e) => {
@@ -62,20 +69,56 @@ export const GlobalContextProvider = ({ children }) => {
   const handleCreateStockbroker = async (e) => {
     e.preventDefault();
 
-    const config = {
-      header: {
-        "Content-type": "application/json",
-      },
-    };
-
     try {
+      const Token = localStorage.getItem("authToken");
+      const config = {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      };
       const { data } = await axios.post(
         "http://localhost:5000/sbp/createStockbrokers",
         {
+          firstName: fullName.split(" ")[0],
+          lastName: fullName.split(" ")[1],
+          userName,
           email,
           password,
           phoneNumber,
           companyName,
+        },
+        config
+      );
+      console.log("data:::::", data);
+      history.push(`/create-user-success`);
+    } catch (err) {
+      setError(err.response.data.error);
+      setTimeout(() => {
+        setError("");
+      }, 5000);
+    }
+  };
+
+  const handleCreateOtherUsers = async (e) => {
+    e.preventDefault();
+
+    try {
+      const Token = localStorage.getItem("authToken");
+      const config = {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      };
+      const { data } = await axios.post(
+        "http://localhost:5000/sbp/createotheruser",
+        {
+          firstName: fullName.split(" ")[0],
+          lastName: fullName.split(" ")[1],
+          userName,
+          email,
+          password,
+          phoneNumber,
+          role,
         },
         config
       );
@@ -108,11 +151,51 @@ export const GlobalContextProvider = ({ children }) => {
         config
       );
       console.log("data:::::", data);
+      console.log("ROLE:::::", data.user.existingUser.role);
       localStorage.setItem("authToken", data.token);
-      localStorage.setItem("currentUser", data.user.userName);
+      localStorage.setItem("currentUserName", data.user.userInfo.userName);
+      localStorage.setItem("currentFirstName", data.user.userInfo.firstName);
+      localStorage.setItem("currentLastName", data.user.userInfo.lastName);
+      localStorage.setItem("currenUser", JSON.stringify(data.user.userInfo));
 
       setUser(data.user);
-      history.push(`/${data.user.role}dashboard`);
+      history.push(`/${data.user.userInfo.role}dashboard/overview`);
+    } catch (err) {
+      setError(err.response.data.error);
+      setTimeout(() => {
+        setError("");
+      }, 5000);
+    }
+  };
+
+  const handleLoginAdmin = async (e) => {
+    e.preventDefault();
+
+    const config = {
+      header: {
+        "Content-type": "application/json",
+      },
+    };
+
+    try {
+      const { data } = await axios.post(
+        "http://localhost:5000/user/loginadmin",
+        {
+          userName,
+          password,
+        },
+        config
+      );
+      console.log("data:::::", data);
+      console.log("ROLE:::::", data.role);
+      localStorage.setItem("authToken", data.token);
+      localStorage.setItem("currentUserName", data.userName);
+      localStorage.setItem("currentFirstName", data.fullName.split(" ")[0]);
+      localStorage.setItem("currentLastName", data.fullName.split(" ")[1]);
+      localStorage.setItem("currenUser", JSON.stringify(data));
+
+      setUser(data.user);
+      history.push(`/${data.role}dashboard/overview`);
     } catch (err) {
       setError(err.response.data.error);
       setTimeout(() => {
@@ -127,7 +210,10 @@ export const GlobalContextProvider = ({ children }) => {
     setFirstName,
     setLastName,
     setUserName,
+    userName,
     setEmail,
+    fullName,
+    setFullName,
     email,
     setPassword,
     password,
@@ -137,7 +223,12 @@ export const GlobalContextProvider = ({ children }) => {
     setcomapanyName,
     setPhone,
     setRole,
+    role,
     handleCreateStockbroker,
+    handleCreateOtherUsers,
+    handleLoginAdmin,
+    handleInRequest,
+    inRequest,
   };
 
   return (

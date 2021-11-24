@@ -1,13 +1,19 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import React, { useState } from "react";
-import Select from "react-select";
+import React, { useState, useEffect, useContext } from "react";
+import axios from "axios";
+// import Select from "react-select";
 import MuiModal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
+import { Select } from "@mui/material";
+import MenuItem from "@mui/material/MenuItem";
+
 import Modal from "../../../components/Modal/Modal";
 // import Modal from "../Modal/Modal";
 import papers from "../../../assets/paper-stack.svg";
 import requestDocs from "../../../assets/request_document.png";
 import "./Requests.css";
+import { getAllHolderCertTotal } from "../../../components/coreApllicationAPI";
+import GlobalContext from "../../../contexts/Authentication/GlobalContext";
 
 const Requests = () => {
   const [approval, setShowApproval] = useState(false);
@@ -16,136 +22,7 @@ const Requests = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  // Transmission documents required;
-  // see attached requirements
-  // No specimen signature.Please engage your stockbroker and process share transfer form through CSCS
-  // Medical report required
-  // Name differs;
-  // please engage your stockbroker
-  // Name differs on Banker 's Confirmation; please engage your stockbroker
-  // Name in CSCS differs from name on certificate;
-  // please engage your stockbroker
-  // Open a new CSCS account;
-  // please engage your stockbroker
-  // Signature Irregular.Please engage your stockbroker to process share transfer form through CSCS
-  // Second signatory is required to sign
-  // Second signatory is not on our records
-  // Second / third authorized signature irregular.Please engage your stockbroker and process share transfer form through CSCS
-  // Shareholder’ s valid means of identification is required
-  // Sworn affidavit is required
-  // Specify any other reason
-  const rejectOptions = [
-    {
-      label: "Alleged Deceased",
-      value: "Alleged Deceased",
-    },
-    {
-      label: "Shares had previously been lodged in CSCS Plc",
-      value: "Shares had previously been lodged in CSCS Plc",
-    },
-    {
-      label: "Administrator / Executor 's attention required",
-      value: "Administrator / Executor 's attention required",
-    },
-    {
-      label: "Caution due to AMCON 's behest",
-      value: "Caution due to AMCON 's behest",
-    },
 
-    {
-      label: "Broker's attention required",
-      value: "Broker's attention required",
-    },
-    {
-      label: "Banker's confirmation required; please engage your stockbroker",
-      value: "Banker's confirmation required; please engage your stockbroker",
-    },
-    {
-      label: "Banker's confirmation letter yet to be re-confirmed",
-      value: "Banker's confirmation letter yet to be re-confirmed",
-    },
-    {
-      label: "Broker's Indemnity required; please engage your stockbroker",
-      value: "Broker's Indemnity required; please engage your stockbroker",
-    },
-    {
-      label:
-        "Banker's confirmation letter not valid; please engage your stockbroker",
-      value:
-        "Banker's confirmation letter not valid; please engage your stockbroker",
-    },
-    {
-      label: "Board Resolution and Signature Mandate required",
-      value: "Board Resolution and Signature Mandate required",
-    },
-    {
-      label: "Broker's signature omitted ",
-      value: "Broker's signature omitted ",
-    },
-    {
-      label: "Broker's seal is required on Section B of the full demat form",
-      value: "Broker's seal is required on Section B of the full demat form",
-    },
-
-    {
-      label: "Broker's seal is required on Section B of the full demat form",
-      value: "Broker's seal is required on Section B of the full demat form",
-    },
-    {
-      label: "Copy of Child’ s birth certificate required",
-      value: "Copy of Child’ s birth certificate required",
-    },
-    {
-      label: "CSCS Statement required",
-      value: "CSCS Statement required",
-    },
-    {
-      label: "Company seal required on Board Resolution",
-      value: "Company seal required on Board Resolution",
-    },
-    {
-      label: "Signature differs",
-      value: "Signature differs",
-    },
-    {
-      label: "shareholder’ s attention required or engage your stockbroker",
-      value: "shareholder’ s attention required or engage your stockbroker",
-    },
-  ];
-  const options = [
-    {
-      label: "Wade Warren",
-      value: "Wade Warren",
-    },
-    {
-      label: "Esther Howard",
-      value: "Esther Howard",
-    },
-    {
-      label: "Cameron Williamson",
-      value: "Cameron Williamson",
-    },
-    {
-      label: "Brooklyn Simmons",
-      value: "Brooklyn Simmons",
-    },
-    {
-      label: "Leslie Alexander",
-      value: "Leslie Alexander",
-    },
-    {
-      label: "Guy Hawkins",
-      value: "Guy Hawkins",
-    },
-    {
-      label: "Theresa Webb",
-      value: "Theresa Webb",
-    },
-    {
-      label: "Kathryn Murphy",
-      value: "Kathryn Murphy",
-    },
-  ];
   const onConfirm = () => {
     setRejectOption((prev) => !prev);
     setShowModal(false);
@@ -153,6 +30,131 @@ const Requests = () => {
   const onCancel = () => {
     setShowModal(false);
   };
+
+  const [id, setId] = useState("");
+  const [setError] = useState("");
+
+  const handleRejectRequest = async (e) => {
+    e.preventDefault();
+
+    try {
+      const Token = localStorage.getItem("authToken");
+      const config = {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      };
+      const { data } = await axios.put(
+        "http://localhost:5000/sbp/rejectrequest",
+        {
+          id: inRequest.id,
+          rejectReason: age,
+          assignedTo: age1,
+        },
+        config
+      );
+      console.log("data:::::", data);
+    } catch (err) {
+      // setError(err.response.data.error);
+      // setTimeout(() => {
+      //   setError("");
+      // }, 5000);
+    }
+  };
+
+  const handleApproveRequest = async (e) => {
+    e.preventDefault();
+
+    try {
+      const Token = localStorage.getItem("authToken");
+      const config = {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      };
+      const { data } = await axios.put(
+        "http://localhost:5000/sbp/apppproverequest",
+        {
+          id: inRequest.id,
+        },
+        config
+      );
+      console.log("data:::::", data);
+    } catch (err) {
+      // setError(err.response.data.error);
+      // setTimeout(() => {
+      //   setError("");
+      // }, 5000);
+    }
+  };
+
+  const [certTotal, setCertTotal] = useState(0);
+  const [reason, setReason] = useState([]);
+  const [verificationuser, setverificationuser] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const custId = 1196;
+        // setCertTotalLoading(true);
+        const result = await getAllHolderCertTotal(custId);
+        setCertTotal(result);
+        console.log("result:::;::::", result);
+        // setCertTotalLoading(false);
+      } catch (error) {
+        // setCertTotalError(true);
+        // setCertTotalLoading(false);
+      }
+    })();
+
+    (async () => {
+      try {
+        // setCertTotalLoading(true);
+        // console.log("dataREASON:::;::::");
+        const { data } = await axios.get("http://localhost:5000/sbp/getreason");
+        setReason(data.data);
+        console.log("dataREASON:::;::::", data);
+        // setCertTotalLoading(false);
+      } catch (error) {
+        // setCertTotalError(true);
+        // setCertTotalLoading(false);
+      }
+    })();
+
+    (async () => {
+      try {
+        // setCertTotalLoading(true);
+        // console.log("dataREASON:::;::::");
+        const { data } = await axios.get(
+          "http://localhost:5000/user/getverification"
+        );
+        setverificationuser(data);
+        console.log("dataVERIFICATON:::;::::", data);
+        // setCertTotalLoading(false);
+      } catch (error) {
+        // setCertTotalError(true);
+        // setCertTotalLoading(false);
+      }
+    })();
+  }, []);
+
+  console.log("RealREASON>>>>>>>>>>>s", reason);
+
+  const [age, setAge] = React.useState("");
+  const [age1, setAge1] = React.useState("");
+
+  const handleChange1 = (event) => {
+    setAge1(event.target.value);
+  };
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
+  const { inRequest } = useContext(GlobalContext);
+
+  console.log("inRequest>>>>:::::", inRequest);
+
   return (
     <div className="dashboard_view">
       <Modal show={showModal} onConfirm={onConfirm} onCancel={onCancel} />
@@ -181,11 +183,17 @@ const Requests = () => {
       <div className="dashboard_head2">
         <div className="stock_broker_request_header">
           <div className="header_text">
-            <p>Correction of Name Request</p>
+            <p>{inRequest.requestType}</p>
           </div>
           <div className="share-holder-amount">
             <p style={{ color: "#528DC2" }}>SHAREHOLDER’S HOLDING:</p>
-            <p style={{ fontSize: "24px", marginTop: "2px" }}>1,000,000</p>
+            {/* <p style={{ fontSize: "24px", marginTop: "2px" }}>1,000,000</p> */}
+            <p style={{ fontSize: "24px", marginTop: "2px" }}>
+              {Number.isInteger(certTotal) &&
+                String(certTotal).replace(/\d(?=(\d{3})+\.)/g, "$&,")}
+              {!Number.isInteger(certTotal) &&
+                certTotal.toFixed(4).replace(/\d(?=(\d{3})+\.)/g, "$&,")}
+            </p>
           </div>
           <div className="request-status">
             <p style={{ color: "#528DC2" }}>STATUS:</p>
@@ -202,15 +210,15 @@ const Requests = () => {
               </tr>
               <tr>
                 <td>NAME:</td>
-                <td>Mr Taofeek Alabi</td>
+                <td>{inRequest.shareholderName}</td>
               </tr>
               <tr>
                 <td>DATE SUBMITTED:</td>
-                <td>08 Jul 2021</td>
+                <td>{inRequest.updatedAt}</td>
               </tr>
               <tr>
                 <td>STOCKBROKER:</td>
-                <td>Century Securities</td>
+                <td>{inRequest.stockbrokerName}</td>
               </tr>
             </table>
           </div>
@@ -222,7 +230,7 @@ const Requests = () => {
               <div>
                 <table>
                   <tr>
-                    <td>Request letter</td>
+                    {/* <td>Request letter</td> */}
                     <td>
                       <img src={papers} alt="" />
                     </td>
@@ -233,41 +241,6 @@ const Requests = () => {
                     </td>
                     <td>
                       <button className="primary-btn">DOWNLOAD</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Sworn Affidavit from the High Court with an affixed
-                      coloured passport photograph duly authenticated by the
-                      Court
-                    </td>
-                    <td>
-                      <img src={papers} alt="" />
-                    </td>
-                    <td>
-                      <button className="primary-btn" onClick={handleOpen}>
-                        VIEW
-                      </button>
-                    </td>
-                    <td>
-                      <button className="primary-btn">DOWNLOAD</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Means of Identification i.e National ID Card, Driver’s
-                      License, International Passport or Permanent Voter’s Card
-                    </td>
-                    <td>
-                      <img src={papers} alt="" />
-                    </td>
-                    <td>
-                      <button className="primary-btn" onClick={handleOpen}>
-                        VIEW
-                      </button>
-                    </td>
-                    <td>
-                      <button className="primary-btn my-2">DOWNLOAD</button>
                     </td>
                   </tr>
                 </table>
@@ -301,10 +274,16 @@ const Requests = () => {
             <div className="d-flex">
               <Select
                 className="react-select-request"
-                classNamePrefix=""
-                name="color"
-                options={options}
-              />
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={age1}
+                label="Age"
+                onChange={handleChange1}
+              >
+                {verificationuser.map((item) => (
+                  <MenuItem value={item.userName}>{item.userName}</MenuItem>
+                ))}
+              </Select>
               <button className="primary-btn">Assign</button>
             </div>
           </div>
@@ -313,11 +292,22 @@ const Requests = () => {
               <p className="request_topic">Reason For Rejection</p>
               <Select
                 className="react-select-request"
-                classNamePrefix=""
-                name="color"
-                options={rejectOptions}
-              />
-              <button className="primary-btn mt-5">SUBMIT REASON</button>
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={age}
+                label="Age"
+                onChange={handleChange}
+              >
+                {reason.map((item) => (
+                  <MenuItem value={item.reason}>{item.reason}</MenuItem>
+                ))}
+              </Select>
+              <button
+                className="primary-btn mt-5"
+                onClick={handleRejectRequest}
+              >
+                SUBMIT REASON
+              </button>
             </div>
           )}
         </div>

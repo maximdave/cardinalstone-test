@@ -10,20 +10,24 @@ const iconColor = "#9FA2B4";
 const iconSize = "2em";
 
 const NameBar = ({ name, title }) => {
-  const currentUser = localStorage.getItem("currentUser");
-  console.log("curreentUser:::::", currentUser);
+  const currentFirstName = localStorage.getItem("currentFirstName");
+  const currentUserName = localStorage.getItem("currentUserName");
+  const currentLastName = localStorage.getItem("currentLastName");
+  console.log("curreentUser:::::", currentUserName);
   return (
     <div className="namebar">
       <p className="helloo">
         <span>Welcome </span>
-        {currentUser}
+        {currentUserName}
       </p>
       <SearchIcon style={{ color: iconColor, fontSize: iconSize }} />
       <NotificationsIcon
         style={{ marginLeft: ".6em", color: iconColor, fontSize: iconSize }}
       />
       <div className="profile">
-        <p className="namebar_name">{title}</p>
+        <p className="namebar_name">
+          {currentFirstName} {currentLastName}
+        </p>
         <Avatar
           sx={{ width: 50, height: 50 }}
           style={{ border: "1px solid red", marginLeft: "20px" }}

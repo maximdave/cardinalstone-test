@@ -68,21 +68,23 @@ import {
   CorrectionOfNameHeader,
   CorrectionOfNameTitle,
 } from "./requestForms/CorrectionOfNameForm";
+import {
+  getAllHolderCertTotal,
+  getAllHolderKYC,
+} from "../../../components/coreApllicationAPI";
 
 const Requests = () => {
   // const [image1, setImage1] = useState();
 
-  const onClick = () => {
-    console.log("I was clicked");
-    createRequest();
-  };
+  const [shName, setshName] = useState("");
+
   const [header, setHeader] = useState(<div>{DematHeader}</div>);
   const [title, setTitle] = useState(<div>{DematTitle} </div>);
   const [requestFiles, setRequestFiles] = useState([]);
   const files = React.useRef([]);
   const [form1, setForm1] = useState(
     <DematRequestForm
-      onClick={onClick}
+      onClick={(e) => onClick(e)}
       setRequestFiles={(e) => {
         files.current = e.target.files;
       }}
@@ -92,50 +94,119 @@ const Requests = () => {
   // console.log("Tiltile:::::", title);
   const [shareholderCHN, setShareholderCHN] = useState("");
   const [shareholderName, setShareholderName] = useState("");
+  const [setError] = useState("");
+
   //
   const createRequest = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
 
-    const config = {
-      header: {
-        "Content-type": "application/json",
-      },
-    };
+    // const config = {
+    //   header: {
+    //     "Content-type": "application/json",
+    //   },
+    // };
+
+    console.log("sarehholder>>>>>>", shName);
+    console.log("shareholderCHN>>>>>>", shareholderCHN);
     try {
+      const Token = localStorage.getItem("authToken");
+      const config = {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      };
+      const dddd = await shName;
       const formData = new FormData();
-      formData.append("shareholderCHN", shareholderCHN);
-      formData.append("shareholderName", shareholderName);
+      console.log("tilte::::", title);
+      console.log("congif::::", config);
       console.log(files.current);
       for (let i = 0; i < files.current.length; i++) {
         formData.append("requestFiles", files.current[i]);
       }
       formData.append("requestType", title);
+      formData.append("shareholderCHN", shareholderCHN);
+      formData.append("shareholderName", shName);
+
+      console.log("sarehholder>>>>>>", shName);
+      console.log("shareholderCHN>>>>>>", shareholderCHN);
+
+      console.log(formData.get("shareholderCHN"));
       const { data } = await axios.post(
         `http://localhost:5000/sbp/createrequest`,
         formData,
-        config
+        {
+          headers: {
+            Authorization: `Bearer ${Token}`,
+          },
+        }
       );
       console.log("data:::::", data);
     } catch (error) {
       console.log(error);
     }
   };
+  const [id, setId] = useState("");
+
+  useEffect(() => {
+    if (!shName) {
+      (async () => {
+        try {
+          const custId = shareholderCHN;
+          const result = await getAllHolderKYC(custId);
+          setshName(result[0].LastName);
+          console.log("resultSTOCK:::;::::@@@", shName);
+
+          // setCertTotalLoading(true);
+          // const result = await getAllHolderKYC(shareholderCHN);
+          // setshName(result[0].LastName);
+          // setCertTotalLoading(false);
+        } catch (error) {
+          console.log(error);
+          // setCertTotalError(true);
+          // setCertTotalLoading(false);
+        }
+      })();
+    }
+  }, [shareholderCHN]);
+  const onClick = (e) => {
+    e.preventDefault();
+    console.log("I was clicked");
+    createRequest(e);
+    console.log("sarehholder>>>>>>", shName);
+    console.log("shareholderCHN>>>>>>", shareholderCHN);
+  };
+  console.log("shareholderCHN::::::>>>>", shareholderCHN);
+  console.log("shName::::::>>>>", shName);
   return (
     <div className="request-card">
       <div className="card-head">
         {header}
         <input
-          type="text"
-          placeholder="Shareholder’s fullname"
-          onChange={(e) => setShareholderName(e.target.value)}
-          value={shareholderName}
-        />
-        <input
-          type="text"
+          style={{ marginRight: "10px" }}
+          type="number"
           placeholder="Input Shareholder’s CHN"
           onChange={(e) => setShareholderCHN(e.target.value)}
           value={shareholderCHN}
         />
+        {/* <input
+          style={{ marginRight: "10px" }}
+          type="text"
+          placeholder="Shareholder’s fullname"
+          onChange={(e) => {
+            setShareholderName(e.target.value);
+            console.log(shareholderName);
+          }}
+          value={shareholderName}
+        /> */}
+        <p>
+          <b>{shName}</b>
+        </p>
+        {/* <input
+          type="text"
+          placeholder="Shareholder’s Holdings"
+          onChange={(e) => setShareholderCHN(e.target.value)}
+          value={shareholderCHN}
+        /> */}
       </div>
       <div className="card-content">
         {form1}
@@ -149,11 +220,12 @@ const Requests = () => {
               setForm1(
                 <DematRequestForm
                   onClick={onClick}
-                  setRequestFiles={(e) => setRequestFiles(e.target.files)}
+                  // setRequestFiles={(e) => setRequestFiles(e.target.files)}
                 />
               );
               setHeader(DematHeader);
               setTitle(<div>{DematTitle} </div>);
+              // setTitle("Demat Title");
             }}
           >
             Demat Request

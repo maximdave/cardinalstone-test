@@ -9,8 +9,14 @@ import GlobalContext from "../../../contexts/Authentication/GlobalContext";
 const AdminLogin = () => {
   const history = useHistory();
 
-  const { setUserName, userName, setPassword, password, handleLogin, error } =
-    useContext(GlobalContext);
+  const {
+    setUserName,
+    userName,
+    setPassword,
+    password,
+    handleLoginAdmin,
+    error,
+  } = useContext(GlobalContext);
   return (
     <div className="admin-login-page">
       <div className="admin-login-card">
@@ -20,7 +26,7 @@ const AdminLogin = () => {
           <p>Admin Login</p>
         </div>
 
-        <form onSubmit={handleLogin} className="admin-login-form m-auto">
+        <form onSubmit={handleLoginAdmin} className="admin-login-form m-auto">
           {error && <span>{error}</span>}
 
           <TextField

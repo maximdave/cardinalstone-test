@@ -5,7 +5,6 @@ import PriceUpdate from "../../stockbrokerSubcomponents/PriceUpdate";
 import GainersCard from "../../stockbrokerSubcomponents/GainersCard";
 import NewsFeed from "../../stockbrokerSubcomponents/NewsFeed";
 import chartdash from "../../../assets/chartdash.svg";
-import UpcomingEvents from "../../stockbrokerSubcomponents/UpcomingEvents";
 
 const Overview = () => {
   const [isFetchingData, setIsFetchingData] = useState(false);
@@ -18,16 +17,18 @@ const Overview = () => {
       const { data } = await axios.get(
         `http://localhost:5000/sbp/getrequeststats`
       );
-      console.log(data.data.totalRequests);
+      // console.log(data.data.totalRequests);
       setRequestsData(data.data);
 
-      console.log("requetsData:::", requetsData.totalRequests);
+      // console.log("requetsData:::", requetsData.totalRequests);
+      console.log("requetsDatassss:::", data.data);
 
       // setPriceUpdate(ganers.slice(0, 5));
     } catch (e) {
       setErr(e);
     }
   };
+  console.log("requetsDatassss:::2222", requetsData);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,20 +47,36 @@ const Overview = () => {
         <div className="dashboard_header">
           <NumberCard
             text="Submitted "
-            number={35}
+            number={requetsData ? requetsData.totalRequests : 0}
             bgColor="linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #002564"
           />
           <NumberCard
             text="Verified, awaiting approval"
-            number={6}
+            number={requetsData ? requetsData.totalVAARequests : 0}
             bgColor="linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #185399"
           />
-          <NumberCard text="Approved" number={6} bgColor="#296DB6" />
+          <NumberCard
+            text="Approved"
+            number={requetsData ? requetsData.totalApprovedRequests : 0}
+            bgColor="#296DB6"
+          />
         </div>
         <div className="dashboard_header">
-          <NumberCard text="Captured " number={2} bgColor="#19559B" />
-          <NumberCard text="Rejected" number={2} bgColor="#296DB6" />
-          <NumberCard text="Completed " number={2} bgColor="#002564" />
+          <NumberCard
+            text="Captured "
+            number={requetsData ? requetsData.totalCapturedRequests : 0}
+            bgColor="#19559B"
+          />
+          <NumberCard
+            text="Rejected"
+            number={requetsData ? requetsData.totalRejectedRequests : 0}
+            bgColor="#296DB6"
+          />
+          <NumberCard
+            text="Completed "
+            number={requetsData ? requetsData.totalCompletedRequests : 0}
+            bgColor="#002564"
+          />
         </div>
 
         <div className="price_update">

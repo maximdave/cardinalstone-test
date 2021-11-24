@@ -37,17 +37,18 @@ const StockbrokerLogin = () => {
             type="text"
             placeholder="Username"
             label="Username"
-            // onChange={(e) => setUserName(e.target.value)}
-            // value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+            value={userName}
+            style={{ marginBottom: "40px" }}
           />
-          <TextField
+          {/* <TextField
             className="w-100"
             type="email"
             placeholder="Email"
             label="Email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
+            // onChange={(e) => setEmail(e.target.value)}
+            // value={email}
+          /> */}
           <TextField
             type="password"
             className="w-100"

@@ -19,6 +19,10 @@ const CreateSockbroker = () => {
     setPassword,
     password,
     email,
+    setFullName,
+    fullName,
+    setUserName,
+    userName,
     setEmail,
     phoneNumber,
     setPhone,
@@ -54,6 +58,22 @@ const CreateSockbroker = () => {
               placeholder="Company Email Address"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
+            />
+          </div>
+          <div className="d-flex justify-content-space-around">
+            <TextField
+              className="create-stockerbroker-input"
+              label="Full Name"
+              placeholder="Full Name"
+              onChange={(e) => setFullName(e.target.value)}
+              value={fullName}
+            />
+            <TextField
+              className=" create-stockerbroker-input"
+              label="Username"
+              placeholder="Username"
+              onChange={(e) => setUserName(e.target.value)}
+              value={userName}
             />
           </div>
           <div className=" d-flex mt-3">
