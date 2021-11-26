@@ -1,14 +1,54 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "../Requests.css";
 // eslint-disable-next-line import/prefer-default-export
-export const ChangeOfNameFormIndividual = (props) => {
-  const history = useHistory();
-  const fileRef = React.useRef(null);
+const ChangeOfNameFormIndividual = (props) => {
+  const [files, setFiles] = useState([]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await props.handleCHNSUbmit();
+  };
+
+  const handleChange = (e) => {
+    const selectedFiles = e.target.files;
+    console.log(selectedFiles);
+    setFiles(selectedFiles);
+  };
+
+  const handleFileUpload = async (e) => {
+    e.preventDefault();
+    if (files.length < 1) {
+      return;
+    }
+    await props.handleCreateRequest(files);
+  };
 
   return (
-    <div className="left">
+    <div className="left" style={{ width: "80%" }}>
+      <div className="d-flex justify-content-between">
+        <div>
+          <h3>Change of Name - Individuals</h3>
+          <p>
+            To complete this request, please upload the required documents below
+          </p>
+        </div>
+        <div>
+          <form onSubmit={handleSubmit}>
+            <input
+              // style={{ marginRight: "10px" }}
+              type="text"
+              placeholder="Shareholder’s CHN"
+              onChange={(e) => props.setShareholderCHN(e.target.value)}
+              value={props.shareholderCHN}
+            />
+          </form>
+          <p>
+            {props.shareholderFirstName || ""} {props.shareholderName || ""}
+          </p>
+        </div>
+      </div>
       <div className="requirements">
         <hr className="horizontal-line" />
         <ul className="ulllll">
@@ -27,39 +67,43 @@ export const ChangeOfNameFormIndividual = (props) => {
           <li>Any additional supporting documents</li>
         </ul>
       </div>
-      <div className="file-input">
-        <input
-          type="file"
-          ref={fileRef}
-          multiple
-          onChange={props?.setRequestFiles}
-        />
-        <span className="button">SELECT</span>
-        <span className="label" data-js-label>
-          png, jpeg (=300KB)
-        </span>
-      </div>
+      <form onSubmit={handleFileUpload}>
+        <div className="file-input" style={{ maxWidth: "95%" }}>
+          <input
+            type="file"
+            multiple
+            name="requestFiles"
+            onChange={handleChange}
+            accept="image/*"
+          />
+          <span className="button">SELECT</span>
+          <span className="label" data-js-label>
+            png, jpeg (=300KB)
+          </span>
+        </div>
+      </form>
       <h6>Click the button below to make payment</h6>
 
-      <div className="btn-container">
-        <button
-          onClick={() => history.push("/requests/request-payment")}
-          className="btn-container1"
+      <div className="d-flex flex-column" style={{ width: "40%" }}>
+        <Link
+          to="/request-payment"
+          style={{
+            marginLeft: "1.3rem",
+            width: "40%",
+            backgroundColor: "#000",
+            color: "#fff",
+            fontStyle: "bold",
+          }}
+          className="btn btn-black"
         >
           PAY NOW
-        </button>
-        <button className="btn-container2" onClick={props?.onClick}>
+        </Link>
+        <button className="btn-container2" onClick={handleFileUpload}>
           SUBMIT REQUEST
         </button>
       </div>
     </div>
   );
 };
-export const ChangeOfNameTitleI = <h3>Change of Name - Individuals</h3>;
 
-export const ChangeOfNameHeaderI = (
-  <div>
-    {ChangeOfNameTitleI}
-    <p>To complete this request, please upload the required documents below</p>
-  </div>
-);
+export default ChangeOfNameFormIndividual;

@@ -10,6 +10,7 @@
   padding: 1em 1.5em;
   margin-top: 1.5em;
   border-radius: 0.5em;
+  width: 100%;
 }
 .nav_bar {
   display: flex;

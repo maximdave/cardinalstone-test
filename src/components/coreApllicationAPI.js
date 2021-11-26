@@ -50,10 +50,21 @@ const getAllHolderKYC = async (CustID) => {
   }
 };
 
+const getRandomHolderDetails = async (searchOption, value) => {
+  try {
+    const url = `https://restserverstaging.cardinalstone.com/api/registrars/getRandomHolderDetails?searchOption=${searchOption}&value=${value}`;
+    const { data } = await axios.get(url);
+    return data;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 export {
   getAllHolderCert,
   getHolderCert,
   getAllHolderCertTotal,
   getHolderCertTotal,
   getAllHolderKYC,
+  getRandomHolderDetails,
 };
