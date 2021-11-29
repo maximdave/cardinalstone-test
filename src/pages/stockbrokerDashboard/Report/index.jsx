@@ -16,8 +16,17 @@ const Report = () => {
   //
   const getReport = async () => {
     try {
+      const Token = localStorage.getItem("authToken");
+      const config = {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      };
       setIsFetchingNews(true);
-      const { data } = await axios.get(`http://localhost:5000/sbp/getrequest`);
+      const { data } = await axios.get(
+        `http://localhost:5000/sbp/getrequest`,
+        config
+      );
       console.log("REPORTdata:::::", data.data);
       setReport(data.data);
       setIsFetchingNews(false);

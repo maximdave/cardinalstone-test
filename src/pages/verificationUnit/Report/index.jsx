@@ -1,12 +1,48 @@
-import React from "react";
-import Pagination from "@mui/material/Pagination";
+/* eslint-disable no-underscore-dangle */
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Pagination } from "@material-ui/lab";
 import { FilterListSharp, FilterAltOutlined } from "@mui/icons-material";
 import Select from "react-select";
 import Button from "@mui/material/Button";
 import CustomTable from "../../../components/CustomTable";
+import usePagination from "../../../components/myPagination";
 import "./Report.css";
 
 const Report = () => {
+  const [isFetchingNews, setIsFetchingNews] = useState(false);
+  const [report, setReport] = useState([]);
+  const [newsErr, setNewsErr] = useState(null);
+  //
+  const getReport = async () => {
+    try {
+      const Token = localStorage.getItem("authToken");
+      const config = {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      };
+      setIsFetchingNews(true);
+      const { data } = await axios.get(
+        `http://localhost:5000/sbp/getpersonalrequest`,
+        config
+      );
+      console.log("REPORTdata:::::", data.data);
+      setReport(data.data);
+      setIsFetchingNews(false);
+    } catch (e) {
+      setIsFetchingNews(false);
+      console.log(e);
+      setNewsErr(e);
+    }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await getReport();
+    };
+    fetchData();
+  }, []);
   const tableHeader = [
     "ID NO",
     "Date",
@@ -14,57 +50,17 @@ const Report = () => {
     "Stockbroker",
     "Status",
   ];
-  const tableProps = [
-    {
-      id: "DR23554",
-      date: "24 Aug 2021",
-      type: "Demat Request",
-      stockbroker: "Afri Invest",
-      status: "Submitted",
-    },
-    {
-      id: "DR23554",
-      date: "24 Aug 2021",
-      type: "Demat Request",
-      stockbroker: "Afri Invest",
-      status: "Captured",
-    },
-    {
-      id: "DR23554",
-      date: "24 Aug 2021",
-      type: "Demat Request",
-      stockbroker: "Afri Invest",
-      status: "Awaiting",
-    },
-    {
-      id: "DR23554",
-      date: "24 Aug 2021",
-      type: "Demat Request",
-      stockbroker: "Afri Invest",
-      status: "Submitted",
-    },
-    {
-      id: "DR23554",
-      date: "24 Aug 2021",
-      type: "Demat Request",
-      stockbroker: "Afri Invest",
-      status: "Submitted",
-    },
-    {
-      id: "DR23554",
-      date: "24 Aug 2021",
-      type: "Demat Request",
-      stockbroker: "Afri Invest",
-      status: "Awaiting",
-    },
-    {
-      id: "DR23554",
-      date: "24 Aug 2021",
-      type: "Demat Request",
-      stockbroker: "Afri Invest",
-      status: "Captured",
-    },
-  ];
+
+  // PAGINATION
+  const [page, setPage] = useState(1);
+  const PER_PAGE = 5;
+  const count = Math.ceil(report.length / PER_PAGE);
+  const _DATA = usePagination(report, PER_PAGE);
+
+  const handleChange = (e, p) => {
+    setPage(p);
+    _DATA.jump(p);
+  };
   return (
     <div>
       <div className="search_options">
@@ -118,22 +114,38 @@ const Report = () => {
       </div>
       <div className="reports">
         <CustomTable tableHeader={tableHeader}>
-          {tableProps.map((tb, idx) => (
-            <tr key={idx}>
-              <td>{tb.id}</td>
-              <td>{tb.date}</td>
-              <td>
-                <strong>{tb.type}</strong>
-              </td>
-              <td>{tb.stockbroker}</td>
-              <td className="d-flex">
-                <p className={tb.status.toLowerCase()}>{tb.status}</p>
-              </td>
-            </tr>
-          ))}
+          {_DATA &&
+            _DATA.currentData().map((tb, idx) => {
+              const a = new Date(tb.updatedAt).toString().substr(4, 11);
+              let date = a.substr(3, 4);
+              date += a.replace(date, " ");
+
+              const b = tb.requestID.substr(0, 8);
+
+              return (
+                <tr key={idx}>
+                  <td>{b}</td>
+                  <td>{date}</td>
+                  <td>
+                    <strong>{tb.requestType}</strong>
+                  </td>
+                  <td>{tb.stockbrokerName}</td>
+                  <td className="d-flex">
+                    <p className={tb.status.toLowerCase()}>{tb.status}</p>
+                  </td>
+                </tr>
+              );
+            })}
         </CustomTable>
         <div className="view-more">
-          <Pagination count={10} color="primary" />
+          <p>Previous</p>
+          <Pagination
+            count={count}
+            page={page}
+            color="primary"
+            onChange={handleChange}
+          />
+          <p>Next</p>
         </div>{" "}
       </div>
     </div>

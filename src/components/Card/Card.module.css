@@ -1,0 +1,17 @@
+.requestCard {
+  background: linear-gradient(103.92deg, #002564 1.19%, #528dc2 100%);
+  border-radius: 0.5rem;
+  height: 8.4rem;
+  min-width: 16rem;
+  color: "#fff";
+  padding: 0.5rem;
+  display: flex;
+  align-items: flex-end;
+  margin-right: 1rem;
+}
+
+.cardText {
+  color: #fff;
+  margin-top: auto;
+  margin-bottom: 0.5em;
+}

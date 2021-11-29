@@ -252,3 +252,7 @@
   margin-top: 10px;
   
 }
+
+.MuiModal-root{
+  overflow: scroll !important
+}

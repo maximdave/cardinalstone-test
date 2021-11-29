@@ -11,7 +11,7 @@ const ChangeOfNameFormCorporate = (props) => {
 
   const handleChange = (e) => {
     const selectedFiles = e.target.files;
-    console.log(selectedFiles);
+    // console.log(selectedFiles);
     setFiles(selectedFiles);
   };
 
@@ -67,11 +67,11 @@ const ChangeOfNameFormCorporate = (props) => {
             multiple
             name="requestFiles"
             onChange={handleChange}
-            accept="image/*"
+            accept="application/pdf"
           />
           <span className="button">SELECT</span>
           <span className="label" data-js-label>
-            png, jpeg (=300KB)
+            pdf (=300KB)
           </span>
         </div>
       </form>

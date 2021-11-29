@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
 
 import axios from "axios";
@@ -56,9 +57,11 @@ export const GlobalContextProvider = ({ children }) => {
         },
         config
       );
+      toast.success("Successful");
       localStorage.setItem("authToken", data.token);
       history.push("/loginadmin");
     } catch (err) {
+      toast.error("An errror occured");
       setError(err.response.data.error);
       setTimeout(() => {
         setError("");
@@ -90,8 +93,10 @@ export const GlobalContextProvider = ({ children }) => {
         config
       );
       console.log("data:::::", data);
+      toast.success("Successful");
       history.push(`/create-user-success`);
     } catch (err) {
+      toast.error("An error occured");
       setError(err.response.data.error);
       setTimeout(() => {
         setError("");
@@ -123,8 +128,10 @@ export const GlobalContextProvider = ({ children }) => {
         config
       );
       console.log("data:::::", data);
+      toast.success("Successful");
       history.push(`/create-user-success`);
     } catch (err) {
+      toast.error("An error occured");
       setError(err.response.data.error);
       setTimeout(() => {
         setError("");
@@ -159,8 +166,10 @@ export const GlobalContextProvider = ({ children }) => {
       localStorage.setItem("currenUser", JSON.stringify(data.user.userInfo));
 
       setUser(data.user);
+      toast.success("Successful");
       history.push(`/${data.user.userInfo.role}dashboard/overview`);
     } catch (err) {
+      toast.error("An error occured");
       setError(err.response.data.error);
       setTimeout(() => {
         setError("");
@@ -195,8 +204,10 @@ export const GlobalContextProvider = ({ children }) => {
       localStorage.setItem("currenUser", JSON.stringify(data));
 
       setUser(data.user);
+      toast.success("Login Successful");
       history.push(`/${data.role}dashboard/overview`);
     } catch (err) {
+      toast.error("An error occured");
       setError(err.response.data.error);
       setTimeout(() => {
         setError("");

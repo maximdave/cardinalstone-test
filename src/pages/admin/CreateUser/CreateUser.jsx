@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import { Select } from "@mui/material";
+import MenuItem from "@mui/material/MenuItem";
 import GlobalContext from "../../../contexts/Authentication/GlobalContext";
 import Logo from "../../../assets/CSRL Logo 1.png";
 import Note from "../../../assets/contact-form-svgrepo-com 1.png";
@@ -28,6 +30,12 @@ const CreateUser = () => {
     role,
     handleCreateOtherUsers,
   } = useContext(GlobalContext);
+
+  const [age1, setAge1] = React.useState("");
+
+  const handleChange1 = (event) => {
+    setAge1(event.target.value);
+  };
   return (
     <div className="create-user-page">
       <div className="create-user-card">
@@ -86,12 +94,25 @@ const CreateUser = () => {
             />
             <TextField
               className="create-user-input"
-              label="Role ID"
+              label="Role"
               type="select"
-              placeholder="Role ID"
+              placeholder="Role"
               onChange={(e) => setRole(e.target.value)}
               value={role}
             />
+            {/* <Select
+              className="create-user-input"
+              // label="Role ID"
+              // labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={age1}
+              placeholder="Select Reason for Rejection"
+              // label="Age"
+              onChange={handleChange1}
+            >
+              <MenuItem value="initiator">initiator</MenuItem>
+              <MenuItem value="verificaion">verificaion</MenuItem>
+            </Select> */}
           </div>
           <Button text="Create User" className="mt-4 create-user-btn" />
 

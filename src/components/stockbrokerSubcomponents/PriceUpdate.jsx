@@ -32,29 +32,33 @@ const PriceUpdate = ({ data }) => {
 
   return (
     <div className="priceupdate">
-      {priceUpdate &&
-        priceUpdate.map((item, index) => (
-          <div key={index} className="pricecard">
-            <span style={{ marginRight: "10px" }}>{item.name}</span>
-            <span style={{ marginRight: "10px" }}>{item.currentPrice}</span>
-            <span style={{ marginRight: "10px", color: "blue" }}>
-              {item.priceChangePercent}
-            </span>
-            <span>
-              {item.priceChangePercent.startsWith("-") ? (
-                <RedArrow />
-              ) : item.priceChangePercent === "0.00" ? (
-                <Dash />
-              ) : (
-                <GreenArrow />
-              )}
-            </span>
-            {/* 
+      <div className="marquee">
+        <div className="marqueeDiv">
+          {priceUpdate &&
+            priceUpdate.map((item, index) => (
+              <div key={index} className="pricecard">
+                <span style={{ marginRight: "10px" }}>{item.name}</span>
+                <span style={{ marginRight: "10px" }}>{item.currentPrice}</span>
+                <span style={{ marginRight: "10px", color: "blue" }}>
+                  {item.priceChangePercent}
+                </span>
+                <span>
+                  {item.priceChangePercent.startsWith("-") ? (
+                    <RedArrow />
+                  ) : item.priceChangePercent === "0.00" ? (
+                    <Dash />
+                  ) : (
+                    <GreenArrow />
+                  )}
+                </span>
+                {/* 
             {item.companyGain ? <GreenArrow /> : <RedArrow />}
               
              */}
-          </div>
-        ))}
+              </div>
+            ))}
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,24 @@
+.requestHistory {
+  width: 100%;
+  display: flex;
+  margin-bottom: 3rem;
+  overflow-x: scroll;
+  /* flex-shrink: 0; */
+}
+
+.selectRequest {
+  margin-right: 1rem;
+}
+
+.filterForm {
+  display: flex;
+}
+
+.button {
+  background: linear-gradient(103.92deg, #002564 1.19%, #528dc2 100%);
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: #fff;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}

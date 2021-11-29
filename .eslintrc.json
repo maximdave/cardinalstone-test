@@ -21,7 +21,6 @@
   "plugins": ["react", "jest", "react-hooks", "prettier"],
   "rules": {
     "react/react-in-jsx-scope": 0,
-    "no-unused-vars": "warn",
     "func-names": "off",
     "class-methods-use-this": "off",
     "no-useless-catch": "warn",
@@ -38,6 +37,9 @@
     "jsx-a11y/label-has-associated-control": "off",
     "react/destructuring-assignment": "off",
     "react/jsx-no-bind": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "no-unused-vars": "off",
+    "no-console": "off",
     "no-use-before-define": [
       "error",
       {
@@ -53,7 +55,6 @@
       }
     ],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/rules-of-hooks": "error"
   }
 }

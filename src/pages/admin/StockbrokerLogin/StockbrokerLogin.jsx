@@ -13,14 +13,14 @@ const StockbrokerLogin = () => {
   // };
 
   const {
-    email,
+    // email,
     setUserName,
     userName,
     setPassword,
     password,
     handleLogin,
-    error,
-    setEmail,
+    // error,
+    // setEmail,
   } = useContext(GlobalContext);
   return (
     <div className="stockbroker-login-page">

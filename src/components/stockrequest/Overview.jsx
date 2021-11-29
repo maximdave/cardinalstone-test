@@ -1,9 +1,7 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/jsx-props-no-spreading */
 import axios from "axios";
-import React, { useMemo, useEffect, useState } from "react";
-import { useTable } from "react-table";
-import { NavLink, useHistory, Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 import NumberCard2 from "./NumberCard2";
 import unlikeIcon from "../../assets/like.svg";
@@ -14,18 +12,18 @@ import CustomTable from "../CustomTable/index";
 const Overview = () => {
   const [isFetchingNews, setIsFetchingNews] = useState(false);
   const [report, setReport] = useState(null);
-  const [newsErr, setNewsErr] = useState(null);
+  const [error, setNewsErr] = useState(null);
   //
   const getReport = async () => {
     try {
       setIsFetchingNews(true);
-      const { data } = await axios.get(`http://localhost:5000/sbp/getrequest`);
-      console.log("REPORTdata:::::", data.data);
+      const { data } = await axios.get(
+        `http://localhost:5000/sbp/getrequestinit`
+      );
       setReport(data.data);
       setIsFetchingNews(false);
     } catch (e) {
       setIsFetchingNews(false);
-      console.log(e);
       setNewsErr(e);
     }
   };
@@ -43,6 +41,26 @@ const Overview = () => {
     "Stockbroker",
     "Status",
   ];
+  const [isFetchingData, setIsFetchingData] = useState(false);
+  const [requetsData, setRequestsData] = useState(null);
+  const [err, setErr] = useState(null);
+  const fetchRequestStats = async () => {
+    try {
+      setIsFetchingData(true);
+      const { data } = await axios.get(
+        `http://localhost:5000/sbp/getrequeststatsinit`
+      );
+      setRequestsData(data.data);
+    } catch (e) {
+      setErr(e);
+    }
+  };
+  useEffect(() => {
+    const fetchData = async () => {
+      await fetchRequestStats();
+    };
+    fetchData();
+  }, []);
   return (
     <div>
       <div className="dashboard_requests_header22">
@@ -51,24 +69,21 @@ const Overview = () => {
       <div className="dashboard_header22">
         <NumberCard2
           text="Stockbrokers’ requests"
-          number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
           icon={total}
-          num={7}
+          num={requetsData ? requetsData.totalRequests : 0}
         />
         <NumberCard2
           text="Approved requests"
-          number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
           icon={likeIcon}
-          num={3}
+          num={requetsData ? requetsData.totalApprovedRequests : 0}
         />
         <NumberCard2
           text="Rejected requests"
-          number={2}
           bgColor="linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%)"
           icon={unlikeIcon}
-          num={4}
+          num={requetsData ? requetsData.totalRejectedRequests : 0}
         />
       </div>
 
@@ -80,7 +95,7 @@ const Overview = () => {
       </div>
 
       <div className="view_more_payments">
-        <NavLink to="viewmore">View All Requests</NavLink>
+        {/* <NavLink to="viewmore">View All Requests</NavLink> */}
       </div>
 
       <div className="reports">
@@ -108,7 +123,7 @@ const Overview = () => {
             })}
         </CustomTable>
         <div className="view-more">
-          <Link to="view-more">View all requests</Link>
+          {/* <Link to="view-more">View all requests</Link> */}
         </div>
       </div>
     </div>

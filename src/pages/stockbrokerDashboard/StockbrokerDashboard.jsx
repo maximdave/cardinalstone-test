@@ -4,6 +4,8 @@ import NameBar from "../../components/requestComponents/general/NameBar";
 import Overview from "../../components/requestComponents/secretary/Overview";
 import Reports from "./Report";
 import Navbar from "../../components/requestComponents/secretary/Navbar";
+// import StockRequestStart from "../requestTypes/StockRequestStart";
+import StockRequestStart from "../initiatorDashboard/requestTypes/StockRequestStart";
 
 import "./StockbrokerDashboard.css";
 import Requests from "./requestTypes/Requests";
@@ -18,7 +20,14 @@ const StockbrokerDashboard = () => (
         <div className="dashboard_view">
           <Switch>
             <Route path="/stockbrokerdashboard/overview" component={Overview} />
-            <Route path="/stockbrokerdashboard/requests" component={Requests} />
+            <Route
+              path="/stockbrokerdashboard/requests"
+              component={StockRequestStart}
+            />
+            <Route
+              path="/stockbrokerdashboard/inrequests/:requestParam"
+              component={Requests}
+            />
             <Route path="/stockbrokerdashboard/reports" component={Reports} />
             {/* <Route path="/stockbrokerdashboard/requests" component={Requests} /> */}
           </Switch>

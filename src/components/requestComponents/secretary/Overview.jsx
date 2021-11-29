@@ -5,6 +5,7 @@ import PriceUpdate from "../../stockbrokerSubcomponents/PriceUpdate";
 import GainersCard from "../../stockbrokerSubcomponents/GainersCard";
 import NewsFeed from "../../stockbrokerSubcomponents/NewsFeed";
 import chartdash from "../../../assets/chartdash.svg";
+import AllIndexChart from "../../charts/AllIndexChart";
 
 const Overview = () => {
   const [isFetchingData, setIsFetchingData] = useState(false);
@@ -13,9 +14,16 @@ const Overview = () => {
 
   const fetchRequestStats = async () => {
     try {
+      const Token = localStorage.getItem("authToken");
+      const config = {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      };
       setIsFetchingData(true);
       const { data } = await axios.get(
-        `http://localhost:5000/sbp/getrequeststats`
+        `http://localhost:5000/sbp/getrequeststats`,
+        config
       );
       // console.log(data.data.totalRequests);
       setRequestsData(data.data);
@@ -51,17 +59,17 @@ const Overview = () => {
             bgColor="linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #002564"
           />
           <NumberCard
-            text="Verified, awaiting approval"
-            number={requetsData ? requetsData.totalVAARequests : 0}
+            text="Captured"
+            number={requetsData ? requetsData.totalCapturedRequests : 0}
             bgColor="linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #185399"
           />
           <NumberCard
-            text="Approved"
-            number={requetsData ? requetsData.totalApprovedRequests : 0}
+            text="Rejected"
+            number={requetsData ? requetsData.totalRejectedRequests : 0}
             bgColor="#296DB6"
           />
         </div>
-        <div className="dashboard_header">
+        {/* <div className="dashboard_header">
           <NumberCard
             text="Captured "
             number={requetsData ? requetsData.totalCapturedRequests : 0}
@@ -77,9 +85,9 @@ const Overview = () => {
             number={requetsData ? requetsData.totalCompletedRequests : 0}
             bgColor="#002564"
           />
-        </div>
+        </div> */}
 
-        <div className="price_update">
+        <div className="price_update" style={{ marginBottom: "3rem" }}>
           <PriceUpdate />
         </div>
 
@@ -90,7 +98,7 @@ const Overview = () => {
               <GainersCard cardTitle="TOP LOSERS" gain={false} />
             </div>
             <div className="chart_dash">
-              <img src={chartdash} alt="carth" />
+              <AllIndexChart />
             </div>
           </div>
           <div className="dashboard_news_feedback">

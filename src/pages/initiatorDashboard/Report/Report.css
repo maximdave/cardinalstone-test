@@ -1,47 +1,65 @@
-.view-more{
+.view-more {
   display: flex;
 
   justify-content: flex-end;
   margin-right: 10%;
 }
 
-.report-status{
-  background-color: #BF7BB5;
+.report-status {
+  background-color: #bf7bb5;
   padding: 5px 30px 5px 30px;
   border-radius: 15px;
-  height:30px;
-  color:#ffffff;
-  width:100%;
-  text-align:center;
+  height: 30px;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
 }
-tr{
-  border-bottom: 1px solid #DFE0EB;
+tr {
+  border-bottom: 1px solid #dfe0eb;
 }
 
-.submitted{
-  background-color: #BF7BB5;
+.submitted {
+  background-color: #bf7bb5;
   padding: 5px 30px 5px 30px;
   border-radius: 15px;
-  height:30px;
-  color:#ffffff;
-  width:100%;
-  text-align:center;
+  height: 30px;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
 }
-.captured{
-  background-color: #EF9011;
+.approved {
+  background-color: #ef9011;
   padding: 5px 30px 5px 30px;
   border-radius: 15px;
-  height:30px;
-  color:#ffffff;
-  width:100%;
-  text-align:center;
+  height: 30px;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
 }
-.awaiting {
-  background-color: #E61C23;
+.captured {
+  background-color: #ef9011;
   padding: 5px 30px 5px 30px;
   border-radius: 15px;
-  height:30px;
-  color:#ffffff;
-  width:100%;
-  text-align:center;
+  height: 30px;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+}
+.verified {
+  background-color: #528DC2;
+  padding: 5px 30px 5px 30px;
+  border-radius: 15px;
+  height: 30px;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+}
+.rejected {
+  background-color: #e61c23;
+  padding: 5px 30px 5px 30px;
+  border-radius: 15px;
+  height: 30px;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
 }

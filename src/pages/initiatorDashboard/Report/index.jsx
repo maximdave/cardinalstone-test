@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import CustomTable from "../../../components/CustomTable";
 import SearchBar from "../../../components/stockrequest/SearchBar";
 import "./Report.css";
@@ -8,18 +7,18 @@ import "./Report.css";
 const Report = () => {
   const [isFetchingNews, setIsFetchingNews] = useState(false);
   const [report, setReport] = useState(null);
-  const [newsErr, setNewsErr] = useState(null);
+  const [error, setNewsErr] = useState(null);
   //
   const getReport = async () => {
     try {
       setIsFetchingNews(true);
-      const { data } = await axios.get(`http://localhost:5000/sbp/getrequest`);
-      console.log("REPORTdata:::::", data.data);
+      const { data } = await axios.get(
+        `http://localhost:5000/sbp/getrequestinit`
+      );
       setReport(data.data);
       setIsFetchingNews(false);
     } catch (e) {
       setIsFetchingNews(false);
-      console.log(e);
       setNewsErr(e);
     }
   };
@@ -69,14 +68,14 @@ const Report = () => {
               );
             })}
         </CustomTable>
-        <div className="view-more">
+        {/* <div className="view-more">
           <Link to="view-more">View all requests</Link>
-        </div>
+        </div> */}
       </div>
 
-      <button className="primary-btn" style={{ marginTop: "40px" }}>
+      {/* <button className="primary-btn" style={{ marginTop: "40px" }}>
         REVERSE
-      </button>
+      </button> */}
     </div>
   );
 };

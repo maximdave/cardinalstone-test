@@ -13,33 +13,33 @@ import ReverseLogIcon from "../../assets/svg/reverselode.svg";
 
 const navItems = [
   {
-    linkPath: "/verification/overview",
+    linkPath: "/verificationDashboard/overview",
     linkIcon: overviewIcon,
     linkText: "Overview",
   },
   {
-    linkPath: "/verification/requests",
+    linkPath: "/verificationDashboard/requests",
     linkIcon: StockrequestIconIcon,
     linkText: "Stockbroker's Request",
   },
   // {
-  //   linkPath: "/verification/approvedcallover",
+  //   linkPath: "/verificationDashboard/approvedcallover",
   //   linkIcon: ApprovecallIcon,
   //   linkText: "Approved Callover",
   // },
   // {
-  //   linkPath: "/verification/rejectedcallover",
+  //   linkPath: "/verificationDashboard/rejectedcallover",
   //   linkIcon: RejectcallIcon,
   //   linkText: "Rejected Callover",
   // },
   {
-    linkPath: "/verification/reverselodg",
+    linkPath: "/verificationDashboard/reverselodg",
     linkIcon: ReverseLogIcon,
     linkText: "Reverse Lodgement",
   },
 
   {
-    linkPath: "/verification/reports",
+    linkPath: "/verificationDashboard/reports",
     linkIcon: reportsIcon,
     linkText: "Reports",
   },

@@ -2,7 +2,13 @@
   display: flex;
   justify-content: space-between;
   border-radius: 0.5em;
-  overflow: scroll;
+  /* overflow: scroll; */
+  position: relative;
+  /* margin-top: 2rem;
+  margin-bottom: 4rem; */
+  /* border: 1px solid black; */
+  /* height: 3rem; */
+  /* width: 100%; */
 }
 
 .pricecard {
@@ -25,4 +31,31 @@
 
 .priceupdate_header h3 {
   margin: 0;
+}
+
+.marquee {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: absolute;
+}
+.marqueeDiv {
+  display: inline-block;
+  width: fit-content;
+  animation: marquee 700s linear infinite;
+  display: flex;
+}
+
+.marqueeDiv:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
 }

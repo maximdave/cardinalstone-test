@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import AdminLogin from "./pages/admin/AdminLogin/AdminLogin";
 import AdminPage from "./pages/admin/AdminPage/AdminPage";
 import CreateUser from "./pages/admin/CreateUser/CreateUser";
@@ -32,8 +34,9 @@ function App() {
       <div className="App">
         <GlobalContextProvider>
           <UserCreationContextProvider>
+            <ToastContainer />
             <Switch>
-              <Route exact path="/" component={AdminLogin} />
+              <Route exact path="/core-login" component={AdminLogin} />
               <Route path="/adminDashboard" component={AdminPage} />
               <Route path="/create-user" component={CreateUser} />
               <Route
@@ -51,7 +54,7 @@ function App() {
           </UserCreationContextProvider>
 
           <Switch>
-            <Route path="/stockbroker-login" component={StockbrokerLogin} />
+            <Route path="/user-login" component={StockbrokerLogin} />
             <Route path="/change-password" component={ChangePassword} />
             <Route path="/forgot-password" component={ForgotPassword} />
             <Route path="/create-password" component={CreateNewPassword} />

@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState, useEffect, useContext } from "react";
+import { toast } from "react-toastify";
 import axios from "axios";
+import FileViewer from "react-file-viewer";
 // import Select from "react-select";
 import MuiModal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
@@ -10,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Modal from "../../../components/Modal/Modal";
 // import Modal from "../Modal/Modal";
 import papers from "../../../assets/paper-stack.svg";
-import requestDocs from "../../../assets/request_document.png";
+// import requestImage from "../../../assets/request_document.png";
 import "./Requests.css";
 import { getAllHolderCertTotal } from "../../../components/coreApllicationAPI";
 import GlobalContext from "../../../contexts/Authentication/GlobalContext";
@@ -23,6 +25,9 @@ const Requests = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const [regNumber, setRegNumber] = useState("");
+  const [accountNumber, setAccountNumber] = useState("");
+
   const onConfirm = () => {
     setRejectOption((prev) => !prev);
     setShowModal(false);
@@ -31,8 +36,8 @@ const Requests = () => {
     setShowModal(false);
   };
 
-  const [id, setId] = useState("");
-  const [setError] = useState("");
+  const [age, setAge] = React.useState("");
+  const [age1, setAge1] = React.useState("");
 
   const handleRejectRequest = async (e) => {
     e.preventDefault();
@@ -50,11 +55,15 @@ const Requests = () => {
           id: inRequest.id,
           rejectReason: age,
           assignedTo: age1,
+          regNumber,
+          accountNumber,
         },
         config
       );
+      toast.error("Request Rejected Successful");
       console.log("data:::::", data);
     } catch (err) {
+      toast.error("An errror occured");
       // setError(err.response.data.error);
       // setTimeout(() => {
       //   setError("");
@@ -76,11 +85,16 @@ const Requests = () => {
         "http://localhost:5000/sbp/apppproverequest",
         {
           id: inRequest.id,
+          regNumber,
+          assignedTo: age1,
+          accountNumber,
         },
         config
       );
+      toast.success("Request Approved Successful");
       console.log("data:::::", data);
     } catch (err) {
+      toast.error("An errror occured");
       // setError(err.response.data.error);
       // setTimeout(() => {
       //   setError("");
@@ -140,9 +154,6 @@ const Requests = () => {
 
   console.log("RealREASON>>>>>>>>>>>s", reason);
 
-  const [age, setAge] = React.useState("");
-  const [age1, setAge1] = React.useState("");
-
   const handleChange1 = (event) => {
     setAge1(event.target.value);
   };
@@ -153,7 +164,36 @@ const Requests = () => {
 
   const { inRequest } = useContext(GlobalContext);
 
-  console.log("inRequest>>>>:::::", inRequest);
+  // console.log("inRequest>>>>:::::", inRequest);
+  // console.log("RequestIMAGE>>>>:::::", inRequest.requestFiles);
+  const reg = /(?=\[")(?="\])/g;
+
+  const aaa = inRequest.requestFiles.replace(`["`, "");
+  const imagefile = aaa.replace(`"]`, "");
+  console.log("imagefile>>>>:::::", imagefile);
+  const [requestImage, setRequestImage] = useState([]);
+  const [newsErr, setNewsErr] = useState(null);
+  //
+  const getRequestImage = async () => {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:5000/sbp/getimage?imageName=${imagefile}`
+      );
+      console.log("REQUESTIMAGE:::::", data.imageUrl);
+      setRequestImage(data.imageUrl);
+    } catch (e) {
+      console.log(e);
+      setNewsErr(e);
+    }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      await getRequestImage();
+    };
+    fetchData();
+  }, []);
+  const type = "pdf";
 
   return (
     <div className="dashboard_view">
@@ -165,11 +205,19 @@ const Requests = () => {
         aria-describedby="view document-description"
       >
         <Box>
-          <img
+          {/* <img
             className="view_document_image"
-            src={requestDocs}
+            src={requestImage}
+            // src="http://localhost:5000/uploads/requestFiles/df500ceb-a5dd-43f7-9a1b-3edd9404cfffmayo2.jpeg"
             alt="View request document"
+          /> */}
+          {/* <div className="view_document_image"> */}
+          <FileViewer
+            className="view_document_image"
+            fileType={type}
+            filePath={requestImage}
           />
+          {/* </div> */}
           <div className="view_document_button">
             <button className="primary-btn" onClick={handleClose}>
               DOWNLOAD
@@ -197,7 +245,8 @@ const Requests = () => {
           </div>
           <div className="request-status">
             <p style={{ color: "#528DC2" }}>STATUS:</p>
-            <p className="request-status-show">Captured</p>
+            {/* <p className="request-status-show">{inRequest.status}</p> */}
+            <p className={inRequest.status.toLowerCase()}>{inRequest.status}</p>
           </div>
         </div>
         <div className="shareholder-flex">
@@ -206,7 +255,7 @@ const Requests = () => {
             <table>
               <tr>
                 <td>ID:</td>
-                <td>SA54435</td>
+                <td>{inRequest.shareholderCHN}</td>
               </tr>
               <tr>
                 <td>NAME:</td>
@@ -268,8 +317,19 @@ const Requests = () => {
             }}
           >
             <input
+              style={{
+                marginRight: "30px",
+              }}
               className="stock-broker-request-approve-input"
-              placeholder="Input shareholder's account number"
+              placeholder="Input Register Number"
+              onChange={(e) => setRegNumber(e.target.value)}
+              value={regNumber}
+            />
+            <input
+              className="stock-broker-request-approve-input"
+              placeholder="Input Account Number"
+              onChange={(e) => setAccountNumber(e.target.value)}
+              value={accountNumber}
             />
             <div className="d-flex">
               <Select
@@ -277,6 +337,7 @@ const Requests = () => {
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={age1}
+                placeholder="Select a Verifier"
                 label="Age"
                 onChange={handleChange1}
               >
@@ -284,7 +345,9 @@ const Requests = () => {
                   <MenuItem value={item.userName}>{item.userName}</MenuItem>
                 ))}
               </Select>
-              <button className="primary-btn">Assign</button>
+              <button className="primary-btn" onClick={handleApproveRequest}>
+                ASSIGN
+              </button>
             </div>
           </div>
           {!rejectOption && (
@@ -295,6 +358,7 @@ const Requests = () => {
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={age}
+                placeholder="Select Reason for Rejection"
                 label="Age"
                 onChange={handleChange}
               >

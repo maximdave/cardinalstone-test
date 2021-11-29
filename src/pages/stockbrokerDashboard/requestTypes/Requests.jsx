@@ -1,7 +1,9 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import axios from "axios";
+import { toast } from "react-toastify";
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "./Requests.css";
 import TransferOfSharesForm from "./requestForms/TransferOfSharesForm";
 import DematRequestForm from "./requestForms/DematRequestForm";
@@ -33,6 +35,51 @@ const Requests = () => {
   const [shareholderCHN, setShareholderCHN] = useState("");
   const [shareholderName, setShareholderName] = useState("");
   const [setError] = useState("");
+
+  const { requestParam } = useParams();
+
+  useEffect(() => {
+    switch (requestParam) {
+      case "dematRequest":
+        setRequestType("Demat Request");
+        break;
+      case "nameCorrection":
+        setRequestType("Correction of Name");
+        break;
+      case "nameChangeI":
+        setRequestType("Change Of Name Individual");
+        break;
+      case "nameChangeC":
+        setRequestType("Change Of Name Coporates");
+        break;
+      case "accountsConsolidation":
+        setRequestType("Request for Consolidating Accounts");
+        break;
+      case "signatureMandate":
+        setRequestType("Request For Signature Mandate");
+        break;
+      case "bankersConfirm":
+        setRequestType("Submission of Banker's Confirmation Letters");
+        break;
+      case "addressChange":
+        setRequestType("Request for Change of Address");
+        break;
+      case "accountStatement":
+        setRequestType("Request for Statement Of Account");
+        break;
+      case "sharesTransfer":
+        setRequestType("Transfer of Shares");
+        break;
+      case "sharesTransmision":
+        setRequestType("Request for Transmision Of Shares");
+        break;
+      case "otherRequests":
+        setRequestType("Other Relevant Requests");
+        break;
+      default:
+        break;
+    }
+  }, []);
 
   //
   const handleCreateRequest = async (uploadFiles) => {
@@ -71,8 +118,10 @@ const Requests = () => {
           },
         }
       );
+      toast.success("Request Submitted Successfully");
       console.log("data:::::", data);
     } catch (error) {
+      toast.error("An Error Occured");
       console.log(error);
     }
   };
@@ -117,8 +166,10 @@ const Requests = () => {
           },
         }
       );
+      toast.success("Request Submitted Successfully");
       console.log("data:::::", data);
     } catch (error) {
+      toast.success("An Error Occured");
       console.log(error);
     }
   };

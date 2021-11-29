@@ -11,7 +11,7 @@ import ReverseLodge from "./ReverseLodge";
 import Reports from "./Report";
 import ApprovedCallover from "./ApprovedCallover";
 import RejectedCallover from "./RejectedCallover";
-import RequestStart from "../initiatorDashboard/requestTypes/RequestStart";
+import RequestStart from "./RequestStartVerify";
 
 const VerificationUnit = () => (
   <div className="secretary_dashboard">
@@ -21,17 +21,29 @@ const VerificationUnit = () => (
         <NameBar name="Jones" title="Jones Ferdinand" />
         <div className="dashboard_view2">
           <Switch>
-            <Route path="/verification/overview" component={Overview} />
-            <Route path="/verification/requests" component={RequestStart} />
-            <Route path="/verification/inrequest" component={Requests} />
-            <Route path="/verification/reverselodg" component={ReverseLodge} />
-            <Route path="/verification/reports" component={Reports} />
             <Route
-              path="/verification/rejectedcallover"
+              path="/verificationDashboard/overview"
+              component={Overview}
+            />
+            <Route
+              path="/verificationDashboard/requests"
+              component={RequestStart}
+            />
+            <Route
+              path="/verificationDashboard/inrequest"
+              component={Requests}
+            />
+            <Route
+              path="/verificationDashboard/reverselodg"
+              component={ReverseLodge}
+            />
+            <Route path="/verificationDashboard/reports" component={Reports} />
+            <Route
+              path="/verificationDashboard/rejectedcallover"
               component={RejectedCallover}
             />
             <Route
-              path="/verification/approvedcallover"
+              path="/verificationDashboard/approvedcallover"
               component={ApprovedCallover}
             />
             <Route path="/forgotpass" component={ForgotPassword} />

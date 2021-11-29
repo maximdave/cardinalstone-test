@@ -64,11 +64,11 @@ const SubmitBankerConfirm = (props) => {
             multiple
             name="requestFiles"
             onChange={handleChange}
-            accept="image/*"
+            accept="application/pdf"
           />
           <span className="button">SELECT</span>
           <span className="label" data-js-label>
-            png, jpeg (=300KB)
+            pdf (=300KB)
           </span>
         </div>
       </form>

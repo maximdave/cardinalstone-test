@@ -3,9 +3,9 @@
 import axios from "axios";
 import React, { useEffect, useState, useContext } from "react";
 import { NavLink, useHistory, Link } from "react-router-dom";
-import SearchBar from "../../../components/stockrequest/SearchBar";
-import CustomTable from "../../../components/CustomTable";
-import GlobalContext from "../../../contexts/Authentication/GlobalContext";
+import SearchBar from "../../components/stockrequest/SearchBar";
+import CustomTable from "../../components/CustomTable";
+import GlobalContext from "../../contexts/Authentication/GlobalContext";
 
 const RequestStart = () => {
   const history = useHistory();
@@ -16,11 +16,18 @@ const RequestStart = () => {
   //
   const getReport = async () => {
     try {
+      const Token = localStorage.getItem("authToken");
+      const config = {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      };
       setIsFetchingNews(true);
       const { data } = await axios.get(
-        `http://localhost:5000/sbp/getrequestinit`
+        `http://localhost:5000/sbp/getpersonalrequest`,
+        config
       );
-      console.log("REPORTdata:::::", data.data);
+      console.log("PERSONALREQUEST:::::", data.data);
       setReport(data.data);
       setIsFetchingNews(false);
     } catch (e) {
