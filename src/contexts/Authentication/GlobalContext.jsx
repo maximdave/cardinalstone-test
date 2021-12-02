@@ -19,6 +19,7 @@ export const GlobalContextProvider = ({ children }) => {
   const [companyName, setcomapanyName] = useState("");
   const [phoneNumber, setPhone] = useState("");
   const [role, setRole] = useState("");
+  const [newPassword, setNewPassword] = useState("");
   const [inRequest, setinRequest] = useState({});
 
   const handleInRequest = async (item) => {
@@ -82,8 +83,8 @@ export const GlobalContextProvider = ({ children }) => {
       const { data } = await axios.post(
         "http://localhost:5000/sbp/createStockbrokers",
         {
-          firstName: fullName.split(" ")[0],
-          lastName: fullName.split(" ")[1],
+          // firstName: fullName.split(" ")[0],
+          // lastName: fullName.split(" ")[1],
           userName,
           email,
           password,
@@ -161,12 +162,29 @@ export const GlobalContextProvider = ({ children }) => {
       console.log("ROLE:::::", data.user.existingUser.role);
       localStorage.setItem("authToken", data.token);
       localStorage.setItem("currentUserName", data.user.userInfo.userName);
-      localStorage.setItem("currentFirstName", data.user.userInfo.firstName);
-      localStorage.setItem("currentLastName", data.user.userInfo.lastName);
-      localStorage.setItem("currenUser", JSON.stringify(data.user.userInfo));
+      localStorage.setItem(
+        "currentFirstName",
+        data.user.userInfo.companyName.split(" ")[0]
+      );
+      localStorage.setItem(
+        "currentLastName",
+        data.user.userInfo.companyName.split(" ")[1]
+      );
+      localStorage.setItem(
+        "currenUser",
+        JSON.parse(JSON.stringify(data.user.userInfo))
+      );
 
       setUser(data.user);
       toast.success("Successful");
+
+      if (
+        data.user.userInfo.role === "stockbroker" &&
+        password === "Password123"
+      ) {
+        history.push("/change-password");
+        return;
+      }
       history.push(`/${data.user.userInfo.role}dashboard/overview`);
     } catch (err) {
       toast.error("An error occured");
@@ -215,6 +233,56 @@ export const GlobalContextProvider = ({ children }) => {
     }
   };
 
+  // eslint-disable-next-line consistent-return
+  const handleChangePassword = async (e) => {
+    e.preventDefault();
+
+    if (newPassword === "") {
+      toast.error("Passwords Cannot be Empty");
+      setPassword("");
+      setConfirmPassword("");
+      setTimeout(() => {
+        setError("");
+      }, 5000);
+      return setError("passwords do not match");
+    }
+
+    if (newPassword !== confirmPassword) {
+      toast.error("Passwords do not match");
+      setPassword("");
+      setConfirmPassword("");
+      setTimeout(() => {
+        setError("");
+      }, 5000);
+      return setError("passwords do not match");
+    }
+
+    try {
+      const Token = localStorage.getItem("authToken");
+      const config = {
+        headers: {
+          Authorization: `Bearer ${Token}`,
+        },
+      };
+      const { data } = await axios.put(
+        "http://localhost:5000/sbp/changePassword",
+        {
+          newPassword,
+        },
+        config
+      );
+      console.log("data:::::", data);
+      toast.success("Password Changed Successfully");
+      history.push(`/indemnity-agreement`);
+    } catch (err) {
+      toast.error("An error occured");
+      setError(err.response.data.error);
+      setTimeout(() => {
+        setError("");
+      }, 5000);
+    }
+  };
+
   const state = {
     handleLogin,
     handleSubmit,
@@ -240,6 +308,9 @@ export const GlobalContextProvider = ({ children }) => {
     handleLoginAdmin,
     handleInRequest,
     inRequest,
+    handleChangePassword,
+    newPassword,
+    setNewPassword,
   };
 
   return (

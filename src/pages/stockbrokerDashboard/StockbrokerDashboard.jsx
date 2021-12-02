@@ -10,6 +10,7 @@ import StockRequestStart from "../initiatorDashboard/requestTypes/StockRequestSt
 import "./StockbrokerDashboard.css";
 import Requests from "./requestTypes/Requests";
 // import Requests from "../initiatorDashboard/requestTypes/Requests";
+import Logout from "../../components/logout";
 
 const StockbrokerDashboard = () => (
   <div className="secretary_dashboard">
@@ -30,6 +31,7 @@ const StockbrokerDashboard = () => (
             />
             <Route path="/stockbrokerdashboard/reports" component={Reports} />
             {/* <Route path="/stockbrokerdashboard/requests" component={Requests} /> */}
+            <Route path="/stockbrokerdashboard/logout" component={Logout} />
           </Switch>
         </div>
       </div>

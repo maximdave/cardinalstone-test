@@ -12,6 +12,7 @@ import Reports from "./Report";
 import ApprovedCallover from "./ApprovedCallover";
 import RejectedCallover from "./RejectedCallover";
 import RequestStart from "./requestTypes/RequestStart";
+import Logout from "../../components/logout";
 
 const InitiatorDashboard = () => (
   <div className="secretary_dashboard">
@@ -41,6 +42,7 @@ const InitiatorDashboard = () => (
               component={ApprovedCallover}
             />
             <Route path="/forgotpass" component={ForgotPassword} />
+            <Route path="/initiatorDashboard/logout" component={Logout} />
           </Switch>
         </div>
       </div>

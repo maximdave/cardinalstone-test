@@ -254,7 +254,7 @@ const Requests = () => {
           <div>
             <table>
               <tr>
-                <td>ID:</td>
+                <td>CHN:</td>
                 <td>{inRequest.shareholderCHN}</td>
               </tr>
               <tr>

@@ -65,7 +65,11 @@ const Navbar = () => (
       ))}
     </div>
     <div className="nav_bar_section_two">
-      <NavItem linkPath="/logout" linkIcon={logoutIcon} linkText="Logout" />
+      <NavItem
+        linkPath="/initiatorDashboard/logout"
+        linkIcon={logoutIcon}
+        linkText="Logout"
+      />
     </div>
   </div>
 );

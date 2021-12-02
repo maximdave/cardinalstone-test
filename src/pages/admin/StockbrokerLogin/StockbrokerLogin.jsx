@@ -37,6 +37,7 @@ const StockbrokerLogin = () => {
             type="text"
             placeholder="Username"
             label="Username"
+            required
             onChange={(e) => setUserName(e.target.value)}
             value={userName}
             style={{ marginBottom: "40px" }}
@@ -54,6 +55,7 @@ const StockbrokerLogin = () => {
             className="w-100"
             placeholder="Password"
             label="Password"
+            required
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />

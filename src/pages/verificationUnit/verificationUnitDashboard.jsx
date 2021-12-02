@@ -12,6 +12,7 @@ import Reports from "./Report";
 import ApprovedCallover from "./ApprovedCallover";
 import RejectedCallover from "./RejectedCallover";
 import RequestStart from "./RequestStartVerify";
+import Logout from "../../components/logout";
 
 const VerificationUnit = () => (
   <div className="secretary_dashboard">
@@ -47,6 +48,7 @@ const VerificationUnit = () => (
               component={ApprovedCallover}
             />
             <Route path="/forgotpass" component={ForgotPassword} />
+            <Route path="/verificationDashboard/logout" component={Logout} />
           </Switch>
         </div>
       </div>

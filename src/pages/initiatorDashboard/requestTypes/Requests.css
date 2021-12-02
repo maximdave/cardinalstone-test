@@ -165,94 +165,93 @@
   margin-top: 20px;
 }
 
-.stock_broker_request_header{
+.stock_broker_request_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   margin-bottom: 40px;
 }
-.stock_broker_request_header p{
+.stock_broker_request_header p {
   margin-top: 10px;
 }
 .stock_broker_request_header .header_text {
-  display:flex;
-  color:#002564;
+  display: flex;
+  color: #002564;
   font-size: 30px;
 }
-.header_text p{
+.header_text p {
   padding: auto;
 }
-.share-holder-amount{
+.share-holder-amount {
   margin-top: 20px;
 }
-.stock_broker_request_header .request-status{
-  display:flex;
+.stock_broker_request_header .request-status {
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top:10px;
-
+  margin-top: 10px;
 }
-.stock_broker_request_header .share-holder-amount{
-  display:flex;
-
+.stock_broker_request_header .share-holder-amount {
+  display: flex;
 }
 .primary-btn {
-  background: linear-gradient(103.92deg, #002564 1.19%, #528DC2 100%);
-  font-size:12px;
+  background: linear-gradient(103.92deg, #002564 1.19%, #528dc2 100%);
+  font-size: 12px;
   border-radius: 5px;
-  color:#ffffff;
-
+  color: #ffffff;
 }
 
-.cta-section{
-  margin:20px 0 0 23%;
+.cta-section {
+  margin: 20px 0 0 23%;
 }
-.cta-section .primary-btn{
+.cta-section .primary-btn {
   margin-right: 25px;
 }
 .danger-btn {
-  background-color: #E61C23;
-  color:#ffffff;
+  background-color: #e61c23;
+  color: #ffffff;
   border-radius: 5px;
 }
 
-.request-status-show{
-  background: #EF9011;
+.request-status-show {
+  background: #ef9011;
   padding: 5px 30px;
   border-radius: 20px;
-  color:#ffffff;
+  color: #ffffff;
 }
-.react-select-request{
-  width:50%;
-  margin-right:20px;
+.react-select-request {
+  width: 50%;
+  margin-right: 20px;
 }
 .stock-broker-request-approve-input {
-  padding:10px;
+  padding: 10px;
   border-radius: 5px;
   margin-bottom: 20px;
-  width:50%;
+  width: 50%;
 }
-.request_topic{
-  color:#002564;
+.request_topic {
+  color: #002564;
   font-size: 16px;
   text-transform: capitalize;
 }
-.view_document_image{
+.view_document_image {
   display: flex;
-  margin:10vh auto 0 auto;
-  height:80vh;
+  margin: 10vh auto 0 auto;
+  height: 80vh;
 }
 
-.view_document_button{
-  display:flex;
+.view_document_button {
+  display: flex;
   justify-content: center;
-  gap:5%;
+  gap: 5%;
   margin-top: 10px;
-  
 }
 
-.MuiModal-root{
-  overflow: scroll !important
+.MuiModal-root {
+  margin-left: 400px !important;
+  margin-top: 40px !important;
+  overflow: scroll !important;
+  /* width: 90000px !important; */
 }

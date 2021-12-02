@@ -13,7 +13,8 @@ const NameBar = ({ name, title }) => {
   const currentFirstName = localStorage.getItem("currentFirstName");
   const currentUserName = localStorage.getItem("currentUserName");
   const currentLastName = localStorage.getItem("currentLastName");
-  console.log("curreentUser:::::", currentUserName);
+  const currentUser = localStorage.getItem("currenUser");
+  console.log("*****curreentUser:::::", currentUser);
   return (
     <div className="namebar">
       <p className="helloo">

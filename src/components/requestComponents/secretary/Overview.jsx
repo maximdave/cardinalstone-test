@@ -87,6 +87,9 @@ const Overview = () => {
           />
         </div> */}
 
+        <p style={{ marginTop: "3rem" }}>
+          <b>Price Update</b>
+        </p>
         <div className="price_update" style={{ marginBottom: "3rem" }}>
           <PriceUpdate />
         </div>

@@ -17,6 +17,7 @@ const PriceUpdate = ({ data }) => {
         `https://restserver3.cardinalstone.com/api/marketTickerData`
       );
       setPriceUpdate(res.data);
+      console.log("priceUpdate>>>>", priceUpdate);
     } catch (e) {
       setErr(e);
     }

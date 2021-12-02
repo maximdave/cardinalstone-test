@@ -27,25 +27,16 @@ tr {
   width: 100%;
   text-align: center;
 }
+.processing {
+  background-color: #ef9011;
+  padding: 5px 30px 5px 30px;
+  border-radius: 15px;
+  height: 30px;
+  color: #ffffff;
+  width: 100%;
+  text-align: center;
+}
 .approved {
-  background-color: #ef9011;
-  padding: 5px 30px 5px 30px;
-  border-radius: 15px;
-  height: 30px;
-  color: #ffffff;
-  width: 100%;
-  text-align: center;
-}
-.captured {
-  background-color: #ef9011;
-  padding: 5px 30px 5px 30px;
-  border-radius: 15px;
-  height: 30px;
-  color: #ffffff;
-  width: 100%;
-  text-align: center;
-}
-.verified {
   background-color: #528DC2;
   padding: 5px 30px 5px 30px;
   border-radius: 15px;

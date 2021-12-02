@@ -26,6 +26,7 @@ import StockbrokerDashboard from "./pages/stockbrokerDashboard/StockbrokerDashbo
 import InternalControlDashboard from "./pages/internalControl/internalControl";
 import { GlobalContextProvider } from "./contexts/Authentication/GlobalContext";
 import { UserCreationContextProvider } from "./contexts/Authentication/UserCreationContext";
+import Logout from "./components/logout";
 
 function App() {
   return (
@@ -83,6 +84,7 @@ function App() {
               path="/internalcontrol"
               component={InternalControlDashboard}
             />
+            <Route path="/logout" component={Logout} />
           </Switch>
         </GlobalContextProvider>
       </div>

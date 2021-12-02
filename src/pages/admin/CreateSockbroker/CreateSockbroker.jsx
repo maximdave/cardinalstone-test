@@ -61,40 +61,50 @@ const CreateSockbroker = () => {
             />
           </div>
           <div className="d-flex justify-content-space-around">
-            <TextField
+            {/* <TextField
               className="create-stockerbroker-input"
               label="Full Name"
               placeholder="Full Name"
               onChange={(e) => setFullName(e.target.value)}
               value={fullName}
-            />
-            <TextField
+            /> */}
+            {/* <TextField
               className=" create-stockerbroker-input"
               label="Username"
               placeholder="Username"
               onChange={(e) => setUserName(e.target.value)}
               value={userName}
-            />
+            /> */}
           </div>
           <div className=" d-flex mt-3">
+            <TextField
+              className=" create-stockerbroker-input"
+              label="Username"
+              placeholder="Username"
+              required
+              onChange={(e) => setUserName(e.target.value)}
+              value={userName}
+            />
             <TextField
               className="create-stockerbroker-input"
               label="Phone Number"
               placeholder="Phone Number"
+              required
               onChange={(e) => setPhone(e.target.value)}
               value={phoneNumber}
             />
-            <TextField
+            {/* <TextField
               className="create-stockerbroker-input"
               label="Alternative Phone Number"
               placeholder="Alternative Phone Number"
-            />
+            /> */}
           </div>
           <div className=" d-flex mt-3">
             <TextField
               className="create-stockerbroker-input"
               label="Create password for user"
               placeholder="Enter Password"
+              required
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
